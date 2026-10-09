@@ -1,0 +1,36 @@
+# Credentials and local environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+node_modules/
+.next/
+__pycache__/
+*.pyc
+
+# Private source material and extraction intermediates
+/Documentation/
+/Lumen _ Research papers/
+/docs/research/extracted/
+/docs/research/slide-images/
+/docs/research/paper-images/
+/Datasets/raw/
+/Datasets/processed/
+/Datasets/restricted/
+/artifacts/private/
+
+# Local outputs
+/models/
+/tmp/
+/artifacts/runs/
+*.log
+.coverage
+.coverage.*
+htmlcov/
+.tools/
+.ruff_cache/
+.pytest_cache/
+*.tsbuildinfo
+playwright-report/
+test-results/

@@ -1,0 +1,1670 @@
+[
+  {
+    "id": "S01",
+    "path": "Documentation/major project/Copy of Sem VII Project Log Book Format 2026.docx",
+    "sha256": "ed2cdf15a136ce2b907add3393b1f77feea134574ad40c745826acc837a3245b",
+    "bytes": 229506,
+    "extracted": "docs/research/extracted/S01.txt",
+    "characters": 9610,
+    "units": [
+      {
+        "paragraphs": 144,
+        "tables": 6
+      }
+    ]
+  },
+  {
+    "id": "S02",
+    "path": "Documentation/major project/Major_Project_Proposal_Format-2026.docx",
+    "sha256": "59b183b31080267639cd5e00adc96ce2ffc299f087be012175c4f87fa41cdf4d",
+    "bytes": 48721,
+    "extracted": "docs/research/extracted/S02.txt",
+    "characters": 17257,
+    "units": [
+      {
+        "paragraphs": 88,
+        "tables": 1
+      }
+    ]
+  },
+  {
+    "id": "S03",
+    "path": "Documentation/major project/Mid sem ppt_template.pptx",
+    "sha256": "6ff83a30fe5b9dcb9d8d1882eacaad07c5b4df342c2d02561bf48d0734e736dc",
+    "bytes": 3668424,
+    "extracted": "docs/research/extracted/S03.txt",
+    "characters": 9686,
+    "units": [
+      {
+        "slide": 1,
+        "characters": 305
+      },
+      {
+        "slide": 2,
+        "characters": 416
+      },
+      {
+        "slide": 3,
+        "characters": 1216
+      },
+      {
+        "slide": 4,
+        "characters": 1516
+      },
+      {
+        "slide": 5,
+        "characters": 1012
+      },
+      {
+        "slide": 6,
+        "characters": 1061
+      },
+      {
+        "slide": 7,
+        "characters": 1160
+      },
+      {
+        "slide": 8,
+        "characters": 613
+      },
+      {
+        "slide": 9,
+        "characters": 105
+      },
+      {
+        "slide": 10,
+        "characters": 948
+      },
+      {
+        "slide": 11,
+        "characters": 110
+      },
+      {
+        "slide": 12,
+        "characters": 110
+      },
+      {
+        "slide": 13,
+        "characters": 40
+      },
+      {
+        "slide": 14,
+        "characters": 40
+      },
+      {
+        "slide": 15,
+        "characters": 36
+      },
+      {
+        "slide": 16,
+        "characters": 36
+      },
+      {
+        "slide": 17,
+        "characters": 38
+      },
+      {
+        "slide": 18,
+        "characters": 111
+      },
+      {
+        "slide": 19,
+        "characters": 118
+      },
+      {
+        "slide": 20,
+        "characters": 113
+      },
+      {
+        "slide": 21,
+        "characters": 118
+      }
+    ]
+  },
+  {
+    "id": "S04",
+    "path": "Documentation/major project/Project Proposal Presentation Template July 2026.pptx",
+    "sha256": "cc8288d0172a5f58cb40808b167abe41a0e63fbe83a6670fa2d21076df37a3e6",
+    "bytes": 2197095,
+    "extracted": "docs/research/extracted/S04.txt",
+    "characters": 10337,
+    "units": [
+      {
+        "slide": 1,
+        "characters": 304
+      },
+      {
+        "slide": 2,
+        "characters": 378
+      },
+      {
+        "slide": 3,
+        "characters": 1210
+      },
+      {
+        "slide": 4,
+        "characters": 1181
+      },
+      {
+        "slide": 5,
+        "characters": 1495
+      },
+      {
+        "slide": 6,
+        "characters": 1262
+      },
+      {
+        "slide": 7,
+        "characters": 913
+      },
+      {
+        "slide": 8,
+        "characters": 25
+      },
+      {
+        "slide": 9,
+        "characters": 25
+      },
+      {
+        "slide": 10,
+        "characters": 24
+      },
+      {
+        "slide": 11,
+        "characters": 10
+      },
+      {
+        "slide": 12,
+        "characters": 109
+      },
+      {
+        "slide": 13,
+        "characters": 89
+      },
+      {
+        "slide": 14,
+        "characters": 89
+      },
+      {
+        "slide": 15,
+        "characters": 89
+      },
+      {
+        "slide": 16,
+        "characters": 89
+      },
+      {
+        "slide": 17,
+        "characters": 89
+      },
+      {
+        "slide": 18,
+        "characters": 89
+      },
+      {
+        "slide": 19,
+        "characters": 958
+      },
+      {
+        "slide": 20,
+        "characters": 1334
+      },
+      {
+        "slide": 21,
+        "characters": 118
+      }
+    ]
+  },
+  {
+    "id": "S05",
+    "path": "Documentation/major project/proposal_LaTeX.pdf",
+    "sha256": "0320db0de8e27a235a10b3e0e8876e54c1137a647447032081971d2f8d650f71",
+    "bytes": 113758,
+    "extracted": "docs/research/extracted/S05.txt",
+    "characters": 17478,
+    "units": [
+      {
+        "page": 1,
+        "characters": 443
+      },
+      {
+        "page": 2,
+        "characters": 2854
+      },
+      {
+        "page": 3,
+        "characters": 2500
+      },
+      {
+        "page": 4,
+        "characters": 2084
+      },
+      {
+        "page": 5,
+        "characters": 1591
+      },
+      {
+        "page": 6,
+        "characters": 2416
+      },
+      {
+        "page": 7,
+        "characters": 2869
+      },
+      {
+        "page": 8,
+        "characters": 1495
+      },
+      {
+        "page": 9,
+        "characters": 1074
+      }
+    ]
+  },
+  {
+    "id": "S06",
+    "path": "Lumen _ Research papers/2025.findings-emnlp.998.docx",
+    "sha256": "c1b07b32de6e61b8e3f1dbc4197e3425c5c0d00c86966433ef10084b570f93a6",
+    "bytes": 217042,
+    "extracted": "docs/research/extracted/S06.txt",
+    "characters": 91170,
+    "units": [
+      {
+        "paragraphs": 775,
+        "tables": 0
+      }
+    ]
+  },
+  {
+    "id": "S07",
+    "path": "Lumen _ Research papers/2025.findings-emnlp.998.pdf",
+    "sha256": "c3f73350d06ae1917840dd7588cf3ee00ee6d3571decd13260c586aa2af24049",
+    "bytes": 693714,
+    "extracted": "docs/research/extracted/S07.txt",
+    "characters": 92080,
+    "units": [
+      {
+        "page": 1,
+        "characters": 5972
+      },
+      {
+        "page": 2,
+        "characters": 4705
+      },
+      {
+        "page": 3,
+        "characters": 4813
+      },
+      {
+        "page": 4,
+        "characters": 6469
+      },
+      {
+        "page": 5,
+        "characters": 4902
+      },
+      {
+        "page": 6,
+        "characters": 4232
+      },
+      {
+        "page": 7,
+        "characters": 3979
+      },
+      {
+        "page": 8,
+        "characters": 4210
+      },
+      {
+        "page": 9,
+        "characters": 4473
+      },
+      {
+        "page": 10,
+        "characters": 5074
+      },
+      {
+        "page": 11,
+        "characters": 5100
+      },
+      {
+        "page": 12,
+        "characters": 3010
+      },
+      {
+        "page": 13,
+        "characters": 4643
+      },
+      {
+        "page": 14,
+        "characters": 4476
+      },
+      {
+        "page": 15,
+        "characters": 4314
+      },
+      {
+        "page": 16,
+        "characters": 4434
+      },
+      {
+        "page": 17,
+        "characters": 2607
+      },
+      {
+        "page": 18,
+        "characters": 3965
+      },
+      {
+        "page": 19,
+        "characters": 4921
+      },
+      {
+        "page": 20,
+        "characters": 1729
+      },
+      {
+        "page": 21,
+        "characters": 695
+      },
+      {
+        "page": 22,
+        "characters": 2971
+      }
+    ]
+  },
+  {
+    "id": "S08",
+    "path": "Lumen _ Research papers/Between Help and Harm_ An Evaluation Study of Mental Health Crisis Handling by Large Language Models.pdf",
+    "sha256": "0863c3e80c8e9ee4e5ceb86fc85b05b8798cd15bdf111def409db7ab04e7b504",
+    "bytes": 1587290,
+    "extracted": "docs/research/extracted/S08.txt",
+    "characters": 108333,
+    "units": [
+      {
+        "page": 1,
+        "characters": 4146
+      },
+      {
+        "page": 2,
+        "characters": 5882
+      },
+      {
+        "page": 3,
+        "characters": 4779
+      },
+      {
+        "page": 4,
+        "characters": 5293
+      },
+      {
+        "page": 5,
+        "characters": 4985
+      },
+      {
+        "page": 6,
+        "characters": 6319
+      },
+      {
+        "page": 7,
+        "characters": 5193
+      },
+      {
+        "page": 8,
+        "characters": 5049
+      },
+      {
+        "page": 9,
+        "characters": 4668
+      },
+      {
+        "page": 10,
+        "characters": 4987
+      },
+      {
+        "page": 11,
+        "characters": 5033
+      },
+      {
+        "page": 12,
+        "characters": 5872
+      },
+      {
+        "page": 13,
+        "characters": 6104
+      },
+      {
+        "page": 14,
+        "characters": 5384
+      },
+      {
+        "page": 15,
+        "characters": 6753
+      },
+      {
+        "page": 16,
+        "characters": 6510
+      },
+      {
+        "page": 17,
+        "characters": 5824
+      },
+      {
+        "page": 18,
+        "characters": 4006
+      },
+      {
+        "page": 19,
+        "characters": 5112
+      },
+      {
+        "page": 20,
+        "characters": 4612
+      },
+      {
+        "page": 21,
+        "characters": 1454
+      }
+    ]
+  },
+  {
+    "id": "S09",
+    "path": "Lumen _ Research papers/Building Trust in Mental Health Chatbots_ Safety Metrics and LLM-Based Evaluation Tools.pdf",
+    "sha256": "f69f5540fb754e6b2db514f12a9f72146f0f0815045c02826b337eba0ff2fb4c",
+    "bytes": 258493,
+    "extracted": "docs/research/extracted/S09.txt",
+    "characters": 58230,
+    "units": [
+      {
+        "page": 1,
+        "characters": 1035
+      },
+      {
+        "page": 2,
+        "characters": 1905
+      },
+      {
+        "page": 3,
+        "characters": 2036
+      },
+      {
+        "page": 4,
+        "characters": 2016
+      },
+      {
+        "page": 5,
+        "characters": 1841
+      },
+      {
+        "page": 6,
+        "characters": 2009
+      },
+      {
+        "page": 7,
+        "characters": 2103
+      },
+      {
+        "page": 8,
+        "characters": 1877
+      },
+      {
+        "page": 9,
+        "characters": 2014
+      },
+      {
+        "page": 10,
+        "characters": 2102
+      },
+      {
+        "page": 11,
+        "characters": 1986
+      },
+      {
+        "page": 12,
+        "characters": 1942
+      },
+      {
+        "page": 13,
+        "characters": 2079
+      },
+      {
+        "page": 14,
+        "characters": 1853
+      },
+      {
+        "page": 15,
+        "characters": 1610
+      },
+      {
+        "page": 16,
+        "characters": 1832
+      },
+      {
+        "page": 17,
+        "characters": 1524
+      },
+      {
+        "page": 18,
+        "characters": 1633
+      },
+      {
+        "page": 19,
+        "characters": 1637
+      },
+      {
+        "page": 20,
+        "characters": 1974
+      },
+      {
+        "page": 21,
+        "characters": 1866
+      },
+      {
+        "page": 22,
+        "characters": 836
+      },
+      {
+        "page": 23,
+        "characters": 1427
+      },
+      {
+        "page": 24,
+        "characters": 2041
+      },
+      {
+        "page": 25,
+        "characters": 2050
+      },
+      {
+        "page": 26,
+        "characters": 2039
+      },
+      {
+        "page": 27,
+        "characters": 1916
+      },
+      {
+        "page": 28,
+        "characters": 1721
+      },
+      {
+        "page": 29,
+        "characters": 1511
+      },
+      {
+        "page": 30,
+        "characters": 1723
+      },
+      {
+        "page": 31,
+        "characters": 1725
+      },
+      {
+        "page": 32,
+        "characters": 1376
+      },
+      {
+        "page": 33,
+        "characters": 407
+      }
+    ]
+  },
+  {
+    "id": "S10",
+    "path": "Lumen _ Research papers/Deep Learning Based Approach For Detecting Suicidal Ideation.pdf",
+    "sha256": "eee7ec06136a811881f23b71858a81502d3dd382c18fae94773d9b5c6dd3bcbb",
+    "bytes": 169791,
+    "extracted": "docs/research/extracted/S10.txt",
+    "characters": 22794,
+    "units": [
+      {
+        "page": 1,
+        "characters": 4300
+      },
+      {
+        "page": 2,
+        "characters": 3748
+      },
+      {
+        "page": 3,
+        "characters": 3596
+      },
+      {
+        "page": 4,
+        "characters": 3868
+      },
+      {
+        "page": 5,
+        "characters": 4874
+      },
+      {
+        "page": 6,
+        "characters": 2307
+      }
+    ]
+  },
+  {
+    "id": "S11",
+    "path": "Lumen _ Research papers/Development and Evaluation of HopeBot.pdf",
+    "sha256": "17e1e7cd173bf56048c5ca8eb0a5b505a7cd0f2dab05ec65fd71041589347e0f",
+    "bytes": 1726121,
+    "extracted": "docs/research/extracted/S11.txt",
+    "characters": 102729,
+    "units": [
+      {
+        "page": 1,
+        "characters": 1976
+      },
+      {
+        "page": 2,
+        "characters": 2815
+      },
+      {
+        "page": 3,
+        "characters": 3782
+      },
+      {
+        "page": 4,
+        "characters": 3604
+      },
+      {
+        "page": 5,
+        "characters": 2974
+      },
+      {
+        "page": 6,
+        "characters": 2000
+      },
+      {
+        "page": 7,
+        "characters": 2445
+      },
+      {
+        "page": 8,
+        "characters": 3479
+      },
+      {
+        "page": 9,
+        "characters": 3234
+      },
+      {
+        "page": 10,
+        "characters": 3260
+      },
+      {
+        "page": 11,
+        "characters": 1752
+      },
+      {
+        "page": 12,
+        "characters": 2760
+      },
+      {
+        "page": 13,
+        "characters": 3341
+      },
+      {
+        "page": 14,
+        "characters": 835
+      },
+      {
+        "page": 15,
+        "characters": 3105
+      },
+      {
+        "page": 16,
+        "characters": 2699
+      },
+      {
+        "page": 17,
+        "characters": 1014
+      },
+      {
+        "page": 18,
+        "characters": 3187
+      },
+      {
+        "page": 19,
+        "characters": 3138
+      },
+      {
+        "page": 20,
+        "characters": 3323
+      },
+      {
+        "page": 21,
+        "characters": 3694
+      },
+      {
+        "page": 22,
+        "characters": 4384
+      },
+      {
+        "page": 23,
+        "characters": 3143
+      },
+      {
+        "page": 24,
+        "characters": 4175
+      },
+      {
+        "page": 25,
+        "characters": 3891
+      },
+      {
+        "page": 26,
+        "characters": 3777
+      },
+      {
+        "page": 27,
+        "characters": 1564
+      },
+      {
+        "page": 28,
+        "characters": 2011
+      },
+      {
+        "page": 29,
+        "characters": 1479
+      },
+      {
+        "page": 30,
+        "characters": 1312
+      },
+      {
+        "page": 31,
+        "characters": 2825
+      },
+      {
+        "page": 32,
+        "characters": 514
+      },
+      {
+        "page": 33,
+        "characters": 1243
+      },
+      {
+        "page": 34,
+        "characters": 559
+      },
+      {
+        "page": 35,
+        "characters": 950
+      },
+      {
+        "page": 36,
+        "characters": 2751
+      },
+      {
+        "page": 37,
+        "characters": 2069
+      },
+      {
+        "page": 38,
+        "characters": 2307
+      },
+      {
+        "page": 39,
+        "characters": 260
+      },
+      {
+        "page": 40,
+        "characters": 143
+      },
+      {
+        "page": 41,
+        "characters": 1784
+      },
+      {
+        "page": 42,
+        "characters": 132
+      },
+      {
+        "page": 43,
+        "characters": 2275
+      }
+    ]
+  },
+  {
+    "id": "S12",
+    "path": "Lumen _ Research papers/Domain-Specific Constitutional AI.pdf",
+    "sha256": "ea209ff3273c088ca0188b1e2af9a0782c10d29ed3ea190d23ec390c75ed12e4",
+    "bytes": 664226,
+    "extracted": "docs/research/extracted/S12.txt",
+    "characters": 20447,
+    "units": [
+      {
+        "page": 1,
+        "characters": 5286
+      },
+      {
+        "page": 2,
+        "characters": 5113
+      },
+      {
+        "page": 3,
+        "characters": 3871
+      },
+      {
+        "page": 4,
+        "characters": 5469
+      },
+      {
+        "page": 5,
+        "characters": 624
+      }
+    ]
+  },
+  {
+    "id": "S13",
+    "path": "Lumen _ Research papers/Gap Analysis Major Project.docx",
+    "sha256": "d064a966e2df0055055cae72b8e6684427a6b7782ec5af1b6a0aebb561d61b41",
+    "bytes": 577372,
+    "extracted": "docs/research/extracted/S13.txt",
+    "characters": 24350,
+    "units": [
+      {
+        "paragraphs": 85,
+        "tables": 0
+      }
+    ]
+  },
+  {
+    "id": "S14",
+    "path": "Lumen _ Research papers/Gap_Analysis.docx",
+    "sha256": "7a8661640e167261c5b45699ad318ed513d3d1174df528276b37310650d75fd1",
+    "bytes": 11243,
+    "extracted": "docs/research/extracted/S14.txt",
+    "characters": 6836,
+    "units": [
+      {
+        "paragraphs": 50,
+        "tables": 0
+      }
+    ]
+  },
+  {
+    "id": "S15",
+    "path": "Lumen _ Research papers/GoEmotions dataset of fine grained emotions.pdf",
+    "sha256": "bc6cbfc58955b6451fcc5dfe7e7be011ddd47c8de4cfefbd16a536c72c06ac6e",
+    "bytes": 773597,
+    "extracted": "docs/research/extracted/S15.txt",
+    "characters": 56198,
+    "units": [
+      {
+        "page": 1,
+        "characters": 3774
+      },
+      {
+        "page": 2,
+        "characters": 4631
+      },
+      {
+        "page": 3,
+        "characters": 4388
+      },
+      {
+        "page": 4,
+        "characters": 4419
+      },
+      {
+        "page": 5,
+        "characters": 3457
+      },
+      {
+        "page": 6,
+        "characters": 4206
+      },
+      {
+        "page": 7,
+        "characters": 5038
+      },
+      {
+        "page": 8,
+        "characters": 2797
+      },
+      {
+        "page": 9,
+        "characters": 4328
+      },
+      {
+        "page": 10,
+        "characters": 4857
+      },
+      {
+        "page": 11,
+        "characters": 3103
+      },
+      {
+        "page": 12,
+        "characters": 4037
+      },
+      {
+        "page": 13,
+        "characters": 2503
+      },
+      {
+        "page": 14,
+        "characters": 2874
+      },
+      {
+        "page": 15,
+        "characters": 1526
+      }
+    ]
+  },
+  {
+    "id": "S16",
+    "path": "Lumen _ Research papers/Large Language Mod for Suicide Detection, Prevention, and Risk Assessment.pdf",
+    "sha256": "8bc3b94fb34e1e1d34be32c721b79f91aaa9c52dc6ffa4b29c40632d528c31e9",
+    "bytes": 913601,
+    "extracted": "docs/research/extracted/S16.txt",
+    "characters": 61226,
+    "units": [
+      {
+        "page": 1,
+        "characters": 4169
+      },
+      {
+        "page": 2,
+        "characters": 4706
+      },
+      {
+        "page": 3,
+        "characters": 1271
+      },
+      {
+        "page": 4,
+        "characters": 5537
+      },
+      {
+        "page": 5,
+        "characters": 3247
+      },
+      {
+        "page": 6,
+        "characters": 3842
+      },
+      {
+        "page": 7,
+        "characters": 1709
+      },
+      {
+        "page": 8,
+        "characters": 5206
+      },
+      {
+        "page": 9,
+        "characters": 5593
+      },
+      {
+        "page": 10,
+        "characters": 6134
+      },
+      {
+        "page": 11,
+        "characters": 5836
+      },
+      {
+        "page": 12,
+        "characters": 7611
+      },
+      {
+        "page": 13,
+        "characters": 6141
+      }
+    ]
+  },
+  {
+    "id": "S17",
+    "path": "Lumen _ Research papers/Machine learning and the prediction of suicide in psychiatric populations.pdf",
+    "sha256": "ac717dce6148b70e0930693e5135fc2da084dd171db51c01fa37adde18ae5fdc",
+    "bytes": 1558986,
+    "extracted": "docs/research/extracted/S17.txt",
+    "characters": 117740,
+    "units": [
+      {
+        "page": 1,
+        "characters": 4280
+      },
+      {
+        "page": 2,
+        "characters": 7483
+      },
+      {
+        "page": 3,
+        "characters": 4018
+      },
+      {
+        "page": 4,
+        "characters": 3675
+      },
+      {
+        "page": 5,
+        "characters": 3053
+      },
+      {
+        "page": 6,
+        "characters": 2714
+      },
+      {
+        "page": 7,
+        "characters": 4002
+      },
+      {
+        "page": 8,
+        "characters": 4873
+      },
+      {
+        "page": 9,
+        "characters": 4500
+      },
+      {
+        "page": 10,
+        "characters": 3545
+      },
+      {
+        "page": 11,
+        "characters": 3782
+      },
+      {
+        "page": 12,
+        "characters": 2814
+      },
+      {
+        "page": 13,
+        "characters": 3867
+      },
+      {
+        "page": 14,
+        "characters": 2603
+      },
+      {
+        "page": 15,
+        "characters": 3569
+      },
+      {
+        "page": 16,
+        "characters": 8058
+      },
+      {
+        "page": 17,
+        "characters": 8107
+      },
+      {
+        "page": 18,
+        "characters": 7391
+      },
+      {
+        "page": 19,
+        "characters": 8510
+      },
+      {
+        "page": 20,
+        "characters": 10588
+      },
+      {
+        "page": 21,
+        "characters": 10609
+      },
+      {
+        "page": 22,
+        "characters": 5313
+      }
+    ]
+  },
+  {
+    "id": "S18",
+    "path": "Lumen _ Research papers/Mentalic Net_ Development of RAG-based Conversational AI and Evaluation Framework for Mental Health Support.pdf",
+    "sha256": "751a77b48902b21508776f5290cb9e3771d18c3de20046a4bb1c1863da0db6ea",
+    "bytes": 657758,
+    "extracted": "docs/research/extracted/S18.txt",
+    "characters": 39361,
+    "units": [
+      {
+        "page": 1,
+        "characters": 4489
+      },
+      {
+        "page": 2,
+        "characters": 6441
+      },
+      {
+        "page": 3,
+        "characters": 5017
+      },
+      {
+        "page": 4,
+        "characters": 6633
+      },
+      {
+        "page": 5,
+        "characters": 5433
+      },
+      {
+        "page": 6,
+        "characters": 4153
+      },
+      {
+        "page": 7,
+        "characters": 6204
+      },
+      {
+        "page": 8,
+        "characters": 856
+      }
+    ]
+  },
+  {
+    "id": "S19",
+    "path": "Lumen _ Research papers/Role of machine learning algorithms in suicide risk prediction.pdf",
+    "sha256": "d796de613a6fa7f98d85d60bb64cf77e0058fc2cdce4091b7c6659ba508ae03c",
+    "bytes": 4078907,
+    "extracted": "docs/research/extracted/S19.txt",
+    "characters": 90569,
+    "units": [
+      {
+        "page": 1,
+        "characters": 3875
+      },
+      {
+        "page": 2,
+        "characters": 5138
+      },
+      {
+        "page": 3,
+        "characters": 4623
+      },
+      {
+        "page": 4,
+        "characters": 5461
+      },
+      {
+        "page": 5,
+        "characters": 699
+      },
+      {
+        "page": 6,
+        "characters": 2593
+      },
+      {
+        "page": 7,
+        "characters": 2458
+      },
+      {
+        "page": 8,
+        "characters": 2045
+      },
+      {
+        "page": 9,
+        "characters": 2378
+      },
+      {
+        "page": 10,
+        "characters": 2628
+      },
+      {
+        "page": 11,
+        "characters": 1607
+      },
+      {
+        "page": 12,
+        "characters": 1602
+      },
+      {
+        "page": 13,
+        "characters": 1802
+      },
+      {
+        "page": 14,
+        "characters": 1647
+      },
+      {
+        "page": 15,
+        "characters": 2303
+      },
+      {
+        "page": 16,
+        "characters": 1845
+      },
+      {
+        "page": 17,
+        "characters": 3193
+      },
+      {
+        "page": 18,
+        "characters": 1766
+      },
+      {
+        "page": 19,
+        "characters": 2587
+      },
+      {
+        "page": 20,
+        "characters": 2529
+      },
+      {
+        "page": 21,
+        "characters": 1399
+      },
+      {
+        "page": 22,
+        "characters": 1062
+      },
+      {
+        "page": 23,
+        "characters": 655
+      },
+      {
+        "page": 24,
+        "characters": 3898
+      },
+      {
+        "page": 25,
+        "characters": 3294
+      },
+      {
+        "page": 26,
+        "characters": 5994
+      },
+      {
+        "page": 27,
+        "characters": 5598
+      },
+      {
+        "page": 28,
+        "characters": 8975
+      },
+      {
+        "page": 29,
+        "characters": 6403
+      }
+    ]
+  },
+  {
+    "id": "S20",
+    "path": "Lumen _ Research papers/SentimentCareBot_ Retrieval-Augmented Generation Chatbot for Mental Health Support with Sentiment Analysis.pdf",
+    "sha256": "9a3adff559bc5154cc45a7cb84890296ec0a15951503770051f820f24c07234f",
+    "bytes": 1174033,
+    "extracted": "docs/research/extracted/S20.txt",
+    "characters": 49117,
+    "units": [
+      {
+        "page": 1,
+        "characters": 6919
+      },
+      {
+        "page": 2,
+        "characters": 11600
+      },
+      {
+        "page": 3,
+        "characters": 4385
+      },
+      {
+        "page": 4,
+        "characters": 7095
+      },
+      {
+        "page": 5,
+        "characters": 3557
+      },
+      {
+        "page": 6,
+        "characters": 4973
+      },
+      {
+        "page": 7,
+        "characters": 2730
+      },
+      {
+        "page": 8,
+        "characters": 7723
+      }
+    ]
+  },
+  {
+    "id": "S21",
+    "path": "Lumen _ Research papers/Suicide- and Crisis-Risk Detection Using Large Language Models in Mental-Health Chatbots .pdf",
+    "sha256": "d4f1444daaea8c77722ad15e64a6981d797db35991a4bfb5ac6a9bea4bc328b1",
+    "bytes": 3290938,
+    "extracted": "docs/research/extracted/S21.txt",
+    "characters": 68261,
+    "units": [
+      {
+        "page": 1,
+        "characters": 861
+      },
+      {
+        "page": 2,
+        "characters": 2025
+      },
+      {
+        "page": 3,
+        "characters": 2975
+      },
+      {
+        "page": 4,
+        "characters": 2342
+      },
+      {
+        "page": 5,
+        "characters": 448
+      },
+      {
+        "page": 6,
+        "characters": 3028
+      },
+      {
+        "page": 7,
+        "characters": 2832
+      },
+      {
+        "page": 8,
+        "characters": 2883
+      },
+      {
+        "page": 9,
+        "characters": 2569
+      },
+      {
+        "page": 10,
+        "characters": 2343
+      },
+      {
+        "page": 11,
+        "characters": 2165
+      },
+      {
+        "page": 12,
+        "characters": 2399
+      },
+      {
+        "page": 13,
+        "characters": 2606
+      },
+      {
+        "page": 14,
+        "characters": 3204
+      },
+      {
+        "page": 15,
+        "characters": 3265
+      },
+      {
+        "page": 16,
+        "characters": 3242
+      },
+      {
+        "page": 17,
+        "characters": 3268
+      },
+      {
+        "page": 18,
+        "characters": 3326
+      },
+      {
+        "page": 19,
+        "characters": 2531
+      },
+      {
+        "page": 20,
+        "characters": 2144
+      },
+      {
+        "page": 21,
+        "characters": 2299
+      },
+      {
+        "page": 22,
+        "characters": 2240
+      },
+      {
+        "page": 23,
+        "characters": 2206
+      },
+      {
+        "page": 24,
+        "characters": 987
+      },
+      {
+        "page": 25,
+        "characters": 1665
+      },
+      {
+        "page": 26,
+        "characters": 916
+      },
+      {
+        "page": 27,
+        "characters": 1062
+      },
+      {
+        "page": 28,
+        "characters": 956
+      },
+      {
+        "page": 29,
+        "characters": 1320
+      },
+      {
+        "page": 30,
+        "characters": 1118
+      },
+      {
+        "page": 31,
+        "characters": 1036
+      },
+      {
+        "page": 32,
+        "characters": 345
+      },
+      {
+        "page": 33,
+        "characters": 345
+      },
+      {
+        "page": 34,
+        "characters": 345
+      },
+      {
+        "page": 35,
+        "characters": 345
+      }
+    ]
+  },
+  {
+    "id": "S22",
+    "path": "Lumen _ Research papers/Systematic review and meta analysis of chatbots in themanagement of depressive and anxiety symptoms.pdf",
+    "sha256": "e84a43d9967b130d7195d0ed9945e70e79245f2938f23cb664b3f50d532ddf25",
+    "bytes": 1344268,
+    "extracted": "docs/research/extracted/S22.txt",
+    "characters": 60130,
+    "units": [
+      {
+        "page": 1,
+        "characters": 4884
+      },
+      {
+        "page": 2,
+        "characters": 4925
+      },
+      {
+        "page": 3,
+        "characters": 3819
+      },
+      {
+        "page": 4,
+        "characters": 3758
+      },
+      {
+        "page": 5,
+        "characters": 5898
+      },
+      {
+        "page": 6,
+        "characters": 1080
+      },
+      {
+        "page": 7,
+        "characters": 3069
+      },
+      {
+        "page": 8,
+        "characters": 8873
+      },
+      {
+        "page": 9,
+        "characters": 7680
+      },
+      {
+        "page": 10,
+        "characters": 7849
+      },
+      {
+        "page": 11,
+        "characters": 6943
+      },
+      {
+        "page": 12,
+        "characters": 1146
+      }
+    ]
+  },
+  {
+    "id": "S23",
+    "path": "Lumen _ Research papers/The Slow Drift of Support.pdf",
+    "sha256": "4b404b4033c943a14c8c0c92cfea379e8d2f84210feebe5b4d652ab3041201a3",
+    "bytes": 2738747,
+    "extracted": "docs/research/extracted/S23.txt",
+    "characters": 65911,
+    "units": [
+      {
+        "page": 1,
+        "characters": 3481
+      },
+      {
+        "page": 2,
+        "characters": 4973
+      },
+      {
+        "page": 3,
+        "characters": 5317
+      },
+      {
+        "page": 4,
+        "characters": 2023
+      },
+      {
+        "page": 5,
+        "characters": 3616
+      },
+      {
+        "page": 6,
+        "characters": 3082
+      },
+      {
+        "page": 7,
+        "characters": 3801
+      },
+      {
+        "page": 8,
+        "characters": 3062
+      },
+      {
+        "page": 9,
+        "characters": 3731
+      },
+      {
+        "page": 10,
+        "characters": 5050
+      },
+      {
+        "page": 11,
+        "characters": 4562
+      },
+      {
+        "page": 12,
+        "characters": 4010
+      },
+      {
+        "page": 13,
+        "characters": 1144
+      },
+      {
+        "page": 14,
+        "characters": 3598
+      },
+      {
+        "page": 15,
+        "characters": 4297
+      },
+      {
+        "page": 16,
+        "characters": 3805
+      },
+      {
+        "page": 17,
+        "characters": 3762
+      },
+      {
+        "page": 18,
+        "characters": 2283
+      }
+    ]
+  },
+  {
+    "id": "S24",
+    "path": "Lumen _ Research papers/woebot-conversional AI for anxiety and depresssion_.pdf",
+    "sha256": "603620faedb0492f335f7acd19e1e2bfa2ca16d7ff1bf1314a6ef27d7414b5f6",
+    "bytes": 482796,
+    "extracted": "docs/research/extracted/S24.txt",
+    "characters": 48115,
+    "units": [
+      {
+        "page": 1,
+        "characters": 3685
+      },
+      {
+        "page": 2,
+        "characters": 6856
+      },
+      {
+        "page": 3,
+        "characters": 6104
+      },
+      {
+        "page": 4,
+        "characters": 6355
+      },
+      {
+        "page": 5,
+        "characters": 859
+      },
+      {
+        "page": 6,
+        "characters": 2583
+      },
+      {
+        "page": 7,
+        "characters": 3293
+      },
+      {
+        "page": 8,
+        "characters": 2773
+      },
+      {
+        "page": 9,
+        "characters": 5806
+      },
+      {
+        "page": 10,
+        "characters": 5713
+      },
+      {
+        "page": 11,
+        "characters": 3900
+      }
+    ]
+  }
+]

@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-10-08",
+  "external_acquisition_performed": false,
+  "source_of_external_observations": "docs/research/rag-datasets-and-efficacy.md; research snapshot, not permission to ingest",
+  "resources": [
+    {
+      "id": "lumen_pilot_0_1_draft",
+      "path": "Datasets/development/pilot.v0.json",
+      "role": "development_evaluation",
+      "revision": "0.1-draft",
+      "provenance": "ai_authored_synthetic",
+      "languages": [
+        "en",
+        "hi-Deva",
+        "mr-Deva",
+        "hi-Latn",
+        "mr-Latn"
+      ],
+      "families": 40,
+      "variants": 200,
+      "acquisition_status": "created_locally",
+      "use_status": "offline_engineering_only",
+      "label_review": "pending_clinical_and_bilingual_review",
+      "rights": "Project-authored draft; no third-party corpus ingested. Public project license not selected.",
+      "personal_data": "No real participants or conversations; synthetic disclosure-like text still requires careful handling.",
+      "split": "development_only",
+      "checksums": "Exact input SHA-256 recorded by every evaluation run.",
+      "release_restrictions": "Not clinical ground truth, a blinded test, language qualification or production guidance. Independent reviewer annotations must not be inferred from draft labels.",
+      "publisher": "Lumen project; named human data owner pending",
+      "access_approval": "local_engineering_creation",
+      "ethical_permissions": "no_personal_data_collected; human_review_pending",
+      "clinical_review_status": "not_reviewed",
+      "permitted_derivatives": "internal_synthetic_fixture_edits; independent_review_required",
+      "redistribution_approval": "not_published; project_license_or_upstream_review_pending",
+      "sha256": "8c7d2ed95fe463ae43d64c8cb3e8b2bb5b8c0d5f14c9e901c98a7b80f44a7ad6"
+    },
+    {
+      "id": "go_emotions",
+      "source_url": "https://huggingface.co/datasets/google-research-datasets/go_emotions",
+      "role": "optional_emotion_experiment",
+      "observed_license": "Apache-2.0 dataset card",
+      "observed_on": "2026-10-08",
+      "revision": null,
+      "acquisition_status": "not_acquired",
+      "use_status": "hold_for_revision_and_provenance_review",
+      "languages": [
+        "en"
+      ],
+      "clinical_labels": false,
+      "restrictions": "Remove linkable Reddit metadata; verify actual release, rights and personal-data handling. Not suicide/crisis ground truth.",
+      "publisher": "Google Research dataset release",
+      "access_approval": "not_requested",
+      "ethical_permissions": "not_assessed_for_acquisition",
+      "clinical_review_status": "not_reviewed",
+      "permitted_derivatives": "not_cleared_for_project",
+      "redistribution_approval": "not_published; project_license_or_upstream_review_pending",
+      "sha256": null
+    },
+    {
+      "id": "empathetic_dialogues",
+      "source_url": "https://github.com/facebookresearch/EmpatheticDialogues",
+      "role": "optional_noncommercial_empathy_experiment",
+      "observed_license": "CC BY-NC 4.0",
+      "observed_on": "2026-10-08",
+      "revision": null,
+      "acquisition_status": "not_acquired",
+      "use_status": "hold_until_intended_use_and_terms_checked",
+      "languages": [
+        "en"
+      ],
+      "clinical_labels": false,
+      "restrictions": "Commercial reuse not cleared; empathy dialogues are not clinician-labeled crisis cases.",
+      "publisher": "Meta/Facebook Research author repository",
+      "access_approval": "not_requested",
+      "ethical_permissions": "not_assessed_for_acquisition",
+      "clinical_review_status": "not_reviewed",
+      "permitted_derivatives": "not_cleared_for_project",
+      "redistribution_approval": "not_published; project_license_or_upstream_review_pending",
+      "sha256": null
+    },
+    {
+      "id": "counsel_chat",
+      "source_url": "https://github.com/nbertagnolli/counsel-chat",
+      "role": "possible_support_content_analysis",
+      "observed_license": "MIT repository; underlying scraped-content rights unresolved",
+      "observed_on": "2026-10-08",
+      "revision": null,
+      "acquisition_status": "not_acquired",
+      "use_status": "hold",
+      "languages": [
+        "en"
+      ],
+      "clinical_labels": false,
+      "restrictions": "Requires upstream rights, sensitive-content, consent and quality review before ingestion.",
+      "publisher": "nbertagnolli repository; underlying content owners require review",
+      "access_approval": "not_requested",
+      "ethical_permissions": "not_assessed_for_acquisition",
+      "clinical_review_status": "not_reviewed",
+      "permitted_derivatives": "not_cleared_for_project",
+      "redistribution_approval": "not_published; project_license_or_upstream_review_pending",
+      "sha256": null
+    },
+    {
+      "id": "amod_counseling_conversations",
+      "source_url": "https://huggingface.co/datasets/Amod/mental_health_counseling_conversations",
+      "role": "possible_paper_replication",
+      "observed_license": "Gated RAIL-D; full license not acquired",
+      "observed_on": "2026-10-08",
+      "revision": null,
+      "acquisition_status": "not_acquired",
+      "use_status": "hold",
+      "languages": [
+        "en"
+      ],
+      "clinical_labels": false,
+      "restrictions": "Do not accept terms, pay, email, translate or train from the source card alone. Current card states derivative/commercial restrictions; resolve actual license and upstream permissions.",
+      "publisher": "Amod dataset publisher; upstream rights require review",
+      "access_approval": "not_requested",
+      "ethical_permissions": "not_assessed_for_acquisition",
+      "clinical_review_status": "not_reviewed",
+      "permitted_derivatives": "not_cleared_for_project",
+      "redistribution_approval": "not_published; project_license_or_upstream_review_pending",
+      "sha256": null
+    },
+    {
+      "id": "psychology_10k",
+      "source_url": "https://huggingface.co/datasets/samhog/psychology-10k",
+      "role": "excluded_production_candidate",
+      "observed_license": "Unclear",
+      "observed_on": "2026-10-08",
+      "revision": null,
+      "acquisition_status": "not_acquired",
+      "use_status": "exclude_pending_permission_and_quality_review",
+      "languages": [
+        "en"
+      ],
+      "clinical_labels": false,
+      "restrictions": "Provenance and rights unresolved; visible professional-identity/treatment responses must not become authoritative reference care.",
+      "publisher": "samhog dataset publisher; upstream owners unresolved",
+      "access_approval": "not_requested",
+      "ethical_permissions": "not_assessed_for_acquisition",
+      "clinical_review_status": "not_reviewed",
+      "permitted_derivatives": "not_cleared_for_project",
+      "redistribution_approval": "not_published; project_license_or_upstream_review_pending",
+      "sha256": null
+    },
+    {
+      "id": "mentalchat16k",
+      "source_url": "https://huggingface.co/datasets/ShenLab/MentalChat16K",
+      "role": "possible_support_response_experiment",
+      "observed_license": "MIT card; mixed synthetic/clinical-derived provenance needs audit",
+      "observed_on": "2026-10-08",
+      "revision": null,
+      "acquisition_status": "not_acquired",
+      "use_status": "hold_for_record_revision_and_ethics_audit",
+      "languages": [
+        "en"
+      ],
+      "clinical_labels": false,
+      "restrictions": "Resolve source-type/count inconsistencies and interview-derived permissions; generated QA records are not independent participants or crisis labels.",
+      "publisher": "ShenLab author-maintained dataset release",
+      "access_approval": "not_requested",
+      "ethical_permissions": "not_assessed_for_acquisition",
+      "clinical_review_status": "not_reviewed",
+      "permitted_derivatives": "not_cleared_for_project",
+      "redistribution_approval": "not_published; project_license_or_upstream_review_pending",
+      "sha256": null
+    }
+  ]
+}

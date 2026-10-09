@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "version": "rules-0.1.1-draft",
+  "review_status": "draft_unreviewed",
+  "intended_use": "offline_synthetic_engineering_only",
+  "locales": ["en", "hi-Deva", "mr-Deva", "hi-Latn", "mr-Latn"],
+  "context_patterns": {
+    "en": "\\b(?:last year|years? ago|used to|old journal|old entry|my friend said|the character|the book|the novel|the film|an article)\\b",
+    "hi-Deva": "(?:पिछले साल|साल पहले|पुरानी डायरी|पहले ऐसा|दोस्त ने कहा|कहानी का पात्र|किताब में|फिल्म में)",
+    "mr-Deva": "(?:गेल्या वर्षी|वर्षांपूर्वी|जुनी डायरी|मित्र म्हणाला|मैत्रीण म्हणाली|कथेतील पात्र|पुस्तकात|चित्रपटात)",
+    "hi-Latn": "\\b(?:pichle saal|saal pehle|purani diary|dost ne kaha|kahani ka character|kitab mein|film mein)\\b",
+    "mr-Latn": "\\b(?:gelya varshi|varshanpurvi|juni diary|mitra mhanala|maitrin mhanali|kathetil patra|pustakat|chitrapatat)\\b"
+  },
+  "rules": [
+    {"id": "en_immediate", "locale": "en", "action": "Critical", "pattern": "\\bi (?:will|am going to|plan to|intend to|might) (?:kill myself|end my life|hurt myself)[^.!?\\n]{0,48}\\b(?:now|tonight|today)\\b"},
+    {"id": "en_unsafe_now", "locale": "en", "action": "Critical", "pattern": "\\bi (?:cannot|can't|do not feel able to) keep myself safe (?:right )?now\\b"},
+    {"id": "en_explicit", "locale": "en", "action": "Elevated", "pattern": "\\bi (?:want(?:ed)? to die|do not want to live|don't want to live|am thinking about suicide|feel like ending my life|(?:will|am going to|plan to|intend to|might) (?:kill myself|end my life|hurt myself))\\b"},
+    {"id": "en_distress", "locale": "en", "action": "Moderate", "pattern": "\\bi (?:feel|am feeling|have been feeling) (?:sad|anxious|lonely|overwhelmed|hopeless)\\b"},
+    {"id": "en_ambiguous", "locale": "en", "action": "Uncertain", "pattern": "\\b(?:everyone would be better without me|i wish i could disappear|there is no future for me)\\b"},
+    {"id": "hi_immediate", "locale": "hi-Deva", "action": "Critical", "pattern": "मैं (?:आज रात|आज|अभी) (?:अपनी जान लेने|खुद को नुकसान पहुँचाने|खुद को नुकसान पहुंचाने) (?:वाला हूँ|वाली हूँ|वाला हूं|वाली हूं)"},
+    {"id": "hi_unsafe_now", "locale": "hi-Deva", "action": "Critical", "pattern": "मैं अभी खुद को सुरक्षित नहीं रख (?:सकता|सकती)"},
+    {"id": "hi_explicit", "locale": "hi-Deva", "action": "Elevated", "pattern": "(?:मैं मरना (?:चाहता|चाहती) (?:हूँ|हूं)|मैं जीना नहीं (?:चाहता|चाहती)|मैं आत्महत्या के बारे में सोच रहा हूँ|मैं आत्महत्या के बारे में सोच रही हूँ)"},
+    {"id": "hi_distress", "locale": "hi-Deva", "action": "Moderate", "pattern": "(?:मैं बहुत उदास (?:हूँ|हूं)|मुझे बहुत चिंता हो रही है|मुझे अकेलापन महसूस हो रहा है|मैं बहुत परेशान (?:हूँ|हूं))"},
+    {"id": "hi_ambiguous", "locale": "hi-Deva", "action": "Uncertain", "pattern": "(?:मेरे बिना सब बेहतर होंगे|काश मैं गायब हो जाऊँ|मेरे लिए कोई भविष्य नहीं है)"},
+    {"id": "mr_immediate", "locale": "mr-Deva", "action": "Critical", "pattern": "मी (?:आज रात्री|आज|आत्ता) (?:माझे आयुष्य संपवणार|स्वतःला इजा करणार) आहे"},
+    {"id": "mr_unsafe_now", "locale": "mr-Deva", "action": "Critical", "pattern": "मी आत्ता स्वतःला सुरक्षित ठेवू शकत नाही"},
+    {"id": "mr_explicit", "locale": "mr-Deva", "action": "Elevated", "pattern": "(?:मला मरायचे आहे|मला जगायचे नाही|मी आत्महत्येचा विचार करत आहे|मला माझे आयुष्य संपवावेसे वाटते)"},
+    {"id": "mr_distress", "locale": "mr-Deva", "action": "Moderate", "pattern": "(?:मला खूप उदास वाटते|मला खूप चिंता वाटते|मला एकटे वाटते|मी खूप अस्वस्थ आहे)"},
+    {"id": "mr_ambiguous", "locale": "mr-Deva", "action": "Uncertain", "pattern": "(?:माझ्याशिवाय सगळे बरे असतील|मी नाहीसा व्हावे असे वाटते|माझ्यासाठी भविष्य नाही)"},
+    {"id": "hinglish_immediate", "locale": "hi-Latn", "action": "Critical", "pattern": "\\bmain (?:aaj raat|aaj|abhi) (?:apni jaan lene|khud ko nuksan pahunchane) (?:wala hoon|wali hoon|wala hun|wali hun)\\b"},
+    {"id": "hinglish_unsafe_now", "locale": "hi-Latn", "action": "Critical", "pattern": "\\bmain abhi khud ko safe nahi rakh sakta\\b"},
+    {"id": "hinglish_explicit", "locale": "hi-Latn", "action": "Elevated", "pattern": "\\b(?:main marna (?:chahta|chahti) (?:hoon|hun)|main jeena nahi (?:chahta|chahti)|main suicide ke baare mein soch raha hoon)\\b"},
+    {"id": "hinglish_distress", "locale": "hi-Latn", "action": "Moderate", "pattern": "\\b(?:main bahut udaas hoon|mujhe bahut anxiety ho rahi hai|mujhe akelapan feel ho raha hai|main bahut pareshan hoon)\\b"},
+    {"id": "hinglish_ambiguous", "locale": "hi-Latn", "action": "Uncertain", "pattern": "\\b(?:mere bina sab better honge|kaash main gayab ho jaun|mere liye koi future nahi hai)\\b"},
+    {"id": "marathi_latn_immediate", "locale": "mr-Latn", "action": "Critical", "pattern": "\\bmi (?:aaj ratri|aaj|atta) (?:majhe ayushya sampavnar|swatala ija karnar) aahe\\b"},
+    {"id": "marathi_latn_unsafe_now", "locale": "mr-Latn", "action": "Critical", "pattern": "\\bmi atta swatala safe thevu shakat nahi\\b"},
+    {"id": "marathi_latn_explicit", "locale": "mr-Latn", "action": "Elevated", "pattern": "\\b(?:mala marayche aahe|mala jagayche nahi|mi suicide cha vichar karat aahe|mala majhe ayushya sampavavese vatate)\\b"},
+    {"id": "marathi_latn_distress", "locale": "mr-Latn", "action": "Moderate", "pattern": "\\b(?:mala khup udaas vatate|mala khup anxiety vatate|mala ekate vatate|mi khup aswastha aahe)\\b"},
+    {"id": "marathi_latn_ambiguous", "locale": "mr-Latn", "action": "Uncertain", "pattern": "\\b(?:majhyashivay sagle bare astil|mi nahisa vhave ase vatate|majhyasathi future nahi)\\b"}
+  ]
+}
