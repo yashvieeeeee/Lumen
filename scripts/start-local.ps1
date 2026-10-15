@@ -2,6 +2,14 @@ $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 if (-not (Test-Path -LiteralPath "$projectRoot\apps\web\.next\BUILD_ID")) { throw 'Run npm run build in apps/web first.' }
 if (-not (Test-Path -LiteralPath "$projectRoot\.env.local")) { throw 'Run scripts/setup-local.ps1 first.' }
+$pgBin = 'C:\Program Files\PostgreSQL\18\bin'
+if (Test-Path -LiteralPath "$pgBin\pg_ctl.exe") {
+    & "$pgBin\pg_ctl.exe" -D "$projectRoot\.tools\pg-data" status *> $null
+    if ($LASTEXITCODE -ne 0) {
+        & "$pgBin\pg_ctl.exe" -D "$projectRoot\.tools\pg-data" -l "$projectRoot\.tools\postgres.log" -w start
+        if ($LASTEXITCODE -ne 0) { throw 'Lumen PostgreSQL startup failed.' }
+    }
+}
 foreach ($port in @(3180,8060)) {
     if (Get-NetTCPConnection -LocalPort $port -State Listen -ErrorAction SilentlyContinue) { throw "Port $port is occupied. Use the running Lumen instance or stop its process before starting." }
 }

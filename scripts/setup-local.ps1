@@ -12,7 +12,12 @@ if ($LASTEXITCODE -ne 0) { throw 'Failed to restrict local database-directory pe
 & icacls $privateToolsPath /grant:r "$($env:USERNAME):(OI)(CI)(F)" /Q | Out-Null
 & icacls "$privateToolsPath\*" /inheritance:e /T /Q | Out-Null
 if ($LASTEXITCODE -ne 0) { throw 'Failed to propagate private directory permissions.' }
-function New-LocalSecret { [Convert]::ToHexString([Security.Cryptography.RandomNumberGenerator]::GetBytes(32)).ToLowerInvariant() }
+function New-LocalSecret {
+    $bytes = New-Object byte[] 32
+    $rng = [Security.Cryptography.RandomNumberGenerator]::Create()
+    $rng.GetBytes($bytes)
+    -join ($bytes | ForEach-Object { '{0:x2}' -f $_ })
+}
 if (-not (Test-Path -LiteralPath '.env.local')) {
     $adminPassword = New-LocalSecret
     $appPassword = New-LocalSecret
