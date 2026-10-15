@@ -120,6 +120,251 @@ async function noOverflow(page: Page) {
   ).toBe(true);
 }
 
+test("appearance choices persist without storing writing or mood", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await workspace(page);
+  await page
+    .getByLabel("Your entry")
+    .fill("Private synthetic draft that must stay out of browser storage.");
+  await page
+    .getByRole("button", { name: "Set mood to Great", exact: true })
+    .click();
+  await page.getByText("Make it yours", { exact: true }).click();
+  await page.getByRole("button", { name: /^Bloom Soft/ }).click();
+  await page.getByRole("button", { name: "Handwritten", exact: true }).click();
+  await page.getByRole("slider", { name: /Text size/ }).press("End");
+  await expect(page.locator("body")).toHaveAttribute("data-theme", "bloom");
+  await expect(page.locator("body")).toHaveAttribute(
+    "data-font",
+    "handwritten",
+  );
+  expect(
+    await page
+      .getByLabel("Your entry")
+      .evaluate((element) => getComputedStyle(element).fontSize),
+  ).toBe("24px");
+  expect(
+    await page
+      .getByLabel("Your entry")
+      .evaluate((element) => getComputedStyle(element).fontFamily),
+  ).toContain("Segoe Print");
+  expect(
+    await page.evaluate(() =>
+      JSON.parse(localStorage.getItem("lumen-appearance")!),
+    ),
+  ).toEqual({ theme: "bloom", font: "handwritten", size: 24 });
+  expect(await page.evaluate(() => Object.keys(localStorage))).toEqual([
+    "lumen-appearance",
+  ]);
+  await page.getByRole("button", { name: "History", exact: true }).click();
+  await expect(page.locator("body")).toHaveAttribute("data-theme", "bloom");
+  await page.reload();
+  await expect(page.getByLabel("Your entry")).toHaveValue("");
+  await expect(page.getByLabel("Your mood (optional)")).toHaveAttribute(
+    "aria-valuetext",
+    "No rating selected",
+  );
+  await expect(page.locator("body")).toHaveAttribute("data-theme", "bloom");
+  await expect(page.locator("body")).toHaveAttribute(
+    "data-font",
+    "handwritten",
+  );
+  await noOverflow(page);
+});
+
+test("mood slider is optional, keyboard accessible, clearable and resets for chat", async ({
+  page,
+}) => {
+  await workspace(page);
+  const slider = page.getByRole("slider", {
+    name: "Your mood (optional)",
+    exact: true,
+  });
+  await expect(slider).toHaveAttribute("aria-valuetext", "No rating selected");
+  await slider.focus();
+  await page.keyboard.press("End");
+  await expect(slider).toHaveAttribute("aria-valuetext", "Great");
+  await expect(
+    page.getByRole("button", { name: "Set mood to Great", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await page.getByRole("button", { name: "Clear rating", exact: true }).click();
+  await expect(slider).toHaveAttribute("aria-valuetext", "No rating selected");
+  await slider.press("Enter");
+  await expect(slider).toHaveAttribute("aria-valuetext", "Okay");
+  await page
+    .getByRole("combobox", { name: "Entry type", exact: true })
+    .selectOption("chat");
+  await expect(slider).toHaveCount(0);
+  await page
+    .getByRole("combobox", { name: "Entry type", exact: true })
+    .selectOption("journal");
+  await expect(slider).toHaveAttribute("aria-valuetext", "No rating selected");
+  await page
+    .getByRole("button", { name: "Set mood to Good", exact: true })
+    .click();
+  await page
+    .getByLabel("Your entry")
+    .fill("Synthetic check-in using the visual mood control.");
+  let submitted: Record<string, unknown> | undefined;
+  await page.route("**/api/events", async (route) => {
+    if (route.request().method() === "POST") {
+      submitted = route.request().postDataJSON();
+      return route.fulfill({
+        status: 201,
+        json: { id: owner, save_state: "not_saved", screening: null },
+      });
+    }
+    return route.fulfill({
+      json: { owner_id: owner, events: [], next_before: null },
+    });
+  });
+  await page.getByRole("button", { name: "Submit entry", exact: true }).click();
+  await expect.poll(() => submitted?.mood).toBe(4);
+  await expect(slider).toHaveAttribute("aria-valuetext", "No rating selected");
+});
+
+for (const state of ["invalid", "blocked"]) {
+  test(`appearance remains usable with ${state} browser storage`, async ({
+    page,
+  }) => {
+    await page.addInitScript((mode) => {
+      if (mode === "invalid")
+        localStorage.setItem(
+          "lumen-appearance",
+          JSON.stringify({
+            theme: "unknown",
+            font: "url(external)",
+            size: 999,
+          }),
+        );
+      else {
+        for (const method of ["getItem", "setItem"])
+          Object.defineProperty(Storage.prototype, method, {
+            value: () => {
+              throw new DOMException("Storage blocked", "SecurityError");
+            },
+          });
+      }
+    }, state);
+    const errors: string[] = [];
+    page.on("pageerror", (error) => errors.push(error.message));
+    await workspace(page);
+    await expect(page.locator("body")).toHaveAttribute("data-theme", "cloud");
+    await expect(page.locator("body")).toHaveAttribute("data-font", "book");
+    await page.getByText("Make it yours", { exact: true }).click();
+    await page.getByRole("button", { name: /^Grove Grounded/ }).click();
+    await expect(page.locator("body")).toHaveAttribute("data-theme", "grove");
+    expect(errors).toEqual([]);
+  });
+}
+
+for (const theme of ["Cloud", "Midnight", "Bloom", "Grove"]) {
+  test(`${theme} theme fits a short phone at the largest writing size`, async ({
+    page,
+  }, testInfo) => {
+    await page.setViewportSize({ width: 320, height: 640 });
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await workspace(page);
+    await page.getByText("Make it yours", { exact: true }).click();
+    await page.getByRole("button", { name: new RegExp(`^${theme} `) }).click();
+    await page
+      .getByRole("button", { name: "Handwritten", exact: true })
+      .click();
+    await page.getByRole("slider", { name: /Text size/ }).press("End");
+    await noOverflow(page);
+    await page.getByText("Make it yours", { exact: true }).click();
+    await page
+      .getByRole("button", { name: "A small win", exact: true })
+      .click();
+    for (const button of await page
+      .getByRole("group", { name: "Choose a mood", exact: true })
+      .getByRole("button")
+      .all()) {
+      const box = (await button.boundingBox())!;
+      expect(box.width).toBeGreaterThanOrEqual(44);
+      expect(box.height).toBeGreaterThanOrEqual(44);
+    }
+    for (const view of ["History", "Mood", "Privacy", "Write"]) {
+      await page.getByRole("button", { name: view, exact: true }).click();
+      await noOverflow(page);
+    }
+    await expect(page.getByLabel("Your entry")).toHaveValue(/Sample:/);
+    await fs.mkdir(output, { recursive: true });
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: "instant" }));
+    await page.screenshot({
+      path: path.join(
+        output,
+        `${testInfo.project.name}-${theme.toLowerCase()}-320.png`,
+      ),
+      fullPage: true,
+      animations: "disabled",
+    });
+  });
+}
+
+test("history cards and mood overview show saved ratings without inventing empty-day values", async ({
+  page,
+}) => {
+  await workspace(page);
+  const today = new Date();
+  const yesterday = new Date(today);
+  yesterday.setDate(yesterday.getDate() - 1);
+  const earlierToday = new Date(today);
+  earlierToday.setHours(0, 0, 0, 0);
+  const entry = {
+    id: owner,
+    sequence: 1,
+    source: "journal",
+    locale: "en",
+    save_state: "saved",
+    text: "Synthetic saved journal for the history card.",
+    recorded_at: today.toISOString(),
+    mood: 4,
+    revision: 1,
+    updated_at: null,
+    screening: null,
+  };
+  await page.route("**/api/events", (route) =>
+    route.fulfill({
+      json: { owner_id: owner, events: [entry], next_before: null },
+    }),
+  );
+  await page.route("**/api/moods**", (route) =>
+    route.fulfill({
+      json: {
+        owner_id: owner,
+        points: [
+          { event_id: owner, mood: 2, recorded_at: yesterday.toISOString() },
+          { event_id: owner, mood: 1, recorded_at: earlierToday.toISOString() },
+          { event_id: owner, mood: 4, recorded_at: today.toISOString() },
+        ],
+        truncated: false,
+      },
+    }),
+  );
+  await page.reload();
+  await expect(page.getByLabel("Your entry")).toBeVisible();
+  await page.getByRole("button", { name: "History", exact: true }).click();
+  await expect(page.locator(".entry-body")).toHaveText(entry.text);
+  await expect(page.locator(".entry-mood")).toContainText("Good");
+  await expect(
+    page.getByRole("button", { name: "Edit journal", exact: true }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Mood", exact: true }).click();
+  await expect(page.locator(".mood-day-count")).toContainText("2 / 14");
+  const calendar = page.getByRole("list", { name: "Mood history" });
+  await expect(calendar.getByRole("listitem")).toHaveCount(14);
+  await expect(calendar.getByText("No entry", { exact: true })).toHaveCount(12);
+  await expect(calendar.getByText("Good", { exact: true })).toHaveCount(1);
+  await expect(calendar.getByText("Very low", { exact: true })).toHaveCount(0);
+  await page
+    .getByRole("button", { name: "Write a check-in", exact: true })
+    .click();
+  await expect(page.getByLabel("Your entry")).toBeVisible();
+});
+
 for (const width of [320, 390, 768, 1440]) {
   test(`responsive writing, history and privacy at ${width}px`, async ({
     page,
@@ -136,7 +381,7 @@ for (const width of [320, 390, 768, 1440]) {
     const nav = page.getByRole("navigation", { name: "Workspace" });
     expect(
       await nav.evaluate((element) => getComputedStyle(element).position),
-    ).toBe(width < 800 ? "fixed" : "static");
+    ).toBe(width < 800 ? "fixed" : "relative");
     for (const button of await nav.getByRole("button").all()) {
       const box = await button.boundingBox();
       expect(Math.round(box!.height)).toBeGreaterThanOrEqual(44);

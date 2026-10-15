@@ -10,6 +10,66 @@ test.beforeEach(async () => {
   lastJourneyStart = Date.now();
 });
 
+test("a real demo account signs in, submits, reloads and accepts its displayed credentials", async ({
+  page,
+}) => {
+  await page.goto("/workspace?mode=signin");
+  const email = (await page.getByTestId("demo-email").textContent())!;
+  const password = (await page.getByTestId("demo-password").textContent())!;
+  let account:
+    { id: string; email: string; storage_enabled: boolean } | undefined;
+  try {
+    await page.getByRole("checkbox", { name: /I am 18 or older/ }).check();
+    await page
+      .getByRole("button", { name: "Explore demo", exact: true })
+      .click();
+    await expect(
+      page.getByRole("heading", { name: "A moment for you." }),
+    ).toBeVisible();
+    account = await (await page.request.get("/api/me")).json();
+    expect(account).toMatchObject({ email, storage_enabled: false });
+    await page
+      .getByRole("button", { name: "Submit entry", exact: true })
+      .click();
+    await expect(page.getByRole("status")).toContainText("text was not saved");
+    await page.getByRole("button", { name: "History", exact: true }).click();
+    await expect(
+      page.getByText("Text was not saved.", { exact: true }),
+    ).toBeVisible();
+    await page.getByRole("button", { name: "Mood", exact: true }).click();
+    await expect(
+      page.getByRole("list", { name: "Mood history" }).getByRole("listitem"),
+    ).toHaveCount(14);
+    await page.reload();
+    await expect(
+      page.getByRole("heading", { name: "A moment for you." }),
+    ).toBeVisible();
+    await page.getByRole("button", { name: "Sign out", exact: true }).click();
+    await page.getByLabel("Email address").fill(email);
+    await page.getByLabel("Password", { exact: true }).fill(password);
+    await page
+      .getByRole("button", { name: "Sign in", exact: true })
+      .last()
+      .click();
+    await expect(
+      page.getByRole("heading", { name: "A moment for you." }),
+    ).toBeVisible();
+    expect((await (await page.request.get("/api/me")).json()).id).toBe(
+      account!.id,
+    );
+  } finally {
+    if (account) {
+      const response = await page.request.delete("/api/account", {
+        headers: {
+          Origin: "http://localhost:3180",
+          "X-Lumen-Account": account.id,
+        },
+      });
+      expect(response.status()).toBe(204);
+    }
+  }
+});
+
 test("journal editing and optional mood survive reload and disappear on withdrawal", async ({
   page,
 }) => {
@@ -27,7 +87,8 @@ test("journal editing and optional mood survive reload and disappear on withdraw
       .getByLabel("Your entry")
       .fill("Fictional journal before editing.");
     await expect(page.getByLabel("Your mood (optional)")).toBeVisible();
-    await page.getByLabel("Your mood (optional)").selectOption("4");
+    await page.getByLabel("Your mood (optional)").press("End");
+    await page.getByLabel("Your mood (optional)").press("ArrowLeft");
     await page.getByRole("button", { name: "Submit entry" }).click();
     await expect(page.getByRole("status")).toContainText("entry is saved");
     await page.getByRole("button", { name: "History", exact: true }).click();
@@ -37,7 +98,7 @@ test("journal editing and optional mood survive reload and disappear on withdraw
     await page
       .getByLabel("Edit journal text")
       .fill("Fictional revised journal.");
-    await page.getByLabel("Edit mood (optional)").selectOption("5");
+    await page.getByLabel("Edit mood (optional)").press("End");
     // Server commits, but the client loses the response; retry must not overwrite/rescreen.
     let edits = 0;
     await page.route("**/api/events/*", async (route) => {
@@ -329,7 +390,7 @@ for (const action of [
       await page
         .getByLabel("Your entry")
         .fill("Synthetic marker that must disappear after deletion.");
-      await page.getByLabel("Your mood (optional)").selectOption("3");
+      await page.getByLabel("Your mood (optional)").press("Enter");
       await page.getByRole("button", { name: "Submit entry" }).click();
       await expect(page.getByRole("status")).toContainText("entry is saved");
       await page.route("**/api/events", (route) =>

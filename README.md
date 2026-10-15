@@ -10,6 +10,10 @@ Start with the [implementation plan](IMPLEMENTATION_PLAN.md), then the [project 
 
 Open [the landing page](http://localhost:3180), [your workspace](http://localhost:3180/workspace), [sign in](http://localhost:3180/workspace?mode=signin), or [find support](http://localhost:3180/support). Accounts, journal/chat submissions, checks, saved journal edits, optional mood ratings,14-day history, export and deletion work. Saving defaults off. AI integration is deferred for the next step; the [clinical/language review packet](docs/review/REVIEW_PACKET.md) is ready to assign.
 
+To explore without choosing account details, open **Sign in**, review the demo credentials below the form, confirm adult eligibility and the privacy notice, then choose **Explore demo**. This creates a separate real account, signs in automatically and places sample text in the editor. Saving starts off. Credentials are generated for this page and are not stored in the browser; keep a copy before reloading if you want to sign back in. Delete the demo account in **Privacy** when finished.
+
+Inside the workspace, **Make it yours** offers Cloud, Midnight, Bloom and Grove themes, three writing fonts and adjustable text size. Only these appearance choices are remembered in this browser. Optional journal moods use a slider or face buttons, including when editing a saved entry; History and the two-week Mood view show the ratings you chose to save.
+
 Follow [local setup and checks](docs/LOCAL_DEVELOPMENT.md). From this directory, after installing the documented runtimes:
 
 ```powershell

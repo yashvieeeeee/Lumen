@@ -20,6 +20,15 @@ html {
   scrollbar-width: none;
   scroll-padding-block: 24px;
 }
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root) {
+  animation: route-out 180ms ease-out both;
+}
+::view-transition-new(root) {
+  animation: page-open 380ms var(--ease) both;
+}
 html:has(.workspace) {
   scroll-padding-bottom: calc(110px + env(safe-area-inset-bottom));
 }
@@ -71,6 +80,34 @@ button:disabled {
 }
 button:not(:disabled):active {
   transform: translateY(1px);
+}
+body[data-motion-ready] :is(button, a[href], summary) {
+  scale: var(--motion-control-scale, 1);
+  translate: 0 var(--motion-control-y, 0px);
+}
+body[data-motion-ready] :is(button, a[href], summary):is(:hover, :active) {
+  transform: none;
+}
+body[data-motion-ready]
+  :is(input, textarea, select):not([type="range"]):not([type="checkbox"]):not(
+    [type="radio"]
+  ) {
+  box-shadow: 0 0 0 calc(var(--motion-focus-glow, 0) * 5px)
+    color-mix(in srgb, var(--iris) 11%, transparent);
+}
+/* GSAP owns these entrances; CSS remains the no-script fallback. */
+body[data-motion-ready]
+  :is(
+    .auth-panel,
+    .demo-access,
+    .content-panel,
+    .delete-form,
+    .feedback,
+    .mood-preview,
+    .appearance-content
+  ),
+body[data-motion-ready] [data-motion-disclosure][open] > :not(summary) {
+  animation: none;
 }
 button:focus-visible,
 a:focus-visible,
@@ -173,7 +210,8 @@ textarea {
   gap: 10px 16px;
   max-width: 1260px;
   margin: auto;
-  padding: 18px max(20px, env(safe-area-inset-left));
+  padding: 14px max(20px, env(safe-area-inset-right)) 14px
+    max(20px, env(safe-area-inset-left));
   border-bottom: 1px solid var(--line);
 }
 .brand {
@@ -219,6 +257,9 @@ textarea {
 .signed-in > button {
   margin-left: auto;
 }
+.site-header > a.text-button {
+  margin-left: auto;
+}
 .site-footer {
   max-width: 1260px;
   margin: 40px auto 0;
@@ -236,12 +277,13 @@ body:has(.workspace) .site-footer {
 .welcome {
   max-width: 520px;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 max(20px, env(safe-area-inset-right)) 0
+    max(20px, env(safe-area-inset-left));
 }
 .introduction {
   position: relative;
   isolation: isolate;
-  padding: 38px 0 30px;
+  padding: 28px 0 24px;
 }
 .quiet-label {
   font-size: 13px;
@@ -315,9 +357,10 @@ body:has(.workspace) .site-footer {
 .auth-panel {
   background: var(--white);
   padding: 24px 20px;
-  border-radius: 18px 18px 8px 8px;
-  box-shadow: 0 18px 60px #28394a08;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px -30px #28394a25;
   border: 1px solid #e4e9ee;
+  animation: page-open 0.65s var(--ease) both;
 }
 .auth-tabs {
   display: flex;
@@ -432,6 +475,64 @@ body:has(.workspace) .site-footer {
   color: var(--muted);
   margin-top: 20px;
 }
+.demo-access {
+  margin-top: 28px;
+  padding: 22px 18px;
+  background: #f1f3f8;
+  border: 1px solid #e0e4ee;
+  border-radius: 16px;
+  animation: page-open 0.5s var(--ease) both;
+}
+.demo-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.demo-heading p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.demo-symbol {
+  color: var(--iris);
+  font-size: 30px;
+}
+.demo-credentials {
+  margin: 18px 0 12px;
+  font-size: 12px;
+}
+.demo-credentials > div + div {
+  margin-top: 12px;
+}
+.demo-credentials dt {
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.demo-credentials dd {
+  margin: 0;
+  font-family: "Aptos", "Segoe UI", sans-serif;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+.demo-button {
+  width: 100%;
+  margin-top: 12px;
+}
+.demo-banner {
+  padding: 14px 18px;
+  margin: 0 0 20px;
+  font-size: 13px;
+  color: var(--muted);
+  border: 1px solid #d8dce9;
+  border-radius: 12px;
+  background: #eeedf6;
+}
+.demo-banner strong {
+  display: block;
+  color: var(--iris);
+  font-weight: 600;
+}
 .text-button {
   border: 0;
   background: transparent;
@@ -443,7 +544,8 @@ body:has(.workspace) .site-footer {
 }
 .workspace {
   max-width: 1260px;
-  padding: 0 16px;
+  padding: 0 max(16px, env(safe-area-inset-right)) 0
+    max(16px, env(safe-area-inset-left));
   margin: 26px auto 0;
 }
 .workspace-heading {
@@ -465,15 +567,38 @@ body:has(.workspace) .site-footer {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   position: fixed;
-  left: 12px;
-  right: 12px;
+  left: max(12px, env(safe-area-inset-left));
+  right: max(12px, env(safe-area-inset-right));
   bottom: max(12px, env(safe-area-inset-bottom));
   z-index: 20;
-  background: #fff;
+  background: #ffffffeb;
   border: 1px solid #d5dfe7;
   border-radius: 20px;
   padding: 6px;
   box-shadow: 0 6px 30px #28394a18;
+  isolation: isolate;
+  backdrop-filter: blur(18px);
+  --active-tab: 0;
+}
+.workspace-tabs[data-view="history"] {
+  --active-tab: 1;
+}
+.workspace-tabs[data-view="mood"] {
+  --active-tab: 2;
+}
+.workspace-tabs[data-view="privacy"] {
+  --active-tab: 3;
+}
+.workspace-tabs::before {
+  content: "";
+  position: absolute;
+  inset: 6px auto 6px 6px;
+  width: calc((100% - 12px) / 4);
+  border-radius: 14px;
+  background: #e6edf3;
+  z-index: -1;
+  transform: translateX(calc(var(--active-tab) * 100%));
+  transition: transform 0.5s var(--ease);
 }
 .workspace-tabs button {
   display: flex;
@@ -496,7 +621,6 @@ body:has(.workspace) .site-footer {
 }
 .workspace-tabs button[aria-current="page"] {
   color: var(--blue);
-  background: #eaf0f4;
   font-weight: 600;
 }
 .workspace-grid {
@@ -508,13 +632,15 @@ body:has(.workspace) .site-footer {
 .content-panel {
   background: var(--white);
   border: 1px solid #e1e7ec;
-  border-radius: 16px 16px 6px 6px;
+  border-radius: 22px;
   min-width: 0;
-  animation: page-open 0.32s var(--ease) both;
+  box-shadow: 0 16px 45px -35px #28394a30;
+  animation: page-open 0.55s var(--ease) both;
 }
 .writing-form,
 .history-view,
-.privacy-view {
+.privacy-view,
+.mood-view {
   padding: 24px 20px;
 }
 .entry-heading {
@@ -693,7 +819,7 @@ body:has(.workspace) .site-footer {
 .mood-calendar {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
+  gap: 6px;
   list-style: none;
   padding: 0;
   margin: 28px 0;
@@ -704,11 +830,12 @@ body:has(.workspace) .site-footer {
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
-  min-height: 140px;
-  padding: 16px 4px;
+  min-height: 122px;
+  padding: 12px 2px;
   border: 1px solid var(--line);
   border-radius: 12px;
   font-size: 11px;
+  text-align: center;
 }
 .mood-calendar time {
   color: var(--muted);
@@ -718,6 +845,8 @@ body:has(.workspace) .site-footer {
   width: 14px;
   border-radius: 7px;
   background: var(--iris);
+  transform-origin: bottom;
+  animation: mood-rise 0.7s var(--ease) both;
 }
 .mood-calendar li[data-mood=""] .mood-bar {
   background: var(--line);
@@ -814,8 +943,9 @@ body:has(.workspace) .site-footer {
 }
 .resource-page {
   width: min(100%, 1040px);
-  margin: 48px auto;
-  padding: 0 20px;
+  margin: 36px auto;
+  padding: 0 max(20px, env(safe-area-inset-right)) 0
+    max(20px, env(safe-area-inset-left));
 }
 .resource-page h1 {
   font-size: clamp(36px, 5vw, 56px);
@@ -827,10 +957,13 @@ body:has(.workspace) .site-footer {
   color: var(--muted);
 }
 .resource-region > summary {
-  padding: 18px 0;
+  padding: 18px 22px;
   min-height: 44px;
   cursor: pointer;
-  border-block: 1px solid var(--line);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #e9eef3;
+  color: var(--blue);
 }
 .resource-region > summary:focus-visible {
   outline: 3px solid var(--iris);
@@ -850,7 +983,8 @@ body:has(.workspace) .site-footer {
   padding: 24px;
   background: var(--white);
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 22px;
+  box-shadow: 0 16px 45px -35px #28394a30;
 }
 .resource-card h2 {
   font-size: 28px;
@@ -1096,7 +1230,8 @@ body:has(.workspace) .site-footer {
   }
   .writing-form,
   .history-view,
-  .privacy-view {
+  .privacy-view,
+  .mood-view {
     padding: 32px;
   }
   .entry-options {
@@ -1140,17 +1275,14 @@ body:has(.workspace) .site-footer {
     flex-basis: auto;
     margin-left: auto;
   }
-  .signed-in > button {
-    margin-left: 0;
-  }
   .welcome {
     max-width: 1150px;
-    margin: 56px auto 0;
+    margin: 36px auto 0;
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     gap: 48px;
     padding: 0 36px;
-    align-items: center;
+    align-items: start;
   }
   .introduction {
     padding: 80px 0 55px;
@@ -1176,20 +1308,24 @@ body:has(.workspace) .site-footer {
     padding: 32px;
   }
   .workspace-tabs {
-    position: static;
-    display: flex;
-    gap: 12px;
-    width: fit-content;
+    position: relative;
+    inset: auto;
+    display: grid;
+    width: 540px;
+    max-width: 100%;
     border-radius: 12px;
     margin-bottom: 28px;
     box-shadow: none;
-    padding: 4px;
+    padding: 6px;
+  }
+  .workspace-tabs::before {
+    border-radius: 8px;
   }
   .workspace-tabs button {
     flex-direction: row;
     gap: 9px;
     min-height: 44px;
-    min-width: 115px;
+    min-width: 0;
     border-radius: 8px;
     font-size: 14px;
   }
@@ -1244,6 +1380,35 @@ body:has(.workspace) .site-footer {
     padding-bottom: 30px;
   }
 }
+@media (max-width: 799px) {
+  .writing-form textarea {
+    height: clamp(190px, 30dvh, 280px);
+    min-height: 190px;
+  }
+  .welcome:has(.demo-access) .introduction {
+    padding-block: 22px;
+  }
+  .welcome:has(.demo-access) .introduction h1 {
+    font-size: clamp(2.3rem, 8vw, 3rem);
+  }
+  .welcome:has(.demo-access) .intro-copy,
+  .welcome:has(.demo-access) .welcome-note {
+    display: none;
+  }
+}
+@keyframes mood-rise {
+  from {
+    transform: scaleY(0.15);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes route-out {
+  to {
+    opacity: 0;
+  }
+}
 @media (min-width: 1080px) {
   .site-header,
   .workspace,
@@ -1263,7 +1428,8 @@ body:has(.workspace) .site-footer {
   }
   .writing-form,
   .history-view,
-  .privacy-view {
+  .privacy-view,
+  .mood-view {
     padding: 36px;
   }
   .entry-options {
@@ -1282,8 +1448,8 @@ body:has(.workspace) .site-footer {
 }
 @keyframes page-open {
   from {
-    opacity: 0.4;
-    transform: translateY(6px);
+    opacity: 0;
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -1317,6 +1483,10 @@ body:has(.workspace) .site-footer {
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
   }
 }
 @media (forced-colors: active) {

@@ -20,7 +20,7 @@ export default function SupportPage() {
       <a className="skip" href="#main">
         Skip to content
       </a>
-      <header className="site-header">
+      <header className="site-header" data-motion-header>
         <a className="brand" href="/" aria-label="Lumen home">
           <span className="brand-mark" aria-hidden="true" />
           Lumen
@@ -30,17 +30,19 @@ export default function SupportPage() {
         </a>
       </header>
       <main id="main" className="resource-page" tabIndex={-1}>
-        <p className="eyebrow">Find support</p>
-        <h1>Support, at your pace.</h1>
-        <p className="resource-intro">
-          Choose a region to see public services. You decide whether to call or
-          visit a service's website.
-        </p>
-        <details className="resource-region">
+        <div className="resource-heading" data-reveal="stagger">
+          <p className="eyebrow">Find support</p>
+          <h1>Support, at your pace.</h1>
+          <p className="resource-intro">
+            Choose a region to see public services. You decide whether to call
+            or visit a service's website.
+          </p>
+        </div>
+        <details className="resource-region" data-motion-disclosure data-reveal>
           <summary>India</summary>
           <div className="resource-grid">
             {current.map((item) => (
-              <article className="resource-card" key={item.id}>
+              <article className="resource-card" key={item.id} data-reveal>
                 <p className="eyebrow">{item.purpose}</p>
                 <h2>{item.name}</h2>
                 <p>{item.description}</p>
@@ -73,7 +75,7 @@ export default function SupportPage() {
               </article>
             ))}
             {current.length === 0 && (
-              <div className="resource-card">
+              <div className="resource-card" data-reveal>
                 <h2>Current service information</h2>
                 <p>
                   {expired.length
@@ -95,7 +97,7 @@ export default function SupportPage() {
           </div>
         </details>
       </main>
-      <footer className="site-footer">
+      <footer className="site-footer" data-reveal>
         <a href="/">Lumen · A little space to reflect</a>
       </footer>
     </>

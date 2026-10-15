@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import Motion from "./motion";
+import DetailsMotion from "./details-motion";
 
 export const metadata: Metadata = {
   title: "Lumen · A little space to reflect",
@@ -20,7 +22,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Motion />
+        <DetailsMotion />
+        {children}
+      </body>
     </html>
   );
 }

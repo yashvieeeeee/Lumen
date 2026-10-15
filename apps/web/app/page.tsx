@@ -7,10 +7,17 @@ export const metadata: Metadata = {
     "A thoughtful space to write, reflect and revisit your words. Optional saving, a personal history and privacy choices in your hands.",
 };
 
-function Orbit({ className }: { className?: string }) {
+function Orbit({
+  className,
+  motion,
+}: {
+  className?: string;
+  motion?: "hero" | "closing";
+}) {
   return (
     <svg
       className={className}
+      data-motion-orbit={motion}
       viewBox="0 0 320 320"
       fill="none"
       aria-hidden="true"
@@ -48,7 +55,7 @@ export default function LandingPage() {
       <a className="skip" href="#main">
         Skip to content
       </a>
-      <header className={styles.header}>
+      <header className={styles.header} data-motion-header>
         <a className={styles.brand} href="/" aria-label="Lumen home">
           <Orbit className={styles.brandOrbit} />
           Lumen
@@ -69,13 +76,18 @@ export default function LandingPage() {
       <main id="main" tabIndex={-1}>
         <section className={styles.hero} aria-labelledby="hero-heading">
           <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>Your space, at your pace</p>
-            <h1 id="hero-heading">A little space to find your words.</h1>
-            <p className={styles.heroDescription}>
-              Some days need a place on the page. Explore a thoughtful journal
-              workspace, with the choice of what to keep in your hands.
+            <p className={styles.eyebrow} data-motion-hero-item>
+              A little space. Just for you.
             </p>
-            <div className={styles.heroActions}>
+            <h1 id="hero-heading">
+              <span data-motion-hero-item>Find</span>{" "}
+              <span data-motion-hero-item>your words.</span>
+            </h1>
+            <p className={styles.heroDescription} data-motion-hero-item>
+              Unpack your day, notice how you feel, and keep the moments that
+              matter. A quiet journal, with you in control.
+            </p>
+            <div className={styles.heroActions} data-motion-hero-item>
               <a className={styles.primary} href="/workspace">
                 Open the workspace
               </a>
@@ -83,18 +95,19 @@ export default function LandingPage() {
                 Take a closer look
               </a>
             </div>
-            <p className={styles.heroNote}>
+            <p className={styles.heroNote} data-motion-hero-item>
               Begin with a moment. Keep what matters. For adults 18+.
             </p>
           </div>
 
           <figure
             className={styles.journalArt}
+            data-motion-hero-art
             aria-label="Illustrative journal with a sample entry and saving turned off"
           >
-            <Orbit className={styles.heroOrbit} />
+            <Orbit className={styles.heroOrbit} motion="hero" />
             <div className={styles.paperBehind} />
-            <div className={styles.journalPaper}>
+            <div className={styles.journalPaper} data-motion-journal>
               <div className={styles.paperTop}>
                 <span>Space to reflect</span>
                 <span className={styles.paperMark} aria-hidden="true">
@@ -125,14 +138,14 @@ export default function LandingPage() {
           className={styles.reflection}
           aria-labelledby="reflection-heading"
         >
-          <div className={styles.sectionIntro}>
+          <div className={styles.sectionIntro} data-reveal>
             <h2 id="reflection-heading">Begin with one moment.</h2>
             <p>
               You do not need a perfect sentence. The workspace gives you a
               simple place to start.
             </p>
           </div>
-          <ol className={styles.steps}>
+          <ol className={styles.steps} data-reveal="stagger">
             <li>
               <span className={styles.stepNumber} aria-hidden="true">
                 1
@@ -175,10 +188,11 @@ export default function LandingPage() {
         <section
           id="privacy"
           className={styles.privacy}
+          data-reveal
           aria-labelledby="privacy-heading"
         >
           <div className={styles.privacyVisual} aria-hidden="true">
-            <div className={styles.privacyRings}>
+            <div className={styles.privacyRings} data-motion-rings>
               <span />
               <span />
               <span />
@@ -207,19 +221,19 @@ export default function LandingPage() {
         </section>
 
         <section className={styles.progress} aria-labelledby="progress-heading">
-          <div className={styles.sectionIntro}>
+          <div className={styles.sectionIntro} data-reveal>
             <h2 id="progress-heading">Built around your everyday.</h2>
             <p>
               A calm place to write, with thoughtful details that keep your
               words and choices close.
             </p>
           </div>
-          <div className={styles.progressColumns}>
+          <div className={styles.progressColumns} data-reveal="stagger">
             <div className={styles.available}>
-              <h3>
-                <span className={styles.statusDot} aria-hidden="true" />
-                Room for your words
-              </h3>
+              <span className={styles.featureSymbol} aria-hidden="true">
+                ✎
+              </span>
+              <h3>Room for your words</h3>
               <ul>
                 <li>A personal workspace to return to</li>
                 <li>Prompts when you need a starting point</li>
@@ -228,6 +242,9 @@ export default function LandingPage() {
               </ul>
             </div>
             <div className={styles.planned}>
+              <span className={styles.featureSymbol} aria-hidden="true">
+                ◇
+              </span>
               <h3>Choices that stay yours</h3>
               <ul>
                 <li>Optional saving, starting off</li>
@@ -236,13 +253,41 @@ export default function LandingPage() {
                 <li>Delete entries or your account at any time</li>
               </ul>
             </div>
+            <div className={styles.available}>
+              <span className={styles.featureSymbol} aria-hidden="true">
+                ◒
+              </span>
+              <h3>A rhythm you can see</h3>
+              <p>
+                Add an optional mood rating to a saved journal. Revisit the past
+                two weeks, with space for the days you skip.
+              </p>
+              <a className={styles.understated} href="/workspace">
+                Explore your workspace
+              </a>
+            </div>
+            <div className={styles.planned}>
+              <span className={styles.featureSymbol} aria-hidden="true">
+                ✧
+              </span>
+              <h3>Support within reach</h3>
+              <p>
+                Find public support services and their official contact
+                information. No account needed.
+              </p>
+              <a className={styles.understated} href="/support">
+                Find support
+              </a>
+            </div>
           </div>
         </section>
 
         <section className={styles.faq} aria-labelledby="faq-heading">
-          <h2 id="faq-heading">Make yourself at home.</h2>
-          <div className={styles.questions}>
-            <details>
+          <h2 id="faq-heading" data-reveal>
+            Make yourself at home.
+          </h2>
+          <div className={styles.questions} data-reveal="stagger">
+            <details data-motion-disclosure>
               <summary>How do I begin?</summary>
               <p>
                 Create your account, open your workspace and start with a few
@@ -250,7 +295,7 @@ export default function LandingPage() {
                 day. Saving starts off, and you can change it in Privacy.
               </p>
             </details>
-            <details>
+            <details data-motion-disclosure>
               <summary>Where can I find my entries?</summary>
               <p>
                 Open History in your workspace to see your submission receipts.
@@ -258,7 +303,7 @@ export default function LandingPage() {
                 their check details, ready to revisit whenever you choose.
               </p>
             </details>
-            <details>
+            <details data-motion-disclosure>
               <summary>What happens when saving is off?</summary>
               <p>
                 Your submitted text and check details are not retained. A
@@ -267,7 +312,7 @@ export default function LandingPage() {
                 check details from your account.
               </p>
             </details>
-            <details>
+            <details data-motion-disclosure>
               <summary>Can I write in my own language?</summary>
               <p>
                 Choose English, Hindi, Marathi, Romanized Hindi or Romanized
@@ -279,16 +324,18 @@ export default function LandingPage() {
         </section>
 
         <section className={styles.closing} aria-labelledby="closing-heading">
-          <Orbit className={styles.closingOrbit} />
-          <h2 id="closing-heading">Start with a little space.</h2>
-          <p>A thought. A moment. A page that belongs to you.</p>
-          <a className={styles.primary} href="/workspace">
-            Open the workspace
-          </a>
+          <Orbit className={styles.closingOrbit} motion="closing" />
+          <div data-reveal="stagger">
+            <h2 id="closing-heading">Start with a little space.</h2>
+            <p>A thought. A moment. A page that belongs to you.</p>
+            <a className={styles.primary} href="/workspace">
+              Open the workspace
+            </a>
+          </div>
         </section>
       </main>
 
-      <footer className={styles.footer}>
+      <footer className={styles.footer} data-reveal="stagger">
         <a className={styles.footerBrand} href="/" aria-label="Lumen home">
           Lumen
         </a>

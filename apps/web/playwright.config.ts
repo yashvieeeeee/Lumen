@@ -13,12 +13,22 @@ export default defineConfig({
     { name: "chrome", use: { channel: "chrome" } },
     {
       name: "firefox-ui",
-      testMatch: ["ui.spec.ts", "landing.spec.ts"],
+      testMatch: [
+        "ui.spec.ts",
+        "landing.spec.ts",
+        "demo.spec.ts",
+        "motion.spec.ts",
+      ],
       use: { browserName: "firefox" },
     },
     {
       name: "webkit-ui",
-      testMatch: ["ui.spec.ts", "landing.spec.ts"],
+      testMatch: [
+        "ui.spec.ts",
+        "landing.spec.ts",
+        "demo.spec.ts",
+        "motion.spec.ts",
+      ],
       use: { browserName: "webkit" },
     },
   ],

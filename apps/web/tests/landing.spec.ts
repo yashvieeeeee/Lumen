@@ -116,7 +116,7 @@ for (const width of [320, 390, 1440]) {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: "A little space to find your words.",
+        name: "Find your words.",
       }),
     ).toBeVisible();
     await expect(page.locator("body")).not.toContainText(

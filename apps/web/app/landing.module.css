@@ -1,15 +1,15 @@
 .page {
-  max-width: 1440px;
+  max-width: 1360px;
   margin: auto;
-  padding: 0 max(20px, env(safe-area-inset-left)) 0
-    max(20px, env(safe-area-inset-right));
+  padding: 0 max(20px, env(safe-area-inset-right)) 0
+    max(20px, env(safe-area-inset-left));
 }
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  padding-block: 20px;
+  padding-block: 14px;
   border-bottom: 1px solid var(--line);
 }
 .brand,
@@ -50,39 +50,41 @@
 .signIn {
   border: 1px solid #b8c5cf;
   padding: 8px 16px;
-  border-radius: 8px;
+  border-radius: 100px;
+  background: #ffffff80;
 }
 .hero {
   display: grid;
-  padding-top: 36px;
+  padding-top: 28px;
+  padding-bottom: 28px;
 }
 .eyebrow {
   color: var(--iris);
-  font-size: 12px;
+  font-size: 13px;
   width: fit-content;
-  background: var(--iris-light);
-  border-radius: 6px;
-  padding: 5px 10px;
-  margin-bottom: 22px;
+  margin-bottom: 16px;
 }
 .hero h1 {
-  max-width: 10ch;
-  font-size: clamp(3.2rem, 13.2vw, 5.4rem);
-  line-height: 1.06;
+  font-size: clamp(3.4rem, 14.5vw, 5.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+.hero h1 span {
+  display: block;
 }
 .heroDescription {
-  margin-top: 24px;
+  margin-top: 20px;
   color: var(--muted);
   max-width: 43ch;
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 .heroActions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px 24px;
-  margin-top: 28px;
+  gap: 4px 24px;
+  margin-top: 24px;
 }
 .primary {
   display: inline-flex;
@@ -93,11 +95,15 @@
   color: white;
   background: var(--blue);
   border: 1px solid var(--blue);
-  border-radius: 9px;
+  border-radius: 100px;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  transition: background 0.2s;
+  box-shadow: 0 5px 14px #34576b16;
+  transition:
+    background 0.25s,
+    box-shadow 0.3s,
+    transform 0.3s var(--ease);
 }
 .understated {
   display: inline-flex;
@@ -109,7 +115,7 @@
   color: var(--blue);
 }
 .heroNote {
-  margin-top: 20px;
+  margin-top: 12px;
   font-size: 12px;
   color: var(--muted);
   line-height: 1.75;
@@ -117,8 +123,8 @@
 .journalArt {
   position: relative;
   isolation: isolate;
-  margin: 30px 0 0;
-  padding: 55px 16px 36px;
+  margin: 16px 0 0;
+  padding: 36px 16px 24px;
   min-width: 0;
 }
 .heroOrbit {
@@ -138,7 +144,7 @@
   height: 66%;
   background: #e4e4ef;
   border: 1px solid #d4d4e2;
-  border-radius: 3px;
+  border-radius: 10px;
   top: 68px;
   left: 14%;
   transform: rotate(-10deg);
@@ -150,8 +156,10 @@
   padding: 22px 20px 18px;
   background: #fff;
   border: 1px solid #dfe5e9;
-  border-radius: 3px;
-  box-shadow: 0 22px 45px #28394a0c;
+  border-radius: 10px;
+  box-shadow:
+    0 24px 70px -22px #28394a30,
+    0 3px 8px #28394a06;
   transform: rotate(3deg);
 }
 .paperTop {
@@ -198,8 +206,7 @@
   font-size: 11px;
   color: var(--muted);
 }
-.paperChoice span,
-.statusDot {
+.paperChoice span {
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -215,7 +222,7 @@
 .reflection,
 .progress,
 .faq {
-  padding-block: 54px;
+  padding-block: 42px;
   border-top: 1px solid var(--line);
 }
 .sectionIntro h2,
@@ -237,19 +244,26 @@
   padding: 0;
   margin: 32px 0 0;
   display: grid;
-  gap: 28px;
+  gap: 12px;
 }
 .steps li {
   display: flex;
   align-items: flex-start;
-  gap: 18px;
+  gap: 16px;
+  padding: 22px 20px;
+  background: #ffffffb0;
+  border: 1px solid #e1e7ec;
+  border-radius: 16px;
 }
 .stepNumber {
   font-family: "Palatino Linotype", serif;
-  font-size: 25px;
+  font-size: 19px;
   color: var(--iris);
-  line-height: 1.15;
-  width: 25px;
+  line-height: 36px;
+  width: 36px;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--iris-light);
   flex-shrink: 0;
 }
 .steps h3 {
@@ -266,14 +280,14 @@
 .privacy {
   display: grid;
   background: #e8edf2;
-  border-radius: 12px;
-  margin-bottom: 54px;
+  border-radius: 24px;
+  margin-bottom: 42px;
   overflow: hidden;
 }
 .privacyVisual {
   position: relative;
   isolation: isolate;
-  min-height: 250px;
+  min-height: 218px;
   display: grid;
   place-items: center;
   padding: 36px;
@@ -326,7 +340,36 @@
 .progressColumns {
   display: grid;
   margin-top: 30px;
-  gap: 30px;
+  gap: 16px;
+}
+.progressColumns > div {
+  padding: 26px;
+  border: 1px solid #e0e5ed;
+  border-radius: 20px;
+  background: #fff;
+}
+.progressColumns > div:nth-child(2) {
+  background: #eeedf6;
+}
+.progressColumns > div:nth-child(3) {
+  background: #e9f0f2;
+}
+.featureSymbol {
+  display: inline-block;
+  color: var(--iris);
+  font-size: 30px;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+.progressColumns > div > p {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 46ch;
+}
+.progressColumns .understated {
+  margin-top: 16px;
 }
 .progressColumns h3 {
   display: flex;
@@ -334,11 +377,6 @@
   gap: 10px;
   font-size: 16px;
   font-weight: 500;
-}
-.statusDot {
-  background: #4a7667;
-  width: 7px;
-  height: 7px;
 }
 .progressColumns ul {
   padding-left: 19px;
@@ -351,14 +389,7 @@
   margin-top: 9px;
 }
 .planned {
-  border-top: 1px solid var(--line);
-  padding-top: 28px;
-}
-.planned > p {
-  margin-top: 18px;
-  color: var(--muted);
-  font-size: 12px;
-  max-width: 42ch;
+  min-width: 0;
 }
 .questions {
   margin-top: 26px;
@@ -372,10 +403,28 @@
   font-weight: 500;
   cursor: pointer;
   min-height: 56px;
-  padding-right: 8px;
+  padding-right: 36px;
+  position: relative;
+  list-style: none;
 }
-.questions summary::marker {
+.questions summary::-webkit-details-marker {
+  display: none;
+}
+.questions summary::after {
+  content: "+";
+  position: absolute;
+  right: 5px;
+  top: 14px;
+  font-size: 22px;
+  font-weight: 400;
   color: var(--iris);
+  transition: transform 0.35s var(--ease);
+}
+.questions details[open] summary::after {
+  transform: rotate(45deg);
+}
+.questions details[open] > p {
+  animation: answerOpen 0.4s var(--ease);
 }
 .questions summary:focus-visible {
   outline: 3px solid var(--iris);
@@ -383,7 +432,7 @@
   border-radius: 3px;
 }
 .questions details > p {
-  padding: 0 8px 23px 18px;
+  padding: 0 32px 23px 0;
   font-size: 14px;
   line-height: 1.8;
   color: var(--muted);
@@ -445,6 +494,8 @@
 @media (hover: hover) {
   .primary:hover {
     background: #24485c;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px #34576b25;
   }
   .understated:hover,
   .navigation a:hover {
@@ -479,13 +530,7 @@
   }
   .progressColumns {
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-  .planned {
-    border-top: 0;
-    border-left: 1px solid var(--line);
-    padding-top: 0;
-    padding-left: 28px;
+    gap: 20px;
   }
 }
 @media (min-width: 900px) {
@@ -502,10 +547,10 @@
     grid-template-columns: 1.05fr 1fr;
     align-items: center;
     gap: 16px;
-    padding: 65px 0 80px;
+    padding: 56px 0 64px;
   }
   .hero h1 {
-    font-size: clamp(4.3rem, 6.5vw, 5.5rem);
+    font-size: clamp(4.5rem, 7.3vw, 6.3rem);
   }
   .heroDescription {
     font-size: 17px;
@@ -537,10 +582,10 @@
   }
   .steps {
     margin-top: 0;
-    gap: 32px;
+    gap: 16px;
   }
   .privacy {
-    margin-bottom: 74px;
+    margin-bottom: 64px;
     grid-template-columns: 0.85fr 1.15fr;
     min-height: 430px;
   }
@@ -577,12 +622,12 @@
     margin-top: 0;
   }
   .progressColumns {
-    margin-top: 48px;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 60px;
+    margin-top: 36px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
   }
-  .planned {
-    padding-left: 32px;
+  .progressColumns > div {
+    padding: 32px;
   }
   .faq {
     display: grid;
@@ -593,16 +638,22 @@
   .questions {
     margin-top: 0;
   }
-  .questions details:first-child summary {
-    padding-top: 0;
-    min-height: 44px;
-  }
   .closing {
     padding-bottom: 82px;
   }
   .footer p {
     order: initial;
     flex-basis: auto;
+  }
+}
+@keyframes answerOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 @keyframes orbitUnfold {
@@ -618,6 +669,15 @@
 @media (prefers-reduced-motion: reduce) {
   .heroOrbit {
     animation: none;
+  }
+}
+@media (max-width: 360px) {
+  .heroActions {
+    display: grid;
+    gap: 0;
+  }
+  .heroActions .understated {
+    justify-content: center;
   }
 }
 @media (forced-colors: active) {
