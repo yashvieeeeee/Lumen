@@ -1,0 +1,2634 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-08T10:19:43.474350+00:00",
+  "runner": "offline_rules_development_v0",
+  "warning": "Synthetic development results with unreviewed labels and rules; not clinical validation or language qualification.",
+  "clinical_validation": false,
+  "language_qualification": false,
+  "dataset_id": "lumen_pilot_0_1_draft",
+  "provenance": "ai_authored_synthetic",
+  "label_status": "draft_unreviewed",
+  "language_review_status": "draft_unreviewed",
+  "dataset_sha256": "8c7d2ed95fe463ae43d64c8cb3e8b2bb5b8c0d5f14c9e901c98a7b80f44a7ad6",
+  "split": "development",
+  "policy_version": "rules-0.1.1-draft",
+  "policy_review_status": "draft_unreviewed",
+  "policy_sha256": "763c564f319c7dc566dd1cd168bf37d31130f617a107255820664a2b3938b36b",
+  "code_sha256": {
+    "run_baseline.py": "114dd789a8464f74a6f5a51d3c98581f34bce33300dca19379407185a94fea03",
+    "baseline.py": "18bcd307c3fd22c44d4c79e8e385c7ba47b2881fdffb4462341bc2e4202da194"
+  },
+  "python_version": "3.11.7",
+  "measurement_scope": "Single-process rule screening only; no model, network, generation or referral latency.",
+  "denominator_notes": "All attempted cases count in agreement. Binary endpoints exclude reference-Uncertain cases explicitly; positive abstentions count as FN, negative abstentions remain in specificity/FPR denominators and do not count as TN. Translations are correlated, not independent observations.",
+  "overall": {
+    "attempted": 200,
+    "family_groups": 40,
+    "unavailable": 0,
+    "uncertain": 40,
+    "action_agreement": 0.755,
+    "confusion_matrix": {
+      "Low": {
+        "Low": 50,
+        "Moderate": 0,
+        "Elevated": 0,
+        "Critical": 0,
+        "Uncertain": 0,
+        "Unavailable": 0
+      },
+      "Moderate": {
+        "Low": 23,
+        "Moderate": 17,
+        "Elevated": 0,
+        "Critical": 0,
+        "Uncertain": 0,
+        "Unavailable": 0
+      },
+      "Elevated": {
+        "Low": 2,
+        "Moderate": 0,
+        "Elevated": 18,
+        "Critical": 0,
+        "Uncertain": 0,
+        "Unavailable": 0
+      },
+      "Critical": {
+        "Low": 4,
+        "Moderate": 0,
+        "Elevated": 0,
+        "Critical": 26,
+        "Uncertain": 0,
+        "Unavailable": 0
+      },
+      "Uncertain": {
+        "Low": 20,
+        "Moderate": 0,
+        "Elevated": 0,
+        "Critical": 0,
+        "Uncertain": 40,
+        "Unavailable": 0
+      }
+    },
+    "concern": {
+      "tp": 44,
+      "fp": 0,
+      "fn": 6,
+      "tn": 90,
+      "negative_abstentions": 0,
+      "reference_positives": 50,
+      "reference_negatives": 90,
+      "ambiguous_reference_excluded": 60,
+      "sensitivity": 0.88,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.12
+    },
+    "urgent": {
+      "tp": 26,
+      "fp": 0,
+      "fn": 4,
+      "tn": 110,
+      "negative_abstentions": 0,
+      "reference_positives": 30,
+      "reference_negatives": 110,
+      "ambiguous_reference_excluded": 60,
+      "sensitivity": 0.8666666666666667,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.13333333333333333
+    },
+    "screening_only_latency_ms": {
+      "p50": 0.0736,
+      "p95": 0.105,
+      "p99": 0.1179
+    }
+  },
+  "by_locale": {
+    "en": {
+      "attempted": 40,
+      "family_groups": 40,
+      "unavailable": 0,
+      "uncertain": 8,
+      "action_agreement": 0.8,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 10,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 4,
+          "Moderate": 4,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 4,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 6,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 4,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 8,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "tn": 18,
+        "negative_abstentions": 0,
+        "reference_positives": 10,
+        "reference_negatives": 18,
+        "ambiguous_reference_excluded": 12,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0,
+        "fnr": 0.0
+      },
+      "urgent": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "tn": 22,
+        "negative_abstentions": 0,
+        "reference_positives": 6,
+        "reference_negatives": 22,
+        "ambiguous_reference_excluded": 12,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0,
+        "fnr": 0.0
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0699,
+        "p95": 0.1087,
+        "p99": 0.1807
+      }
+    },
+    "hi-Deva": {
+      "attempted": 40,
+      "family_groups": 40,
+      "unavailable": 0,
+      "uncertain": 8,
+      "action_agreement": 0.7,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 10,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 6,
+          "Moderate": 2,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 1,
+          "Moderate": 0,
+          "Elevated": 3,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 1,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 5,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 4,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 8,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 8,
+        "fp": 0,
+        "fn": 2,
+        "tn": 18,
+        "negative_abstentions": 0,
+        "reference_positives": 10,
+        "reference_negatives": 18,
+        "ambiguous_reference_excluded": 12,
+        "sensitivity": 0.8,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0,
+        "fnr": 0.2
+      },
+      "urgent": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 1,
+        "tn": 22,
+        "negative_abstentions": 0,
+        "reference_positives": 6,
+        "reference_negatives": 22,
+        "ambiguous_reference_excluded": 12,
+        "sensitivity": 0.8333333333333334,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0,
+        "fnr": 0.16666666666666666
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0791,
+        "p95": 0.1166,
+        "p99": 0.1188
+      }
+    },
+    "hi-Latn": {
+      "attempted": 40,
+      "family_groups": 40,
+      "unavailable": 0,
+      "uncertain": 8,
+      "action_agreement": 0.75,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 10,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 4,
+          "Moderate": 4,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 1,
+          "Moderate": 0,
+          "Elevated": 3,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 1,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 5,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 4,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 8,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 8,
+        "fp": 0,
+        "fn": 2,
+        "tn": 18,
+        "negative_abstentions": 0,
+        "reference_positives": 10,
+        "reference_negatives": 18,
+        "ambiguous_reference_excluded": 12,
+        "sensitivity": 0.8,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0,
+        "fnr": 0.2
+      },
+      "urgent": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 1,
+        "tn": 22,
+        "negative_abstentions": 0,
+        "reference_positives": 6,
+        "reference_negatives": 22,
+        "ambiguous_reference_excluded": 12,
+        "sensitivity": 0.8333333333333334,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0,
+        "fnr": 0.16666666666666666
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0696,
+        "p95": 0.105,
+        "p99": 0.1073
+      }
+    },
+    "mr-Deva": {
+      "attempted": 40,
+      "family_groups": 40,
+      "unavailable": 0,
+      "uncertain": 8,
+      "action_agreement": 0.75,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 10,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 5,
+          "Moderate": 3,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 4,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 1,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 5,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 4,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 8,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 9,
+        "fp": 0,
+        "fn": 1,
+        "tn": 18,
+        "negative_abstentions": 0,
+        "reference_positives": 10,
+        "reference_negatives": 18,
+        "ambiguous_reference_excluded": 12,
+        "sensitivity": 0.9,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0,
+        "fnr": 0.1
+      },
+      "urgent": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 1,
+        "tn": 22,
+        "negative_abstentions": 0,
+        "reference_positives": 6,
+        "reference_negatives": 22,
+        "ambiguous_reference_excluded": 12,
+        "sensitivity": 0.8333333333333334,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0,
+        "fnr": 0.16666666666666666
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0708,
+        "p95": 0.1018,
+        "p99": 0.1053
+      }
+    },
+    "mr-Latn": {
+      "attempted": 40,
+      "family_groups": 40,
+      "unavailable": 0,
+      "uncertain": 8,
+      "action_agreement": 0.775,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 10,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 4,
+          "Moderate": 4,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 4,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 1,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 5,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 4,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 8,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 9,
+        "fp": 0,
+        "fn": 1,
+        "tn": 18,
+        "negative_abstentions": 0,
+        "reference_positives": 10,
+        "reference_negatives": 18,
+        "ambiguous_reference_excluded": 12,
+        "sensitivity": 0.9,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0,
+        "fnr": 0.1
+      },
+      "urgent": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 1,
+        "tn": 22,
+        "negative_abstentions": 0,
+        "reference_positives": 6,
+        "reference_negatives": 22,
+        "ambiguous_reference_excluded": 12,
+        "sensitivity": 0.8333333333333334,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0,
+        "fnr": 0.16666666666666666
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0647,
+        "p95": 0.0949,
+        "p99": 0.1045
+      }
+    }
+  },
+  "by_source": {
+    "chat": {
+      "attempted": 100,
+      "family_groups": 20,
+      "unavailable": 0,
+      "uncertain": 20,
+      "action_agreement": 0.85,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 30,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 5,
+          "Moderate": 10,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 10,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 15,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 10,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 20,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 25,
+        "fp": 0,
+        "fn": 0,
+        "tn": 45,
+        "negative_abstentions": 0,
+        "reference_positives": 25,
+        "reference_negatives": 45,
+        "ambiguous_reference_excluded": 30,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0,
+        "fnr": 0.0
+      },
+      "urgent": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 0,
+        "tn": 55,
+        "negative_abstentions": 0,
+        "reference_positives": 15,
+        "reference_negatives": 55,
+        "ambiguous_reference_excluded": 30,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0,
+        "fnr": 0.0
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0786,
+        "p95": 0.1087,
+        "p99": 0.1188
+      }
+    },
+    "journal": {
+      "attempted": 100,
+      "family_groups": 20,
+      "unavailable": 0,
+      "uncertain": 20,
+      "action_agreement": 0.66,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 20,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 18,
+          "Moderate": 7,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 2,
+          "Moderate": 0,
+          "Elevated": 8,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 4,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 11,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 10,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 20,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 19,
+        "fp": 0,
+        "fn": 6,
+        "tn": 45,
+        "negative_abstentions": 0,
+        "reference_positives": 25,
+        "reference_negatives": 45,
+        "ambiguous_reference_excluded": 30,
+        "sensitivity": 0.76,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0,
+        "fnr": 0.24
+      },
+      "urgent": {
+        "tp": 11,
+        "fp": 0,
+        "fn": 4,
+        "tn": 55,
+        "negative_abstentions": 0,
+        "reference_positives": 15,
+        "reference_negatives": 55,
+        "ambiguous_reference_excluded": 30,
+        "sensitivity": 0.7333333333333333,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0,
+        "fnr": 0.26666666666666666
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0696,
+        "p95": 0.1045,
+        "p99": 0.1057
+      }
+    }
+  },
+  "by_category": {
+    "benign_distress": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 1.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 5,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0927,
+        "p95": 0.1176,
+        "p99": 0.1176
+      }
+    },
+    "dependency_boundary": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 0.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 5,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 5,
+        "sensitivity": null,
+        "specificity": null,
+        "precision": null,
+        "fpr": null,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 5,
+        "sensitivity": null,
+        "specificity": null,
+        "precision": null,
+        "fpr": null,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0599,
+        "p95": 0.0752,
+        "p99": 0.0752
+      }
+    },
+    "diagnosis_request": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 1.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 5,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0455,
+        "p95": 0.0488,
+        "p99": 0.0488
+      }
+    },
+    "educational": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 1.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 5,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.1012,
+        "p95": 0.1073,
+        "p99": 0.1073
+      }
+    },
+    "explicit_concern": {
+      "attempted": 20,
+      "family_groups": 4,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 0.9,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 2,
+          "Moderate": 0,
+          "Elevated": 18,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 18,
+        "fp": 0,
+        "fn": 2,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 20,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": 0.9,
+        "specificity": null,
+        "precision": 1.0,
+        "fpr": null,
+        "fnr": 0.1
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 20,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 20,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0831,
+        "p95": 0.102,
+        "p99": 0.105
+      }
+    },
+    "grief": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 0.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 5,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0933,
+        "p95": 0.0971,
+        "p99": 0.0971
+      }
+    },
+    "historical": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 5,
+      "action_agreement": 1.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 5,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 5,
+        "sensitivity": null,
+        "specificity": null,
+        "precision": null,
+        "fpr": null,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 5,
+        "sensitivity": null,
+        "specificity": null,
+        "precision": null,
+        "fpr": null,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0495,
+        "p95": 0.0562,
+        "p99": 0.0562
+      }
+    },
+    "historical_resolved": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 5,
+      "action_agreement": 1.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 5,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 5,
+        "sensitivity": null,
+        "specificity": null,
+        "precision": null,
+        "fpr": null,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 5,
+        "sensitivity": null,
+        "specificity": null,
+        "precision": null,
+        "fpr": null,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.064,
+        "p95": 0.0733,
+        "p99": 0.0733
+      }
+    },
+    "idiom": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 1.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 5,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0867,
+        "p95": 0.1125,
+        "p99": 0.1125
+      }
+    },
+    "idiomatic_distress": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 0.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 5,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0529,
+        "p95": 0.0592,
+        "p99": 0.0592
+      }
+    },
+    "immediate_concern": {
+      "attempted": 25,
+      "family_groups": 5,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 0.84,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 4,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 21,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 21,
+        "fp": 0,
+        "fn": 4,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 25,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": 0.84,
+        "specificity": null,
+        "precision": 1.0,
+        "fpr": null,
+        "fnr": 0.16
+      },
+      "urgent": {
+        "tp": 21,
+        "fp": 0,
+        "fn": 4,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 25,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": 0.84,
+        "specificity": null,
+        "precision": 1.0,
+        "fpr": null,
+        "fnr": 0.16
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.051,
+        "p95": 0.0859,
+        "p99": 0.1047
+      }
+    },
+    "indirect_concern": {
+      "attempted": 25,
+      "family_groups": 5,
+      "unavailable": 0,
+      "uncertain": 15,
+      "action_agreement": 0.6,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 10,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 15,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 25,
+        "sensitivity": null,
+        "specificity": null,
+        "precision": null,
+        "fpr": null,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 25,
+        "sensitivity": null,
+        "specificity": null,
+        "precision": null,
+        "fpr": null,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.061,
+        "p95": 0.1166,
+        "p99": 0.1179
+      }
+    },
+    "missing_context": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 0.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 5,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 5,
+        "sensitivity": null,
+        "specificity": null,
+        "precision": null,
+        "fpr": null,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 5,
+        "sensitivity": null,
+        "specificity": null,
+        "precision": null,
+        "fpr": null,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0452,
+        "p95": 0.0533,
+        "p99": 0.0533
+      }
+    },
+    "mixed_negation_current": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 1.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 5,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 5,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": 1.0,
+        "specificity": null,
+        "precision": 1.0,
+        "fpr": null,
+        "fnr": 0.0
+      },
+      "urgent": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 5,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": 1.0,
+        "specificity": null,
+        "precision": 1.0,
+        "fpr": null,
+        "fnr": 0.0
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0592,
+        "p95": 0.1045,
+        "p99": 0.1045
+      }
+    },
+    "negation": {
+      "attempted": 10,
+      "family_groups": 2,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 1.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 10,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 10,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 10,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 10,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 10,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0546,
+        "p95": 0.0768,
+        "p99": 0.0768
+      }
+    },
+    "ordinary": {
+      "attempted": 10,
+      "family_groups": 2,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 1.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 10,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 10,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 10,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 10,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 10,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0863,
+        "p95": 0.1807,
+        "p99": 0.1807
+      }
+    },
+    "ordinary_distress": {
+      "attempted": 20,
+      "family_groups": 4,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 0.85,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 3,
+          "Moderate": 17,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 20,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 20,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 20,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 20,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0877,
+        "p95": 0.096,
+        "p99": 0.1018
+      }
+    },
+    "quotation": {
+      "attempted": 10,
+      "family_groups": 2,
+      "unavailable": 0,
+      "uncertain": 10,
+      "action_agreement": 1.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 10,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 10,
+        "sensitivity": null,
+        "specificity": null,
+        "precision": null,
+        "fpr": null,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 10,
+        "sensitivity": null,
+        "specificity": null,
+        "precision": null,
+        "fpr": null,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0501,
+        "p95": 0.0595,
+        "p99": 0.0595
+      }
+    },
+    "sarcasm": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 0.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 5,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0527,
+        "p95": 0.0536,
+        "p99": 0.0536
+      }
+    },
+    "sleep": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 0.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 5,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0959,
+        "p95": 0.099,
+        "p99": 0.099
+      }
+    },
+    "third_person_benign": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 1.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 5,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0932,
+        "p95": 0.0978,
+        "p99": 0.0978
+      }
+    },
+    "third_person_concern": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 5,
+      "action_agreement": 1.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 5,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 5,
+        "sensitivity": null,
+        "specificity": null,
+        "precision": null,
+        "fpr": null,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 0,
+        "ambiguous_reference_excluded": 5,
+        "sensitivity": null,
+        "specificity": null,
+        "precision": null,
+        "fpr": null,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0535,
+        "p95": 0.0593,
+        "p99": 0.0593
+      }
+    },
+    "word_boundary": {
+      "attempted": 5,
+      "family_groups": 1,
+      "unavailable": 0,
+      "uncertain": 0,
+      "action_agreement": 1.0,
+      "confusion_matrix": {
+        "Low": {
+          "Low": 5,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Moderate": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Elevated": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Critical": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        },
+        "Uncertain": {
+          "Low": 0,
+          "Moderate": 0,
+          "Elevated": 0,
+          "Critical": 0,
+          "Uncertain": 0,
+          "Unavailable": 0
+        }
+      },
+      "concern": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "urgent": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 5,
+        "negative_abstentions": 0,
+        "reference_positives": 0,
+        "reference_negatives": 5,
+        "ambiguous_reference_excluded": 0,
+        "sensitivity": null,
+        "specificity": 1.0,
+        "precision": null,
+        "fpr": 0.0,
+        "fnr": null
+      },
+      "screening_only_latency_ms": {
+        "p50": 0.0699,
+        "p95": 0.0727,
+        "p99": 0.0727
+      }
+    }
+  }
+}

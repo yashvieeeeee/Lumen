@@ -1,0 +1,43 @@
+{
+  "scope": "local synthetic application UI refinement",
+  "build_id": "06GKP4UOrxKDOQCysEYZV",
+  "verification": {
+    "production_build": "passed",
+    "existing_chrome_account_privacy_regressions": 10,
+    "npm_audit": "0 known vulnerabilities reported",
+    "typescript": "passed",
+    "formatting": "passed",
+    "presentation": {
+      "count": 18,
+      "widths_px": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "browsers": [
+        "installed Google Chrome",
+        "Playwright Firefox",
+        "Playwright WebKit"
+      ],
+      "api_requests": "fully intercepted, no server writes"
+    },
+    "independent_review": "no material blocker; nine keyboard profiles and long-history/cancel-focus reproduction passed"
+  },
+  "limitations": [
+    "Desktop engines and viewport resizing; physical iOS/Android keyboard and safe-area QA not completed",
+    "WebKit skip-link activation checked with explicit focus; Chrome and Firefox also check first Tab",
+    "No clinical, hosted, or Phase3 capability claimed"
+  ],
+  "source_sha256": {
+    "apps/web/app/layout.tsx": "0929d0d3a0a96c383b7cdaa25e5ad7d06edefe25d65bb2cff819dc8d37edb142",
+    "docs/LOCAL_DEVELOPMENT.md": "271e3588080d7f7d8e43533e468052d951eafda9e53adf519c4211ff168667c8",
+    "apps/web/app/globals.css": "83d01ead920bd8d3aac411ef264d8fc44e5aa08b9ea0d1e209074828939baeeb",
+    "docs/IMPLEMENTATION_STATUS.md": "edd95586071ac75619f676f5d5de8715e20a8f553cbfd8d061f8f223c9450b3e",
+    "apps/web/tests/ui.spec.ts": "c94b284f34d244b5fd71eaf8ce637e0bd1829a61b1973b14159dc25da48c9f79",
+    "apps/web/playwright.config.ts": "d2ac6174370c335f4bfbc5af2b0fb6f0ca5b37bc6e715d3b1d17ec22eb963840",
+    "apps/web/app/page.tsx": "3a7f9a8f5cf6d494b852ba35ceb62940798ae065ee42d55c499c3bdf575eb9e6",
+    "apps/web/app/icon.svg": "c88075e0679ce63e9e0c82aa44045bc1cbf133e12b09ad9f972184d1ec8c8027"
+  },
+  "recorded_at": "2026-10-08T09:54:49.4037780Z"
+}

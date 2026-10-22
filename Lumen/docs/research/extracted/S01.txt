@@ -1,0 +1,207 @@
+Source ID: S01
+Original: Documentation/major project/Copy of Sem VII Project Log Book Format 2026.docx
+St. Francis Institute of Technology
+(Engineering College)
+(An Autonomous Institute, Affiliated to University of Mumbai)
+AICTE Approved | NAAC A+ Grade: CMPN, EXTC, INFT NBA Accredited: ISO 9001:2015 Certified
+
+Department of Information Technology
+
+MAJOR PROJECT-I LOGBOOK
+
+Lumen: A Safety Guarded Conversational AI- Companion with Real-Time Crisis Detection
+GROUP MEMBERS
+
+1.  Yashvie Mahey      231063
+2.  Shravani Lad         231058
+3.  Harshit Behl          231005
+4.  Rahil Kirtikar       231051
+
+Guide
+Dr. Prachi Raut
+Designation
+
+
+
+
+
+(Academic Year 2026-2027)
+
+
+
+
+
+
+                  INSTITUTE VISION & MISSION
+VISION:
+
+To be a chrysalis where bright youngsters are transformed into technological entrepreneurs and innovative leaders of tomorrow’s world, consistent with the Franciscan vision of integrity, peace and love.
+
+           
+MISSION:
+
+To churn highly competent engineering graduates with a commitment to result oriented work, a perennial zest for learning, a quest for excellence, an open mind and the universal values of honesty, dignity and mutual care.
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+Department of Information Technology
+
+  DEPARTMENT VISION & MISSION
+
+VISION:
+
+To create a conducive instrument for transforming the enrolled potential fresher into competent Information Technology professional or entrepreneur with integrity and ethical value.
+
+MISSION:
+
+●To become unit of excellence in teaching, training, research, innovative application and extension work in IT in co-operation with various other departments.
+●To make knowledge and expertise accessible with various dissemination strategies, including networking with research unit, colleges, government and industry along with the motivation for self-learning.
+●To integrate teaching, research and practice along with higher education for generation and application of knowledge in line with emerging needs of industry, technical quality with market driven professional pursuits, programs, courses, collaboration.
+●To develop entrepreneur skills along with ethical and professional values among the students.
+
+
+          PROGRAM EDUCATIONAL OBJECTIVES (PEO's)
+
+●To provide students with a sound foundation in mathematical, scientific and engineering fundamentals to design, analyze and solve complex engineering problems, to develop quest for higher studies and to inspire them to foster innovative research.
+●To provide an environment and to make knowledge & expertise accessible for students to work in multi-disciplinary projects, to solve the real life problems with the help of modern tools and techniques and to lead towards a successful professional career.
+●To develop effective soft skills, inculcate team building capabilities such as leadership skills, managerial skills, and entrepreneurial skills and simultaneously nurture professional and ethical attitude in broad social context for sustainable development through lifelong learning.
+
+
+            Department of Information Technology
+
+              PROGRAM SPECIFIC OUTCOMES (PSOs)
+
+Students will be able to acquire the basic knowledge of analysis and design, based on the comprehensive principles of Software Engineering, Project Management, Software Testing and Quality Assurance.
+Students will be able to apply research-based approach using innovative tools and techniques in the field of Communication & Networks, Computer graphics & Image Processing and Information Security & Data Management.
+Students will be able to use the knowledge of Information Technology to develop end to end solutions in the field of SCAM (Social, Cloud, Analytics and Mobile).
+Students will be able to fuel entrepreneurship or to serve niche employment while portraying competencies like teamwork, efficient soft skills and a zeal for lifelong learning in order to contribute to society with moral and ethical values.
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+                         Department of Information Technology
+
+                      STUDENT INFORMATION
+
+
+Project Title: Lumen: A Safety-Guarded Conversational AI Companion with Real-Time Crisis Detection
+
+ | Student 1 | Student 2 | Student 3 | Student 4
+Student ID | 231063 | 231058 | 231005 | 231051
+Name | Yashvie Mahey | Shravani Lad | Harshit Behl | Rahil Kirtikar
+Class with Division | BE INFT A | BE INFT A | BE INFT A | BE INFT A
+Contact No. | 9082066641 | 8108692660 | 7757982317 | 9892083749
+E-mail | yashviemahey1@student.sfit.ac.in | shravanilad05@student.sfit.ac.in | harshitbehl1704@student.sfit.ac.in | rahilkirtikar@student.sfit.ac.in
+Address | Charkop, Kandivali (W), Mumbai | Dahanukarwadi, Kandivali (W), Mumbai | Boisar(W),Palghar,Mumbai | Shimpoli, Borivali (W), Mumbai
+
+Department of Information Technology
+
+COURSE OUTCOMES
+
+CO | COURSE OUTCOME | POs covered |   PSOs covered
+CO1 | Students should be able to demonstrate sound technical knowledge of domain  selected  for project and apply it to solve real life problems for the sustainable development of the society. | PO1, PO6, PO7 | 
+CO2 | Students should be able to analyze complex engineering problems and apply appropriate and creative solutions to solve the problems using modern tools | PO2, PO3, PO4, PO5 | 
+CO3 | Students should be able to link across different domains of engineering and should be able to generate, develop and evaluate information so as to apply these skills to the project task | PO11 | 
+CO4 | Students should acquire collaborative skills through working in a team to achieve common goal and demonstrate knowledge of engineering and management principles by applying it in one’s work, as a member and leader in the team | PO9, PO11 | 
+CO5 | Students should be able to communicate effectively and present ideas clearly and ethically, both written and oral. | PO8 , PO10 | 
+CO6 | Students should be able to learn on their own, reflect on their learning and take appropriate action to improve it in order to develop skill of lifelong learning | PO12 | 
+ 
+CO-PO-PSO MAPPING
+
+ | PO1 | PO2 | PO3 | PO4 | PO5 | PO6 | PO7 | PO8 | PO9 | PO10 | PO11
+CO1 |  |  |  |  |  |  |  |  |  |  | 
+CO2 |  |  |  |  |  |  |  |  |  |  | 
+CO3 |  |  |  |  |  |  |  |  |  |  | 
+CO4 |  |  |  |  |  |  |  |  |  |  | 
+CO5 |  |  |  |  |  |  |  |  |  |  | 
+CO6 |  |  |  |  |  |  |  |  |  |  | 
+
+Department of Information Technology
+
+SCHEDULE FOR MAJOR PROJECT
+
+Date: | Week  | Assigned Work
+ | 1 | Review of research papers related to the area of interest . Prepar ation of   p roject proposals and  submission to project   c oordinators. Visit to the library for “ Awareness of Print Journals / IEEE Xplore Platform Search”.
+ | 2 | Based on the reviews, refinement of project proposals (if accepted). Preparation of a powerpoint  presentation on the guidelines given. (First  round of  s crutiny). Interview for Industry sponsored project.(For interested groups)
+ |  | LATEX Workshop
+ | 3 | Release of first list of approved topics and Round 2 of project proposal scrutiny (Presentations). Refinement of project proposal as per feedback given during presentation. (Applicable for Round 2) Allotment of Guide. Preparation of Project Log Book.
+ |  | Session on “Literature Review”
+ | 4 | Documentation  of the  comparative table for “ Literature review related to methodologies” for the selected  topic . Documentation of the comparative table  for “Literature review related to  algorithms ” for the selected topic. Identify Gaps in the available literature
+ | 4 | Session on “ How to define Problem Statement”
+ | 5 | Proposed Methodology Defin ing the p roblem  s tatement with  o bjectives Defin ing  th e  scope of work.
+ | 5 | Mapping of  c ourse  o utcomes of  the  project with POs and PSOs.( W ith the help of Project Guides) Discuss ion on s ystem design  of the  project.
+ | 6 | Mid Semester Evaluation
+ | 7 | Reporting to  the  guide. Discussion and refinement of complete  s ystem analysis,  u se case  d iagram / c lass diagram with explanation. Design of  U ser Interface /  GUI  of the project.
+ | 8 | Reporting to the guide. Discussion of  a rchitectural  d esign (Project  f low /architecture with description/ b lock diagram)
+ | 9 | Discussion and refinement of  A nalysis  m odeling  a ctivity/Sequence  d iagram. Preparation of  t ime l ine  c hart and  w ork  b reakdown  s tructure.
+ | 10 | Complet ion of  White Book -  S em VII with  H eaders &  C ertificate ( I n  L atex format) Preparation of powerpoint  presentation Approval of White Book - Sem VII  and presentation from the guide.
+ | 11 | End  s emester  p roject evaluation - Sem VII
+ | 12 | Submission of Final Report  Submission   of certificates of participation/winner in any activity related to project
+
+Department of Information Technology
+
+PROGRESS/ATTENDANCE REPORT
+
+Title of the Project: Lumen:  A Safety-Guarded Conversational AI Companion with Real-Time Crisis Detection
+     Group No. 14 | Name of Student 1:  Yashvie Mahey
+ | Name of Student 2: Shravan i Lad
+ | Name of Student 3: Harshit B eh l
+ | Name of Student 4: Rahil Kirtikar
+Name of the Guide:  Dr. Prachi Raut
+
+S.No. | Date | Progress/Suggestion | Sign of Guide
+ |  | 1 | 2 | 3 | 4 |  | 
+1 |  |  |  |  |  |  | 
+2 |  |  |  |  |  |  | 
+3 |  |  |  |  |  |  | 
+4 |  |  |  |  |  |  | 
+5 |  |  |  |  |  |  | 
+6 |  |  |  |  |  |  | 
+7 |  |  |  |  |  |  | 
+8 |  |  |  |  |  |  | 
+9 |  |  |  |  |  |  | 
+10 |  |  |  |  |  |  | 
+11 |  |  |  |  |  |  | 
+12 |  |  |  |  |  |  | 
+13 |  |  |  |  |  |  | 
+14 |  |  |  |  |  |  | 
+15 |  |  |  |  |  |  | 
+
+
+Name, Date & Sign of the Supervisor/Guide
+APPENDIX
+Final accepted project proposal copy
+Hard copy of technical papers referred for literature review.
+Any other document

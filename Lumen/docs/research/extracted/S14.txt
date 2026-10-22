@@ -1,0 +1,51 @@
+Source ID: S14
+Original: Lumen _ Research papers/Gap_Analysis.docx
+tab 1
+Rahil
+Paper 1: 2025.findings-emnlp.998Gap Analysis - 
+1. Real-world validation gap: DeepSuiMind is synthetic, and the authors explicitly state that synthetic data cannot replace real clinical data. 2. Multilingual/cultural gap: The study is primarily English-focused. 3. Implicit-risk detection gap: Current LLMs still struggle with subtle, metaphorical, self-referential and evolving suicidal cues. 4. Intervention gap: Detecting risk does not consistently translate into practical, hope-promoting, contextually appropriate support. 5. Human-oversight/clinical-integration gap: The authors explicitly state that the framework should not itself be treated as a clinical instrument. 6. Longitudinal/continuous monitoring gap — inferred: The study evaluates model responses to test cases rather than tracking users over time. 7. Personalization gap — inferred: The evaluation tests predefined scenarios and response criteria; it does not demonstrate individualized intervention based on a user's longitudinal history. 
+
+Paper 2: Deep Learning Based Approach For Detecting Suicidal IdeationGap Analysis - 
+1. Natural Hinglish data gap: The dataset is generated because directly available Hinglish suicidal-ideation data was unavailable. 2. Data quality/diversity gap: More data and better labels are explicitly needed for noise, spelling errors, diverse contexts and stemming. 3. Sarcasm/humor/irony gap: Explicit modeling of these linguistic phenomena remains unresolved. 4. Binary-risk classification gap: The model determines suicidal vs. non-suicidal text but does not establish levels of severity or progression. 5. Real-world application gap: The study establishes classification baselines rather than testing a complete user-facing mental-health system. 6. Longitudinal/continuous monitoring gap — inferred: The experiment does not study changes in an individual's mental state over time. 7. Intervention gap — inferred: The model detects suicidal ideation but does not provide or evaluate mental-health support following detection. 
+
+Paper 3: Development and Evaluation of HopeBot Gap Analysis - 
+1. Clinical validation gap: HopeBot was compared with self-administered PHQ-9 rather than clinician-administered assessments, so its clinical and diagnostic validity remains unestablished. 2. Recall-bias gap: Completing both assessments in the same session may have influenced participants' responses. 3. Population generalizability gap: The sample was skewed toward younger and digitally literate users, limiting generalizability to older adults and people with lower digital access. 4. Cultural and demographic gap: The study was not specifically designed to examine cultural differences, while some demographic groups had relatively small sample sizes. 5. Real-world and healthcare integration gap: The system was evaluated in a controlled environment, leaving its effectiveness and impact within real-world healthcare settings insufficiently established. 6. Non-verbal and accessibility gap: The conversational system cannot fully capture non-verbal cues and may not adequately address underserved populations with limited digital access. 7. Long-term impact and safety gap: The study does not establish long-term mental-health outcomes, and further work is needed on user trust, therapeutic relationships, clinical oversight, escalation protocols and responsible deployment.
+Paper 4: Development and Evaluation of HopeBot Gap Analysis - GoEmotions dataset of fine grained emotions
+1. Cross-cultural robustness gap: The dataset and emotion annotations are based on English Reddit comments and native English-speaking annotators from India, so the authors identify the need to investigate whether the emotion ratings remain robust across different cultural contexts. 2. Multilingual emotion recognition gap: The dataset focuses exclusively on English, and the authors identify extending the emotion taxonomy and dataset to other languages as an area for future research. 3. Implicit emotion understanding gap: Some emotions, particularly grief and nervousness, have fewer strongly associated words and lower inter-rater correlation, suggesting that certain emotions are more implicit and require additional context to interpret accurately. 4. Difficult or ambiguous emotion gap: Around 4K examples lacked sufficient annotator agreement, indicating that emotionally ambiguous or difficult-to-interpret text remains a challenging area for emotion classification. 5. Model performance gap: The BERT baseline achieved an average F1-score of only 0.46 across the 27-emotion taxonomy, and the authors state that there is substantial room for improvement in fine-grained emotion prediction. 6. Demographic and dataset-representation gap: The authors acknowledge that Reddit has demographic biases and that the dataset is not representative of global diversity, meaning models trained on it may not generalize equally across different populations.7. Domain-specific emotion understanding gap: Although transfer-learning experiments show that GoEmotions can help other domains, the dataset is derived from Reddit comments, leaving further scope for evaluating fine-grained emotion recognition in other real-world domains and communication settings. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yashvie : 
+Paper 1: Domain-Specific Constitutional AI
+Limited evaluation of long-term/multi-turn conversations, where safety boundaries may change over time.
+Constitutional principles are predefined, with limited exploration of dynamically adapting them to different user contexts.
+Further validation is needed across more diverse models, users, and real-world healthcare settings.
+
+Paper 2 : The Slow Drift of Support
+Focuses mainly on boundary violations, rather than integrating boundary monitoring with complete crisis-risk detection and intervention.
+Uses virtual patient profiles and simulated conversations, leaving real-world user interaction less explored.
+Further work is needed to understand how different user characteristics, languages, and cultural contexts affect safety failures.
+
+Paper 3 : Building Trust in Mental Health Chatbots
+Primarily focuses on clinical safety, while dimensions such as bias, empathy, privacy, and accuracy require further evaluation.
+The framework was tested using a GPT-3.5-based chatbot, limiting conclusions about newer or different LLM architectures.
+More scalable and comprehensive evaluation is needed for real-world deployment.
+
+Paper 4 : Suicide- and Crisis-Risk Detection Using LLMs
+Focuses on risk detection, but does not fully evaluate the subsequent intervention and response process.
+The study uses a relatively small dataset of 200 conversation segments, limiting broader generalization.
+Clinician disagreement and uncertainty make it difficult to establish a definitive ground truth for crisis-risk detection.
+
+
+
+

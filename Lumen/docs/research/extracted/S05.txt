@@ -1,0 +1,328 @@
+Source ID: S05
+Original: Documentation/major project/proposal_LaTeX.pdf
+
+=== PAGE 1 ===
+Major Project
+(ITM 701)
+Project Proposal
+Lumen: A Safety-Guarded Conversational
+AI Companion with Real-Time Crisis Detection
+B. E. Information Technology
+By
+GROUP NO. 14
+Yashvie Mahey 51
+Shravani Lad 52
+Harshit Behl 53
+Rahil Kirtikar 54
+Department of Information Technology
+St. Francis Institute of Technology
+(An Autonomous Institution)
+A+ Grade by NAAC: CMPN, EXTC, INFT NBA Accredited: ISO 9001:2015
+Certified
+University of Mumbai
+2026–2027
+
+=== PAGE 2 ===
+Title of the Project: Lumen:A Safety-Guarded Conversational AI Companion with
+Real-Time Crisis Detection
+Domain:AI/ML, Mental Health Technology, Human-Computer Interaction
+I. Introduction
+Access to timely mental health support remains one of the most persistent gaps in health-
+care delivery worldwide. According to World Health Organization data, the treatment
+gap for serious mental disorders ranges from 35–50% even in developed countries and rises
+to 76–90% in low- and middle-income countries, with stigma alone linked to an average
+delay of 9 to 23 years between the onset of a condition and a person’s first treatment.
+Fear of judgment, social devaluation, and the discomfort of naming a problem as “mental
+illness” consistently rank among the strongest predictors of why people never seek care
+at all, regardless of country.
+In India, this global pattern is compounded by distinctly local barriers. India is home
+to 18% of the global population and carries a disproportionate share of this burden —
+mental disorders are the second leading cause of years lived with disability in the country,
+and nearly 11 out of every 100 Indians live with a mental health disorder, yet between
+70% and 92% never receive proper treatment. Unlike a pure resource shortage, a large
+part of this gap in India is attitudinal rather than infrastructural: lack of awareness
+about what counts as a mental health concern, fear of being judged or labelled by family
+and community, and a cultural tendency to treat emotional distress as a private matter
+to be endured rather than discussed, all lead people to avoid seeking help even where
+services technically exist. This is precisely why India’s own institutional response — Tele
+MANAS, implemented under the Ministry of Health and Family Welfare with NIMHANS,
+Bengaluru as its apex nodal body — has been designed as a free, anonymous, 24/7 helpline
+available in 20 languages rather than a clinic-first model: anonymity and low-friction
+access are treated as prerequisites to reaching people at all, not conveniences.
+As these tools grow more capable and more widely used, the safety infrastructure
+around them has not kept pace: most existing systems provide either a rigid, clinician-
+scripted conversation flow with limited natural flexibility, or an open-ended conversational
+experience with little to no risk-detection scaffolding. Lumen aims to build an end-to-
+end AI-driven emotional-support platform, relevant to both global and Indian users, that
+integrates real-time crisis detection, anti-diagnosis guardrails, longitudinal mood-trend
+analysis, and an explainable safety-decision layer, together with a structured escalation
+pathway into India’s existing helpline and referral ecosystem rather than a generic hotline
+reference. Using conversational input and journal entries as its data sources, Lumen will
+1
+
+=== PAGE 3 ===
+deliver emotionally supportive interaction while continuously screening for risk, enabling
+safe engagement without overstating its role as a replacement for professional care.
+By doing so, the project demonstrates how conversational AI can be engineered for
+a safety-critical domain, and presents a framework that balances empathetic support,
+transparency, and responsible boundary-setting between early support and clinical diag-
+nosis — one that is globally applicable in design but explicitly grounded in the language,
+infrastructure, and cultural context of Indian users.
+II. Motivation
+Mental health support access is one of the most critical yet under-addressed gaps in per-
+sonal wellbeing infrastructure, globally and in India alike. High-profile cases — including
+lawsuits against Character.AI over teen-suicide cases and Italian regulatory action against
+Replika — highlight the dangers of deploying open-ended conversational AI in emotion-
+ally sensitive contexts without adequate safeguards. Existing structured tools such as
+Woebot and Wysa reduce this risk through scripted flows but sacrifice conversational
+naturalness and rely on brittle, largely English-first, keyword-based safety triggers. To
+address these challenges, there is a strong need for an AI system that remains conver-
+sationally flexible while continuously screening for risk, tracking patterns over time, and
+explaining its own safety decisions — in a way that also fits how Indian users actually
+communicate.
+Key Motivations for Lumen:
+•Close a global gap that is sharper in India: with 70–92% of Indians with men-
+tal disorders not receiving treatment, and most private therapy concentrated in metro
+cities, an AI-first support layer has disproportionate value for tier-2/3 cities and stu-
+dents — a population underserved by existing urban-centric therapy platforms.
+•Enhance Risk Visibility: apply crisis-pattern detection across both chat and journal
+content to provide early warnings before a situation escalates.
+•Tackle Gradual Risk Development: track mood and sentiment trends across ses-
+sions rather than relying solely on single-message keyword triggers.
+•Treat Language as a Safety Variable, Not an Afterthought: Tele-MANAS
+itself operates in 20 languages precisely because language barriers are documented to
+cause underutilisation of mental health services in India; Lumen should treat Hindi,
+Marathi, and code-mixed input as first-class cases for crisis detection and generation,
+not a stretch goal.
+2
+
+=== PAGE 4 ===
+•Balance Empathy and Safety: use a constrained-generation approach so conversa-
+tional responses remain warm and natural while never crossing into diagnostic territory.
+•Mitigate False Positives/Negatives: layer rule-based detection with an explain-
+ability module so flagged (and unflagged) decisions can be reviewed and improved.
+•Anchor Escalation in India’s Real Referral Infrastructure: route flagged users
+to Tele-MANAS (14416 / 1800-891-4416), campus counselling cells, or other verified
+Indian services, rather than a subtle in-chat message or a generic international hotline
+— mirroring how Tele-MANAS itself follows up with high-risk callers instead of treating
+each contact as a one-off transaction.
+•Respect India’s Data Protection Regime: mental health conversations and jour-
+nal entries are sensitive personal data under India’s Digital Personal Data Protection
+(DPDP) Act, 2023, which shapes how Lumen handles consent, storage, and retention
+of chat/journal embeddings from the design stage onward.
+III. Problem Statement
+Existing AI emotional-support tools — including India-origin platforms like Wysa — force
+a compromise between safety and flexibility: rigid clinical chatbots stifle conversation,
+while open-ended companion apps lack safety scaffolding. Safety in both cases is largely
+restricted to static, English-first keyword triggers evaluated on isolated messages, which is
+a particularly poor fit for a linguistically diverse user base where distress is often expressed
+in Hindi, Marathi, or code-mixed phrasing. These systems fail to detect subtle, oblique
+risk that builds gradually across multiple interactions and siloed journal entries, and when
+they do escalate, they typically point to a generic or international crisis line rather than
+India’s own Tele-MANAS/District Mental Health Programme referral network. There
+is a critical need for an architecture that treats safety as a continuous, explainable,
+multilingual, multi-checkpoint process — one that plugs into India’s existing tele-mental-
+health infrastructure rather than working around it.
+3
+
+=== PAGE 5 ===
+IV. Literature Review
+Sr.
+No.
+Title of Paper Review Analysis / Limita-
+tion
+1 Delivering Cognitive
+Behavior Therapy to
+Young Adults With
+Symptoms of Depres-
+sion and Anxiety Using
+a Fully Automated
+Conversational Agent
+(Woebot): A Ran-
+domized Controlled
+Trial
+Clinician-designed
+CBT chatbot that
+significantly reduced
+depressive symptoms in
+a 2-week RCT.
+Uses scripted conver-
+sations and keyword-
+based crisis detection,
+limiting flexibility and
+contextual safety.
+2 An Empathy-Driven,
+Conversational Artifi-
+cial Intelligence Agent
+(Wysa) for Digital
+Mental Well-Being:
+Real-World Data Eval-
+uation Mixed-Methods
+Study
+Evaluates Wysa’s ef-
+fectiveness using CBT,
+DBT, mindfulness,
+and sentiment analy-
+sis. Wysa is itself an
+Indian-origin platform
+(Touchkin eServices,
+Bengaluru), making its
+gaps directly relevant
+local precedent.
+Journaling is not inte-
+grated into safety mon-
+itoring, safety-response
+logic lacks transparency,
+and escalation is not
+linked to India’s Tele-
+MANAS/DMHP refer-
+ral network.
+3 Using Psychological
+Artificial Intelligence
+(Tess) to Relieve Symp-
+toms of Depression and
+Anxiety: Randomized
+Controlled Trial
+Shows Tess significantly
+reduced depression and
+anxiety symptoms.
+Focuses on outcomes
+rather than safety, with
+no long-term risk detec-
+tion or explainability.
+4 Systematic Review and
+Meta-Analysis of Chat-
+bots in the Management
+of Depressive and Anxi-
+ety Symptoms
+Meta-analysis of 39
+RCTs found chat-
+bots provide modest
+improvements in de-
+pression and anxiety.
+Most studies lacked sys-
+tematic safety monitor-
+ing or adverse-event re-
+porting.
+4
+
+=== PAGE 6 ===
+V. Gap Analysis
+Across reviewed systems, three consistent gaps emerge:
+•Message-Level, Keyword-Based Detection: Safety detection across all reviewed
+systems is almost universally limited to individual messages and English-first key-
+word triggers, with no system described as tracking mood or behavioral trends across
+multiple sessions, or handling Hindi/Marathi/code-mixed distress language, to inform
+escalation decisions.
+•Siloed Journaling and Conversation: Journaling and conversational support are
+treated as separate, disconnected features — no reviewed competitor routes journal
+content through the same safety pipeline as live chat, despite both being equally capable
+of containing crisis-relevant language.
+•Absence of Explainability and India-Anchored Escalation: Existing tools sur-
+face a crisis response when triggered but do not expose to the user or development
+team which factors contributed to a given risk assessment, and typically escalate to a
+generic or international hotline rather than India’s own Tele-MANAS/District Mental
+Health Programme referral network, leaving both false positives and false negatives
+equally opaque.
+Lumen directly targets these three gaps through a shared safety pipeline spanning both
+chat and journal inputs, longitudinal trend-based flagging rather than single-message trig-
+gers alone, multilingual (English, Hindi, Marathi) crisis detection, and an explainability
+layer that surfaces the specific factors behind any detected risk while routing escalation
+into India’s verified referral ecosystem.
+VI. Proposed Solution/Methodology
+The proposed system, Lumen, aims to build a comprehensive framework that goes be-
+yond scripted chatbot flows and single-message keyword filters. At its core, the solution
+integrates constrained conversational generation, real-time risk classification, longitudinal
+trend analysis, and explainability to create a full-stack safety-guarded emotional-support
+platform, designed for global applicability but grounded in the language and referral
+infrastructure that Indian users actually have access to. The methodology combines mul-
+tiple safety techniques while ensuring that flagged decisions remain interpretable and
+auditable for both users and reviewers.
+The first module focuses on input-side risk classification. Using incoming chat mes-
+sages and journal entries, the system applies rule-based keyword and pattern matching
+5
+
+=== PAGE 7 ===
+to screen for crisis-relevant language, chosen deliberately over an opaque ML classifier
+given the current absence of a labeled clinical dataset suitable for safe, validated training
+at this stage. This lexicon is extended beyond English to include Hindi and Marathi
+crisis-language patterns, with allowance for code-mixed (Hinglish) phrasing, reflecting
+how Indian users typically type rather than assuming English-only input.
+To address the issue of context and conversational memory, a retrieval-augmented
+approach will be adopted. Prior conversation and journal history will be embedded and
+stored using PostgreSQL with the pgvector extension, allowing the system to retrieve
+semantically relevant past context rather than relying on raw chat-history truncation,
+improving both coherence and cost-efficiency of generation.
+The next stage of the methodology involves constrained response generation. A lan-
+guage model, scoped by a carefully engineered system prompt, generates supportive re-
+sponses that are then passed through an anti-diagnosis guardrail — an output-side filter
+that intercepts and reframes any diagnostic-sounding language before it reaches the user.
+To capture risk that builds gradually rather than appearing in a single message,
+the system includes a mood and trend-tracking module. Sentiment and mood-tag data
+from journal entries and chat sessions are analyzed over time, flagging sustained negative
+trends (e.g., N consecutive low-mood entries or declining engagement frequency) for a
+gentle proactive check-in, distinct from a hard crisis escalation.
+Finally, an explainability layer will translate risk-classification outputs into human-
+readable justification. Instead of simply triggering a generic crisis message, the system
+will surface the specific factors — keyword matches, sentiment trend, frequency change
+— that contributed to a given flag, through both an internal audit dashboard and a user-
+facing escalation interface. This escalation interface routes users to India’s Tele-MANAS
+helpline (14416 / 1800-891-4416) and, where applicable, institutional resources such as
+a college counselling cell, mirroring Tele-MANAS’s own two-tier structure of first-level
+counsellor support with referral upward rather than inventing a parallel system. All
+storage of chat and journal data is designed with consent and retention practices aligned
+to India’s Digital Personal Data Protection Act, 2023.
+In summary, the methodology combines rule-based multilingual risk classification,
+retrieval-augmented generation, output-side guardrails, longitudinal trend analysis, and
+explainability into a unified platform. This holistic approach not only improves detection
+coverage beyond single-message triggers but also makes the system auditable, transparent,
+and practically trustworthy for a safety-critical use case, in India and globally.
+6
+
+=== PAGE 8 ===
+VII. Hardware & Software Requirements
+Hardware:
+•Processor: AMD Ryzen 7 5700U with Radeon Graphics, 8 Cores / 16 Logical Pro-
+cessors (1.80 GHz base)
+•Memory (RAM): 16 GB Installed
+•Graphics Card (GPU): Not required for rule-based classifiers; recommended (NVIDIA
+RTX series or a rented GPU instance) if self-hosting the language model rather than
+using a hosted inference endpoint
+•Storage: 256 GB SSD (512 GB preferred for model weights and embedding indices)
+•System: Windows 10/11 or Linux
+Software:
+•Programming Language: TypeScript, Python (for classifier/NLP components if
+separated as a service)
+•Frontend Framework: Next.js 14, Tailwind CSS
+•Voice Interaction: Web Speech API (SpeechRecognition, SpeechSynthesis)
+•NLP/Classification: spaCy or NLTK (rule-based keyword/pattern matching), Hug-
+ging Face Transformers (sentiment/emotion scoring)
+•Embeddings: sentence-transformers (for pgvector-backed retrieval)
+•Language Model: Open-weight LLM served via Ollama or Hugging Face Inference
+Endpoints
+•Database: PostgreSQL with the pgvector extension; Redis for session state/job queue
+•Testing & Tooling: Jest (guardrail/classifier logic), Git/GitHub, VS Code
+VIII. References
+[1] K. K. Fitzpatrick, A. Darcy, and M. Vierhile, “Delivering Cognitive Behavior Therapy
+to Young Adults With Symptoms of Depression and Anxiety Using a Fully Automated
+Conversational Agent (Woebot): A Randomized Controlled Trial,”JMIR Mental
+Health, vol. 4, no. 2, p. e19, Jun. 2017, doi: 10.2196/mental.7785.
+7
+
+=== PAGE 9 ===
+[2] B. Inkster, S. Sarda, and V. Subramanian, “An Empathy-Driven, Conversational
+Artificial Intelligence Agent (Wysa) for Digital Mental Well-Being: Real-World Data
+Evaluation Mixed-Methods Study,”JMIR mHealth and uHealth, vol. 6, no. 11, p.
+e12106, Nov. 2018, doi: 10.2196/12106.
+[3] R. Fulmer, A. Joerin, B. Gentile, L. Lakerink, and M. Rauws, “Using Psychological
+Artificial Intelligence (Tess) to Relieve Symptoms of Depression and Anxiety: Ran-
+domized Controlled Trial,”JMIR Mental Health, vol. 5, no. 4, p. e64, Dec. 2018, doi:
+10.2196/mental.9782.
+[4] J.-S. Sohn, B.-G. Ha, S. Park, and J.-J. Kim et al., “Systematic review and meta-
+analysis of chatbots in the management of depressive and anxiety symptoms,”npj
+Digital Medicine, vol. 9, art. 377, Mar. 2026, doi: 10.1038/s41746-026-02566-w.
+[5] S. M. Lim, C. W. C. Shiau, L. J. Cheng, and Y. Lau, “Chatbot-Delivered Psychother-
+apy for Adults With Depressive and Anxiety Symptoms: A Systematic Review and
+Meta-Regression,”Behavior Therapy, vol. 53, no. 2, pp. 334–347, Mar. 2022, doi:
+10.1016/j.beth.2021.09.007.
+8

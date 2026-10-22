@@ -1,0 +1,554 @@
+Source ID: S20
+Original: Lumen _ Research papers/SentimentCareBot_ Retrieval-Augmented Generation Chatbot for Mental Health Support with Sentiment Analysis.pdf
+
+=== PAGE 1 ===
+ScienceDirect
+Available online at www.sciencedirect.com
+Procedia Computer Science 251 (2024) 334–341
+1877-0509 © 2024 The Authors. Published by Elsevier B.V .
+This is an open access article under the CC BY-NC-ND license ( https://creativecommons.org/licenses/by-nc-nd/4.0 )
+Peer-review under responsibility of the scientific committee of the Conference Program Chairs
+10.1016/j.procs.2024.11.118
+Available online at www.sciencedirect.com
+Procedia Computer Science 00 (2018) 000–000
+www.elsevier.com/locate/procedia
+The 14th International Conference on Current and Future Trends of Information and
+Communication Technologies in Healthcare (ICTH 2024)
+October 28-30, 2024, Leuven, Belgium
+SentimentCareBot: Retrieval-Augmented Generation Chatbot for
+Mental Health Support with Sentiment Analysis
+Jean Pierre Nayinzira a,∗, Mehdi Adda a
+aUniversity of Quebec at Rimouski, 300 all´ ee des Ursulines, Rimouski G5L 3A1, Canada
+Abstract
+The global mental healthcare system faces various challenges in terms of accessibility and the availability of specialist support,
+such as psychologists and counselors, especially following the COVID-19 pandemic. This study explores a potential solution to
+this problem by developing a chatbot model, SentimentCareBot, which integrates sentiment analysis with retrieved-augmented
+generation (RAG) techniques and Large Language Models (LLMs). The study uses a public Mental Health Counseling Conver-
+sations Dataset and baseline selection methods such as Naive RAG, Multi-query RAG, and Hypothetical Document Embeddings
+(HyDE) to improve query translations. The findings from Tukey’s Honest Significant Difference (HSD) test reveals a significant
+improvement in sentiment analysis performance when it is applied to the Multi-query RAG using the MistralAI language model,
+compared to both Multi-query RAG using the OpenAI language model and HyDE using OpenAI with Sentiment Analysis. These
+results demonstrate the potential of sentiment analysis to enhance the effectiveness of mental health chatbots.
+© 2018 The Authors. Published by Elsevier B.V .
+This is an open access article under the CC BY -NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+Peer-review under responsibility of the Conference Program Chairs.
+Keywords: Mental Health; Chatbot; Retrieval-Augmented Generation (RAG); Sentiment Analysis; Large Language Models (LLMs).
+1. Introduction
+The World Health Organization (WHO) brings attention to the critical importance of mental health as a fundamental
+human well-being, by promoting the improvement of global mental health. They focus on the significant gap between
+the demand for mental health services and their current availability, despite different public health crises, in particular
+the COVID-19 pandemic. WHO recommends integrating mental health services into primary healthcare and achieving
+universal health coverage [24]. In addition, the WHO points out the essential role of healthcare professionals in
+expanding mental healthcare, recommending increased training and support networks to improve service provision. It
+calls on governments to boost mental health funding to facilitate these necessary changes.
+∗ Corresponding author. Tel.: +1-418-509-7757.
+E-mail address: JeanPierre.Nayinzira@uqar.ca
+1877-0509 © 2018 The Authors. Published by Elsevier B.V .
+This is an open access article under the CC BY -NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+Peer-review under responsibility of the Conference Program Chairs.
+Available online at www.sciencedirect.com
+Procedia Computer Science 00 (2018) 000–000
+www.elsevier.com/locate/procedia
+The 14th International Conference on Current and Future Trends of Information and
+Communication Technologies in Healthcare (ICTH 2024)
+October 28-30, 2024, Leuven, Belgium
+SentimentCareBot: Retrieval-Augmented Generation Chatbot for
+Mental Health Support with Sentiment Analysis
+Jean Pierre Nayinzira a,∗, Mehdi Adda a
+aUniversity of Quebec at Rimouski, 300 all´ ee des Ursulines, Rimouski G5L 3A1, Canada
+Abstract
+The global mental healthcare system faces various challenges in terms of accessibility and the availability of specialist support,
+such as psychologists and counselors, especially following the COVID-19 pandemic. This study explores a potential solution to
+this problem by developing a chatbot model, SentimentCareBot, which integrates sentiment analysis with retrieved-augmented
+generation (RAG) techniques and Large Language Models (LLMs). The study uses a public Mental Health Counseling Conver-
+sations Dataset and baseline selection methods such as Naive RAG, Multi-query RAG, and Hypothetical Document Embeddings
+(HyDE) to improve query translations. The findings from Tukey’s Honest Significant Difference (HSD) test reveals a significant
+improvement in sentiment analysis performance when it is applied to the Multi-query RAG using the MistralAI language model,
+compared to both Multi-query RAG using the OpenAI language model and HyDE using OpenAI with Sentiment Analysis. These
+results demonstrate the potential of sentiment analysis to enhance the effectiveness of mental health chatbots.
+© 2018 The Authors. Published by Elsevier B.V .
+This is an open access article under the CC BY -NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+Peer-review under responsibility of the Conference Program Chairs.
+Keywords: Mental Health; Chatbot; Retrieval-Augmented Generation (RAG); Sentiment Analysis; Large Language Models (LLMs).
+1. Introduction
+The World Health Organization (WHO) brings attention to the critical importance of mental health as a fundamental
+human well-being, by promoting the improvement of global mental health. They focus on the significant gap between
+the demand for mental health services and their current availability, despite different public health crises, in particular
+the COVID-19 pandemic. WHO recommends integrating mental health services into primary healthcare and achieving
+universal health coverage [24]. In addition, the WHO points out the essential role of healthcare professionals in
+expanding mental healthcare, recommending increased training and support networks to improve service provision. It
+calls on governments to boost mental health funding to facilitate these necessary changes.
+∗ Corresponding author. Tel.: +1-418-509-7757.
+E-mail address: JeanPierre.Nayinzira@uqar.ca
+1877-0509 © 2018 The Authors. Published by Elsevier B.V .
+This is an open access article under the CC BY -NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+Peer-review under responsibility of the Conference Program Chairs.
+10.1016/j.procs.2024.11.118 1877-0509
+© 2024 The Authors. Published by Elsevier B.V .
+This is an open access article under the CC BY-NC-ND license (https://creativecommons.org/licenses/by-nc-nd/4.0)
+ Peer-review under responsibility of the scientific committee of the Conference Program Chairs
+
+=== PAGE 2 ===
+ Jean Pierre Nayinzira  et al. / Procedia Computer Science 251 (2024) 334–341 335
+Available online at www.sciencedirect.com
+Procedia Computer Science 00 (2018) 000–000
+www.elsevier.com/locate/procedia
+The 14th International Conference on Current and Future Trends of Information and
+Communication Technologies in Healthcare (ICTH 2024)
+October 28-30, 2024, Leuven, Belgium
+SentimentCareBot: Retrieval-Augmented Generation Chatbot for
+Mental Health Support with Sentiment Analysis
+Jean Pierre Nayinzira a,∗, Mehdi Adda a
+aUniversity of Quebec at Rimouski, 300 all´ ee des Ursulines, Rimouski G5L 3A1, Canada
+Abstract
+The global mental healthcare system faces various challenges in terms of accessibility and the availability of specialist support,
+such as psychologists and counselors, especially following the COVID-19 pandemic. This study explores a potential solution to
+this problem by developing a chatbot model, SentimentCareBot, which integrates sentiment analysis with retrieved-augmented
+generation (RAG) techniques and Large Language Models (LLMs). The study uses a public Mental Health Counseling Conver-
+sations Dataset and baseline selection methods such as Naive RAG, Multi-query RAG, and Hypothetical Document Embeddings
+(HyDE) to improve query translations. The findings from Tukey’s Honest Significant Difference (HSD) test reveals a significant
+improvement in sentiment analysis performance when it is applied to the Multi-query RAG using the MistralAI language model,
+compared to both Multi-query RAG using the OpenAI language model and HyDE using OpenAI with Sentiment Analysis. These
+results demonstrate the potential of sentiment analysis to enhance the effectiveness of mental health chatbots.
+© 2018 The Authors. Published by Elsevier B.V .
+This is an open access article under the CC BY -NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+Peer-review under responsibility of the Conference Program Chairs.
+Keywords: Mental Health; Chatbot; Retrieval-Augmented Generation (RAG); Sentiment Analysis; Large Language Models (LLMs).
+1. Introduction
+The World Health Organization (WHO) brings attention to the critical importance of mental health as a fundamental
+human well-being, by promoting the improvement of global mental health. They focus on the significant gap between
+the demand for mental health services and their current availability, despite different public health crises, in particular
+the COVID-19 pandemic. WHO recommends integrating mental health services into primary healthcare and achieving
+universal health coverage [24]. In addition, the WHO points out the essential role of healthcare professionals in
+expanding mental healthcare, recommending increased training and support networks to improve service provision. It
+calls on governments to boost mental health funding to facilitate these necessary changes.
+∗ Corresponding author. Tel.: +1-418-509-7757.
+E-mail address: JeanPierre.Nayinzira@uqar.ca
+1877-0509 © 2018 The Authors. Published by Elsevier B.V .
+This is an open access article under the CC BY -NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+Peer-review under responsibility of the Conference Program Chairs.
+Available online at www.sciencedirect.com
+Procedia Computer Science 00 (2018) 000–000
+www.elsevier.com/locate/procedia
+The 14th International Conference on Current and Future Trends of Information and
+Communication Technologies in Healthcare (ICTH 2024)
+October 28-30, 2024, Leuven, Belgium
+SentimentCareBot: Retrieval-Augmented Generation Chatbot for
+Mental Health Support with Sentiment Analysis
+Jean Pierre Nayinzira a,∗, Mehdi Adda a
+aUniversity of Quebec at Rimouski, 300 all´ ee des Ursulines, Rimouski G5L 3A1, Canada
+Abstract
+The global mental healthcare system faces various challenges in terms of accessibility and the availability of specialist support,
+such as psychologists and counselors, especially following the COVID-19 pandemic. This study explores a potential solution to
+this problem by developing a chatbot model, SentimentCareBot, which integrates sentiment analysis with retrieved-augmented
+generation (RAG) techniques and Large Language Models (LLMs). The study uses a public Mental Health Counseling Conver-
+sations Dataset and baseline selection methods such as Naive RAG, Multi-query RAG, and Hypothetical Document Embeddings
+(HyDE) to improve query translations. The findings from Tukey’s Honest Significant Difference (HSD) test reveals a significant
+improvement in sentiment analysis performance when it is applied to the Multi-query RAG using the MistralAI language model,
+compared to both Multi-query RAG using the OpenAI language model and HyDE using OpenAI with Sentiment Analysis. These
+results demonstrate the potential of sentiment analysis to enhance the effectiveness of mental health chatbots.
+© 2018 The Authors. Published by Elsevier B.V .
+This is an open access article under the CC BY -NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+Peer-review under responsibility of the Conference Program Chairs.
+Keywords: Mental Health; Chatbot; Retrieval-Augmented Generation (RAG); Sentiment Analysis; Large Language Models (LLMs).
+1. Introduction
+The World Health Organization (WHO) brings attention to the critical importance of mental health as a fundamental
+human well-being, by promoting the improvement of global mental health. They focus on the significant gap between
+the demand for mental health services and their current availability, despite different public health crises, in particular
+the COVID-19 pandemic. WHO recommends integrating mental health services into primary healthcare and achieving
+universal health coverage [24]. In addition, the WHO points out the essential role of healthcare professionals in
+expanding mental healthcare, recommending increased training and support networks to improve service provision. It
+calls on governments to boost mental health funding to facilitate these necessary changes.
+∗ Corresponding author. Tel.: +1-418-509-7757.
+E-mail address: JeanPierre.Nayinzira@uqar.ca
+1877-0509 © 2018 The Authors. Published by Elsevier B.V .
+This is an open access article under the CC BY -NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+Peer-review under responsibility of the Conference Program Chairs.
+2 Nayinzira and Adda / Procedia Computer Science 00 (2018) 000–000
+In a related study, Abd-Alrazaq et al. [1] explore the potential of chatbots in mental healthcare, noting their effec-
+tiveness in addressing disorders such as depression and stress. Although acknowledging the need for improvements in
+chatbot conversation capabilities and integration into healthcare, the study highlights patient perceptions and opinions,
+pointing to chatbots as a cost-effective and accessible complement to traditional mental health treatments.
+While chatbots have proven effective in mental health contexts, several challenges remain. One key issue is the
+ethical concern about the reliability and effectiveness of these chatbots, many of which lack evidence-based support or
+sufficient research backing. It is crucial for the development and deployment of mental health chatbots to be anchored
+in clinical evidence to confirm their effectiveness [10]. In addition, a significant limitation of chatbots in mental
+health care is their fundamental inability to experience and convey empathy as humans do. Although some users find
+chatbots, such as Woebot, to be empathetic and supportive, this perception is not universal. The experience of empathy
+from chatbots can differ significantly among individuals [5].
+In this study, we introduce a chatbot named ”SentimentCareBot” by implementing Retrieval-Augmented Gen-
+eration (RAG) models across different baseline selections (section 3.4) and then applying sentiment analysis to all
+of these models. To evaluate these models, we used two datasets: a complete evaluation dataset comprising 106
+question-answer pairs, and a subset of this dataset consisting of five question-answer pairs. For evaluation, we used
+Ragas evaluation metrics to calculate Faithfulness, Answer Relevancy, and Answer Correctness scores for the various
+RAG models. Additionally, we selected two Large Language Models (LLMs) for our evaluation: OpenAI’s ”gpt-3.5-
+turbo-0125” [23] and Mistral’s ”mistral-large-latest” [21]. Finally, we performed an ANOV A and Tukey HSD test
+to analyze the significant differences between various RAG models, applying sentiment analysis to each scenario.
+Our results also included an analysis of token usage and latency for both LLMs, using the subset evaluation data to
+demonstrate the API’s limitations on the study.
+2. Background
+With the proposal of the Turing test by Alan Turing in 1950, which posed the question ”Can machines think?”,
+the foundation for chatbot development was laid, signaling the start of their popularization. The first notable chatbot,
+Eliza, developed in 1966, mimicked a psychotherapist by employing simple pattern matching and template-based re-
+sponses to echo user input as questions. Despite its rudimentary conversational abilities, Eliza managed to confuse
+people during an era when computer interaction was rare, thus encouraging the creation of more sophisticated chat-
+bots. Significant advancements was achieved with the introduction of PARRY in 1972, a chatbot designed with a
+distinct personality. Later, the 1995 creation of the chatbot ALICE, which was awarded the ”most human computer”
+title after winning the Loebner Prize in 2000, 2001, and 2004, showcased further progress. ALICE used a pattern
+matching algorithm enhanced by the Artificial Intelligence Markup Language (AIML), facilitating the expansion of
+its knowledge base by developers [2].
+Machine learning and natural language processing advancements have facilitated the development of advanced
+chatbots, including Amazon’s Alexa and Google’s Assistant, reducing reliance on rules and pattern matching. These
+innovations have improved chatbot flexibility, ease of implementation, and the precision of human-like conversation,
+presenting clear advantages over rule-based models in terms of adaptability and domain independence. Furthermore,
+machine learning enables chatbots to learn directly from human dialogue, eliminating the need to manually define
+patterns, and thus increasing their adaptability [6].
+Within the framework of Seq2Seq (Sequence-to-Sequence) models, the attention mechanism plays a crucial role in
+overcoming the limitations posed by encoding entire input sentences into fixed-length context vectors. This innovative
+mechanism enables the decoder to selectively focus on various parts of the input sequence, effectively preserving vital
+information and context that could be lost in longer sequences. By forming direct connections between the target and
+source, the attention mechanism allows the model to concentrate on relevant segments of the input during translation
+or response generation, thereby enhancing the model’s capability to handle variable-length sequences and improving
+the simplicity and clarity of generated responses. Such advancements make the attention mechanism a crucial element
+in the development of more sophisticated and human-like conversational agents.
+Further insights on the evolution of chatbot technologies are transformer models that employ multiple attention
+mechanisms and demonstrate better performance and accuracy over traditional Seq2Seq models equipped with atten-
+tion mechanisms. The key to the transformer model’s success lies in its ability to address sequence-related challenges
+
+=== PAGE 3 ===
+336 Jean Pierre Nayinzira  et al. / Procedia Computer Science 251 (2024) 334–341
+Nayinzira and Adda / Procedia Computer Science 00 (2018) 000–000 3
+without relying on recurrent neural networks (RNNs), thus optimizing training time and enhancing neural machine
+translation performance. Nuanced handling and interpretation of input sequences facilitated by the attention mech-
+anisms within transformers result in more accurate and contextually relevant responses. This leap forward marks
+a significant step in the ongoing effort to harness advanced neural network techniques, including Long-Short-Term
+Memory (LSTM) cells [20, 25].
+The Transformer Architecture, which employs a self-attention mechanism to process complex data sequences,
+is central to the development of LLMs. This design facilitates parallel computations and effectively manages long-
+distance dependencies in text, laying the groundwork for the Generative Pre-trained Transformer (GPT) series. No-
+tably, these models excel in generating text that mirrors human quality and achieve high accuracy in various linguistic
+tasks, thanks to extensive training on broad textual corpora [8].
+Despite these technological strides, integrating LLMs into healthcare presents distinct challenges, particularly med-
+ical misinformation. Concerns include the misinterpretation of medical terms and the generation of advice that con-
+tradicts standard medical practices. Furthermore, the use of commercial servers by LLMs to store patient health data
+has sparked debates about privacy implications [26].
+Addressing the limitations of LLMs, the RAG framework offers a distinct approach by tackling the challenges
+of updating knowledge bases, clarifying prediction rationales, and correcting factual inaccuracies. By combining a
+pre-trained sequence-to-sequence model with a detailed context index, RAG ensures more accurate and fact-based
+context generation. This innovative method not only reduces the likelihood of misinformation, but also enhances
+the interpretability and adaptability of the model, setting a new standard for knowledge-intensive natural language
+processing tasks [18, 15, 19, 14].
+3. Method
+3.1. Retrieval-Augmented Generation (RAG)
+Retrieval-Augmented Generation is an advanced method designed to enhance the factual correctness and relevance
+of generated content by integrating external knowledge from retrieved documents into the generation process. This
+approach is crucial to address the inherent limitations of LLMs, such as hallucinations and outdated knowledge, thus
+based the generated output on current factual information from external sources [3].
+The RAG framework employs retrieval mechanisms to obtain a list of relevant documents that provide contextual
+knowledge to support the generation process. This integration is intended to reduce the likelihood of hallucinations and
+update the information with the latest research [3, 16, 11]. The typical RAG workflow includes three essential steps:
+corpus partitioning and vector indexing, identifying and retrieving chunks based on vector similarity, and synthesizing
+a response conditioned on the retrieved chunks [14].
+RAG combines both the innate knowledge of LLMs and additional information fetched from external documents
+to generate more accurate and contextually rich responses. This dual reliance on expansive background documents
+and generative capabilities ensures comprehensive responses to user queries, particularly in knowledge-dense NLP
+tasks. As a result, RAG often outperforms conventional sequence-to-sequence (seq2seq) models and certain retrieve-
+and-extract architectures [16].
+3.2. SentimentCareBot Architecture overview
+Figure 1 illustrates the proposed model for the SentimentCareBot architecture. This model comprises a baseline
+selection through query translation and a vector database that simplifies retrieval through similarity search. Subse-
+quently, a sentiment analysis ranker was used to filter the retrieved documents based on their relevance and sentiment
+score. Finally, the LLM uses the re-ranked documents, alongside the initial input query, to generate a final response.
+3.3. Data Preparation
+In this study, we used the ”Mental Health Counseling Conversations Dataset,” accessible through Hugging Face
+[4]. This dataset consists of 3,512 collections of questions and answers sourced from two online counseling and
+
+=== PAGE 4 ===
+ Jean Pierre Nayinzira  et al. / Procedia Computer Science 251 (2024) 334–341 337
+Nayinzira and Adda / Procedia Computer Science 00 (2018) 000–000 3
+without relying on recurrent neural networks (RNNs), thus optimizing training time and enhancing neural machine
+translation performance. Nuanced handling and interpretation of input sequences facilitated by the attention mech-
+anisms within transformers result in more accurate and contextually relevant responses. This leap forward marks
+a significant step in the ongoing effort to harness advanced neural network techniques, including Long-Short-Term
+Memory (LSTM) cells [20, 25].
+The Transformer Architecture, which employs a self-attention mechanism to process complex data sequences,
+is central to the development of LLMs. This design facilitates parallel computations and effectively manages long-
+distance dependencies in text, laying the groundwork for the Generative Pre-trained Transformer (GPT) series. No-
+tably, these models excel in generating text that mirrors human quality and achieve high accuracy in various linguistic
+tasks, thanks to extensive training on broad textual corpora [8].
+Despite these technological strides, integrating LLMs into healthcare presents distinct challenges, particularly med-
+ical misinformation. Concerns include the misinterpretation of medical terms and the generation of advice that con-
+tradicts standard medical practices. Furthermore, the use of commercial servers by LLMs to store patient health data
+has sparked debates about privacy implications [26].
+Addressing the limitations of LLMs, the RAG framework offers a distinct approach by tackling the challenges
+of updating knowledge bases, clarifying prediction rationales, and correcting factual inaccuracies. By combining a
+pre-trained sequence-to-sequence model with a detailed context index, RAG ensures more accurate and fact-based
+context generation. This innovative method not only reduces the likelihood of misinformation, but also enhances
+the interpretability and adaptability of the model, setting a new standard for knowledge-intensive natural language
+processing tasks [18, 15, 19, 14].
+3. Method
+3.1. Retrieval-Augmented Generation (RAG)
+Retrieval-Augmented Generation is an advanced method designed to enhance the factual correctness and relevance
+of generated content by integrating external knowledge from retrieved documents into the generation process. This
+approach is crucial to address the inherent limitations of LLMs, such as hallucinations and outdated knowledge, thus
+based the generated output on current factual information from external sources [3].
+The RAG framework employs retrieval mechanisms to obtain a list of relevant documents that provide contextual
+knowledge to support the generation process. This integration is intended to reduce the likelihood of hallucinations and
+update the information with the latest research [3, 16, 11]. The typical RAG workflow includes three essential steps:
+corpus partitioning and vector indexing, identifying and retrieving chunks based on vector similarity, and synthesizing
+a response conditioned on the retrieved chunks [14].
+RAG combines both the innate knowledge of LLMs and additional information fetched from external documents
+to generate more accurate and contextually rich responses. This dual reliance on expansive background documents
+and generative capabilities ensures comprehensive responses to user queries, particularly in knowledge-dense NLP
+tasks. As a result, RAG often outperforms conventional sequence-to-sequence (seq2seq) models and certain retrieve-
+and-extract architectures [16].
+3.2. SentimentCareBot Architecture overview
+Figure 1 illustrates the proposed model for the SentimentCareBot architecture. This model comprises a baseline
+selection through query translation and a vector database that simplifies retrieval through similarity search. Subse-
+quently, a sentiment analysis ranker was used to filter the retrieved documents based on their relevance and sentiment
+score. Finally, the LLM uses the re-ranked documents, alongside the initial input query, to generate a final response.
+3.3. Data Preparation
+In this study, we used the ”Mental Health Counseling Conversations Dataset,” accessible through Hugging Face
+[4]. This dataset consists of 3,512 collections of questions and answers sourced from two online counseling and
+4 Nayinzira and Adda / Procedia Computer Science 00 (2018) 000–000
+Fig. 1: SentimentCareBot Architecture
+therapy platforms. The dataset provides answers to the questions that cover a wide range of mental health topics. We
+started by splitting the documents into chunks. This process involves dividing large documents into smaller and more
+manageable sections to minimize information loss. Next, we created a vector database to store and retrieve vectors.
+These vectors are lists of numbers that represent data within a multi-dimensional space. Using vector search methods,
+it is possible to locate similar data by querying for the nearest vectors in this space. Finally, a similarity search
+retrieves relevant documents from the database. We used Facebook AI Similarity Search (FAISS) as our similarity
+search metric. FAISS is a specialized library for efficient similarity search and clustering of dense vectors [9,22].
+3.4. Baseline Selection
+For our baseline selection, we used Naive RAG, a conventional RAG model that simply employs the original user
+question for document retrieval. The Multi-query approach expands a single user query into multiple similar queries
+with the assistance of an LLM by generating several alternative questions that reflect the intent of the original query
+from different perspectives [17]. And Hypothetical Document Embeddings (HyDE), which generates a hypothetical
+document based on the query using LLMs [13].
+3.5. Sentiment Analysis
+The study analyzes the significant improvement sentiment analysis can make in the different RAG models, with the
+retrieval process for documents with better relevance to the question that forms the basis for the final answer. Although
+the documents retrieved by the FAISS similarity search may be relevant to the query, Sentiment Analysis can alter
+the priority of the retrieved documents by considering the highest sentiment score. We employed ”cardiffnlp,” a pre-
+trained model from Hugging Face [7], for text classification sentiment analysis. This model outputs the sentiment
+label and sentiment score. By applying this model, we can rank the retrieved documents based on their sentiment
+label, from positive sentiment to neutral sentiment to negative sentiment. After ranking the documents according to
+their sentiment label, those with similar sentiments are also ranked based on their highest to lowest scores.
+3.6. LLM
+For experimental purposes, we selected ”gpt-3.5-turbo-0125” and ”mistral-large-latest ” due to their cost-
+effectiveness and ease of implementation. Given the token limitations established by the APIs provided by ”OpenAI”
+and ”MistralAI”, it was critical to regulate the number of queries used for each session.
+
+=== PAGE 5 ===
+338 Jean Pierre Nayinzira  et al. / Procedia Computer Science 251 (2024) 334–341
+Nayinzira and Adda /Procedia Computer Science 00 (2018) 000–000 5
+3.7. Evaluation Data and Metrics
+The evaluation data consists of the complete 106 question-answer pairs, which represents approximately 3% of the
+entire dataset, and the remaining 97% of the dataset was used to construct the vector database. For our evaluation,
+we used the LLMs-as-judges metric, called the Retrieval Augmented Generation Assessment (Ragas) [12]. Ragas
+evaluates RAG systems and introduces a suite of metrics that do not rely solely on ground-truth human annotations.
+Such as the ”Faithfulness,” which assesses the factual consistency of the generated answer relative to the given context,
+the ”Answer Relevancy,” which assesses how pertinent the generated answer is to the given prompt, and the ”Answer
+Correctness” which evaluates the accuracy of the generated answer in comparison to the ground truth that offers a
+comprehensive evaluation of your system’s performance.
+4. Results
+The study evaluates a variety of advanced RAG models using metrics such as Faithfulness, Answer Relevancy,
+and Answer Correctness. A comparative analysis is presented through boxplots to visualize the distribution of these
+metrics on the complete 106 question-answer pairs and the subset of five question-answer pairs of the evaluation data.
+The ANOV A and Tukey HSD tests were then used to determine the statistical significance of the differences observed
+in both evaluation data. Then the token usage and latency of the subset of the evaluation data are demonstrated through
+a boxplot.
+4.1. Comparative Analysis of Metrics
+The faithfulness evaluation remained relatively stable for both the complete and subset evaluation. In terms of
+Answer Relevancy of the complete evaluation data, as depicted in Figure 2 show greater consistency across different
+techniques. The analysis for the subset evaluation data (Figure 3), the median remained consistent on different RAG
+models except for both Naive RAG and Multi-query using MistralAI language model where the sentiment analysis
+improved the median.
+In terms of Answer Correctness of the complete evaluation (Figure 4) the median scores indicate a small improve-
+ments when sentiment analysis is applied across different RAG models. As for the subset evaluation as depicted in
+Figure 5 shows the effect of sentiment analysis across various RAG models, particularly in the Naive RAG model
+using the MistralAI language model. Here, the median score improved by 0.51. However, the analysis also revealed
+exceptions, such as in the HyDE model using OpenAI language model, where both the median and maximum scores
+decreased, indicating that sentiment analysis may not universally benefit all architectures. Additionally, outliers in sev-
+eral models indicate performance variability, which may reflect scenarios where the models either under-performed
+or achieved exceptionally high correctness scores.
+4.2. Statistical V alidation of Differences
+Table 1: Tukey’s HSD test results comparing different RAG models.
+RAG Model Comparison Meandiff P-adj Reject
+Naive RAG + OpenAI Naive RAG + Sentiment Analysis + OpenAI 0.0287 0.9992 False
+Multi-query + OpenAI Multi-query + Sentiment Analysis + OpenAI -0.0304 0.9987 False
+Multi-query + OpenAI Multi-query + Sentiment Analysis + Mistral -0.1103 0.0333 True
+HyDE + OpenAI HyDE + Sentiment Analysis + OpenAI 0.0081 1 False
+HyDE + Sentiment Analysis + OpenAI Multi-query + Sentiment Analysis + Mistral -0.1085 0.0394 True
+
+=== PAGE 6 ===
+ Jean Pierre Nayinzira  et al. / Procedia Computer Science 251 (2024) 334–341 339
+Nayinzira and Adda /Procedia Computer Science 00 (2018) 000–000 5
+3.7. Evaluation Data and Metrics
+The evaluation data consists of the complete 106 question-answer pairs, which represents approximately 3% of the
+entire dataset, and the remaining 97% of the dataset was used to construct the vector database. For our evaluation,
+we used the LLMs-as-judges metric, called the Retrieval Augmented Generation Assessment (Ragas) [12]. Ragas
+evaluates RAG systems and introduces a suite of metrics that do not rely solely on ground-truth human annotations.
+Such as the ”Faithfulness,” which assesses the factual consistency of the generated answer relative to the given context,
+the ”Answer Relevancy,” which assesses how pertinent the generated answer is to the given prompt, and the ”Answer
+Correctness” which evaluates the accuracy of the generated answer in comparison to the ground truth that offers a
+comprehensive evaluation of your system’s performance.
+4. Results
+The study evaluates a variety of advanced RAG models using metrics such as Faithfulness, Answer Relevancy,
+and Answer Correctness. A comparative analysis is presented through boxplots to visualize the distribution of these
+metrics on the complete 106 question-answer pairs and the subset of five question-answer pairs of the evaluation data.
+The ANOV A and Tukey HSD tests were then used to determine the statistical significance of the differences observed
+in both evaluation data. Then the token usage and latency of the subset of the evaluation data are demonstrated through
+a boxplot.
+4.1. Comparative Analysis of Metrics
+The faithfulness evaluation remained relatively stable for both the complete and subset evaluation. In terms of
+Answer Relevancy of the complete evaluation data, as depicted in Figure 2 show greater consistency across different
+techniques. The analysis for the subset evaluation data (Figure 3), the median remained consistent on different RAG
+models except for both Naive RAG and Multi-query using MistralAI language model where the sentiment analysis
+improved the median.
+In terms of Answer Correctness of the complete evaluation (Figure 4) the median scores indicate a small improve-
+ments when sentiment analysis is applied across different RAG models. As for the subset evaluation as depicted in
+Figure 5 shows the effect of sentiment analysis across various RAG models, particularly in the Naive RAG model
+using the MistralAI language model. Here, the median score improved by 0.51. However, the analysis also revealed
+exceptions, such as in the HyDE model using OpenAI language model, where both the median and maximum scores
+decreased, indicating that sentiment analysis may not universally benefit all architectures. Additionally, outliers in sev-
+eral models indicate performance variability, which may reflect scenarios where the models either under-performed
+or achieved exceptionally high correctness scores.
+4.2. Statistical V alidation of Differences
+Table 1: Tukey’s HSD test results comparing different RAG models.
+RAG Model Comparison Meandiff P-adj Reject
+Naive RAG + OpenAI Naive RAG + Sentiment Analysis + OpenAI 0.0287 0.9992 False
+Multi-query + OpenAI Multi-query + Sentiment Analysis + OpenAI -0.0304 0.9987 False
+Multi-query + OpenAI Multi-query + Sentiment Analysis + Mistral -0.1103 0.0333 True
+HyDE + OpenAI HyDE + Sentiment Analysis + OpenAI 0.0081 1 False
+HyDE + Sentiment Analysis + OpenAI Multi-query + Sentiment Analysis + Mistral -0.1085 0.0394 True
+6 Nayinzira and Adda / Procedia Computer Science 00 (2018) 000–000
+Fig. 2: Boxplot of Answer Relevancy illustrating the range distribution of
+Answer Relevancy scores across different RAG models.
+Fig. 3: Boxplot of Answer Relevancy illustrating the range distribution
+of Answer Relevancy scores across different RAG models on the subset
+evaluation data.
+Fig. 4: Boxplot of Answer Correctness illustrating the range distribution
+of Answer Correctness scores across different RAG models.
+Fig. 5: Boxplot of Answer Correctness illustrating the range distribution
+of Answer Correctness scores across different RAG models on a subset
+evaluation data.
+The ANOV A test we used on the evaluation results showed that there was a difference between the Answer Rel-
+evancy result groups across different RAG models of the complete evaluation data. The results of Tukey’s HSD test
+confirmed that the Multi-query using the MistralAI language model, combined with sentiment analysis, performs bet-
+ter than both the Multi-query using OpenAI and the HyDE using OpenAI combined with sentiment analysis. However,
+other comparisons did not show a significant difference.
+4.3. API performance Analysis
+We evaluated the API’s performance using the subset evaluation data, that consisted of five question-answer pairs.
+The API’s token limitation constraints led us to choose this subset. The evaluation used Ragas evaluation metrics and
+
+=== PAGE 7 ===
+340 Jean Pierre Nayinzira  et al. / Procedia Computer Science 251 (2024) 334–341
+Nayinzira and Adda / Procedia Computer Science 00 (2018) 000–000 7
+Langsmith1 to examine token usage and latency for each model. By employing a manageable subset that all the RAG
+models could handle simultaneously, this enabled us to correctly assess the model performance.
+Fig. 6: Boxplot illustrating Tokens usage across different RAG models on
+a subset evaluation data.
+Fig. 7: Boxplot illustrating Latency across di fferent RAG models on a
+subset evaluation data.
+The token usage (Fig. 6) demonstrates the disparity between the performance of various RAG models. The Multi-
+query model using OpenAI language model demonstrated the highest token usage, with the median token count
+increasing when Sentiment Analysis was applied. In contrast, the HyDE baseline selection displayed the lowest token
+usage among the baseline selections. Despite the high token usage observed in the Multi-query baseline selection with
+OpenAI language model, the latency (Fig. 7) remains quite low. This indicates an e fficient processing capability de-
+spite the increased token load. However, the Multi-query baseline selection using MistralAI language model displayed
+a higher latency, suggesting that while it may handle complex queries, it does so at the expense of response time.
+5. Conclusion
+In conclusion, adding sentiment analysis to the Retrieval-Augmented Generation architectures has shown a lot
+of promise for making mental health chatbots more useful, even though there are some challenges and restrictions
+associated with it. Among the tested configurations, the Multi-query approach with MistralAI’s language model and
+sentiment analysis significantly outperforms the Multi-query method with OpenAI’s language model and the HyDE
+approach with OpenAI’s language model combined with sentiment analysis. Nevertheless, this enhanced performance
+comes at the cost of increased latency and token consumption, which raises concerns regarding the scalability and ef-
+ficiency of API’s usage. Additionally, the ”gpt-3.5-turbo-0125” model supports a maximum of 16,384 tokens per
+session, while the ”mistral-large-latest ” version allows for up to 32,748 tokens. This disparity reveals critical con-
+straints in our evaluation process, as these token limits restrict the ability to process larger datasets simultaneously.
+Furthermore, privacy concerns surrounding patient data contribute largely to the scarcity of publicly available mental
+health conversation datasets, another critical limitation. Overcoming these challenges is critical for advancing the use
+of sentiment analysis within RAG models in mental healthcare systems.
+1 https://smith.langchain.com
+
+=== PAGE 8 ===
+ Jean Pierre Nayinzira  et al. / Procedia Computer Science 251 (2024) 334–341 341
+Nayinzira and Adda / Procedia Computer Science 00 (2018) 000–000 7
+Langsmith1 to examine token usage and latency for each model. By employing a manageable subset that all the RAG
+models could handle simultaneously, this enabled us to correctly assess the model performance.
+Fig. 6: Boxplot illustrating Tokens usage across different RAG models on
+a subset evaluation data.
+Fig. 7: Boxplot illustrating Latency across di fferent RAG models on a
+subset evaluation data.
+The token usage (Fig. 6) demonstrates the disparity between the performance of various RAG models. The Multi-
+query model using OpenAI language model demonstrated the highest token usage, with the median token count
+increasing when Sentiment Analysis was applied. In contrast, the HyDE baseline selection displayed the lowest token
+usage among the baseline selections. Despite the high token usage observed in the Multi-query baseline selection with
+OpenAI language model, the latency (Fig. 7) remains quite low. This indicates an e fficient processing capability de-
+spite the increased token load. However, the Multi-query baseline selection using MistralAI language model displayed
+a higher latency, suggesting that while it may handle complex queries, it does so at the expense of response time.
+5. Conclusion
+In conclusion, adding sentiment analysis to the Retrieval-Augmented Generation architectures has shown a lot
+of promise for making mental health chatbots more useful, even though there are some challenges and restrictions
+associated with it. Among the tested configurations, the Multi-query approach with MistralAI’s language model and
+sentiment analysis significantly outperforms the Multi-query method with OpenAI’s language model and the HyDE
+approach with OpenAI’s language model combined with sentiment analysis. Nevertheless, this enhanced performance
+comes at the cost of increased latency and token consumption, which raises concerns regarding the scalability and ef-
+ficiency of API’s usage. Additionally, the ”gpt-3.5-turbo-0125” model supports a maximum of 16,384 tokens per
+session, while the ”mistral-large-latest ” version allows for up to 32,748 tokens. This disparity reveals critical con-
+straints in our evaluation process, as these token limits restrict the ability to process larger datasets simultaneously.
+Furthermore, privacy concerns surrounding patient data contribute largely to the scarcity of publicly available mental
+health conversation datasets, another critical limitation. Overcoming these challenges is critical for advancing the use
+of sentiment analysis within RAG models in mental healthcare systems.
+1 https://smith.langchain.com
+8 Nayinzira and Adda / Procedia Computer Science 00 (2018) 000–000
+Acknowledgement
+We acknowledge the support of the Natural Sciences and Engineering Research Council of Canada (NSERC)
+[funding reference number 06351]).
+References
+[1] Abd-Alrazaq, A.A., Alajlani, M., Ali, N., Denecke, K., Bewick, B.M., Househ, M., 2021. Perceptions and opinions of patients about mental
+health chatbots: scoping review. Journal of medical Internet research 23, e17828.
+[2] Adamopoulou, E., Moussiades, L., 2020. An overview of chatbot technology, in: IFIP international conference on artificial intelligence
+applications and innovations, Springer. pp. 373–383.
+[3] Agarwal, S., Laradji, I.H., Charlin, L., Pal, C., 2024. Litllm: A toolkit for scientific literature review. URL: https://arxiv.org/abs/2402.
+01788, arXiv:2402.01788 .
+[4] Bertagnolli, N., 2020. Counsel chat: Bootstrapping high-quality therapy data. URL: https://huggingface.co/datasets/Amod/mental_
+health_counseling_conversations.
+[5] Boucher, E.M., Harake, N.R., Ward, H.E., Stoeckl, S.E., V argas, J., Minkel, J., Parks, A.C., Zilca, R., 2021. Artificially intelligent chatbots in
+digital mental health interventions: a review. Expert Review of Medical Devices 18, 37–49.
+[6] Caldarini, G., Jaf, S., McGarry, K., 2022. A literature survey of recent advances in chatbots. Information 13, 41.
+[7] Camacho-Collados, J., Rezaee, K., Riahi, T., Ushio, A., Loureiro, D., Antypas, D., Boisson, J., Espinosa-Anke, L., Liu, F., Mart ´ınez-C´amara,
+E., et al., 2022. Tweetnlp: Cutting-edge natural language processing for social media. arXiv preprint arXiv:2206.14774 .
+[8] Chu, Z., Ni, S., Wang, Z., Feng, X., Li, C., Hu, X., Xu, R., Y ang, M., Zhang, W., 2024. History, development, and principles of large language
+models-an introductory survey. arXiv preprint arXiv:2402.06853 .
+[9] Danopoulos, D., Kachris, C., Soudris, D., 2019. Approximate similarity search with faiss framework using fpgas on the cloud, in: International
+Conference on Embedded Computer Systems, Springer. pp. 373–386.
+[10] Denecke, K., Abd-Alrazaq, A., Househ, M., 2021. Artificial intelligence for chatbots in mental health: opportunities and challenges. Multiple
+perspectives on artificial intelligence in healthcare: Opportunities and challenges , 115–128.
+[11] Eibich, M., Nagpal, S., Fred-Ojala, A., 2024. Aragog: Advanced rag output grading. URL: https://arxiv.org/abs/2404.01037,
+arXiv:2404.01037 .
+[12] Es, S., James, J., Espinosa-Anke, L., Schockaert, S., 2023. Ragas: Automated evaluation of retrieval augmented generation. arXiv preprint
+arXiv:2309.15217 .
+[13] Gao, L., Ma, X., Lin, J., Callan, J., 2022. Precise zero-shot dense retrieval without relevance labels. arXiv preprint arXiv:2212.10496 .
+[14] Gao, Y ., Xiong, Y ., Gao, X., Jia, K., Pan, J., Bi, Y ., Dai, Y ., Sun, J., Wang, M., Wang, H., 2024. Retrieval-augmented generation for large
+language models: A survey. URL: https://arxiv.org/abs/2312.10997, arXiv:2312.10997 .
+[15] Jiang, Z., Xu, F.F., Gao, L., Sun, Z., Liu, Q., Dwivedi-Y u, J., Y ang, Y ., Callan, J., Neubig, G., 2023. Active retrieval augmented generation.
+arXiv preprint arXiv:2305.06983 .
+[16] Kim, J., Min, M., 2024. From rag to qa-rag: Integrating generative ai for pharmaceutical regulatory compliance process. URL: https:
+//arxiv.org/abs/2402.01717, arXiv:2402.01717 .
+[17] Langchain, 2023. Query transformations. https://blog.langchain.dev/query-transformations/ .
+[18] Lewis, P ., Perez, E., Piktus, A., Petroni, F., Karpukhin, V ., Goyal, N., K¨uttler, H., Lewis, M., tau Yih, W., Rockt¨aschel, T., Riedel, S., Kiela, D.,
+2021. Retrieval-augmented generation for knowledge-intensive nlp tasks. arXiv:2005.11401 .
+[19] Li, H., Su, Y ., Cai, D., Wang, Y ., Liu, L., 2022. A survey on retrieval-augmented text generation. arXiv preprint arXiv:2202.01110 .
+[20] Masum, A.K.M., Abujar, S., Akter, S., Ria, N.J., Hossain, S.A., 2021. Transformer based bengali chatbot using general knowledge dataset, in:
+2021 20th IEEE International Conference on Machine Learning and Applications (ICMLA), IEEE. pp. 1235–1238.
+[21] MistralAI, 2024. mistral-large-latest [large language model]. URL: https://docs.mistral.ai/getting-started/models/.
+[22] Mu, C., Y ang, B., Y an, Z., 2019. An empirical comparison of faiss and fenshses for nearest neighbor search in hamming space. arXiv preprint
+arXiv:1906.10095 .
+[23] OpenAI, 2021. gpt-3.5-turbo-0125 [large language model]. URL: https://platform.openai.com/docs/models/gpt-3-5-turbo .
+[24] Organization, W.H., et al., 2022. World mental health report: Transforming mental health for all. UMB Digital Archive .
+[25] Sojasingarayar, A., 2020. Seq2seq ai chatbot with attention mechanism. arXiv:2006.02767 .
+[26] Zhao, W.X., Zhou, K., Li, J., Tang, T., Wang, X., Hou, Y ., Min, Y ., Zhang, B., Zhang, J., Dong, Z., Du, Y ., Y ang, C., Chen, Y ., Chen, Z., Jiang,
+J., Ren, R., Li, Y ., Tang, X., Liu, Z., Liu, P ., Nie, J.Y ., Wen, J.R., 2023. A survey of large language models. arXiv:2303.18223 .

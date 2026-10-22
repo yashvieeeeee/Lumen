@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "verified_utc": "2026-10-08T16:37:23.518003+00:00",
+  "scope": "local synthetic engineering; AI/provider integration deferred by owner; no clinical or hosted qualification",
+  "routes": [
+    "/",
+    "/workspace",
+    "/workspace?mode=signin",
+    "/support"
+  ],
+  "database": "PostgreSQL project cluster127.0.0.1:55432; additive schema0003",
+  "checks": {
+    "offline_tests": 24,
+    "api_schema_postgresql_tests": 30,
+    "api_coverage": {
+      "covered_lines": 414,
+      "num_statements": 417,
+      "percent_covered": 98.81656804733728,
+      "percent_covered_display": "99",
+      "missing_lines": 3,
+      "excluded_lines": 0,
+      "percent_statements_covered": 99.28057553956835,
+      "percent_statements_covered_display": "99",
+      "num_branches": 90,
+      "num_partial_branches": 3,
+      "covered_branches": 87,
+      "missing_branches": 3,
+      "percent_branches_covered": 96.66666666666667,
+      "percent_branches_covered_display": "97"
+    },
+    "browser_unique_checks": 63,
+    "browser_breakdown": {
+      "chrome_account_database_journeys": 11,
+      "chrome_live_web_boundary": 1,
+      "mocked_workspace_three_engines": 36,
+      "public_landing_support_three_engines": 15
+    },
+    "final_support_style_change": "full63 suite passed; final one-line shared skip class correction rebuilt and3 support checks passed again",
+    "production_build": "passed",
+    "typescript": "passed",
+    "ruff": "passed",
+    "python_format": "passed",
+    "web_format": "passed",
+    "npm_audit": "no known advisories at check",
+    "pip_audit": "no known advisories at check",
+    "migration_empty_dedicated_database": "UP/DOWN/UP with0003 passed earlier this turn",
+    "migration_application": "additive0003 upgrade; no reset",
+    "supplied_source_hashes": {
+      "unchanged": 24,
+      "changed": 0
+    }
+  },
+  "review": {
+    "status": "no remaining actionable issue",
+    "intercepted_privacy_cases": 6,
+    "confirmed_feedback_retests": 3,
+    "registry_boundary_checks": 9,
+    "legacy_fingerprint_variants": 6,
+    "sheet_tasks": 400,
+    "sheet_variants": 200,
+    "sheet_families": 40,
+    "clinical_language_signoffs": "pending; no reviewer identities or judgments populated"
+  },
+  "resources": {
+    "country": "India; manually opened",
+    "source_check_date": "2026-10-08",
+    "review_due_utc": "2026-11-08T00:00:00Z",
+    "verification": "official ministry source pages; no test calls or live availability",
+    "sources": [
+      "https://dghs.mohfw.gov.in/national-mental-health-programme.php",
+      "https://www.mha.gov.in/en/commoncontent/emergency-response-support-system-erss"
+    ]
+  },
+  "pending_record": "docs/PLAN_AUDIT.md",
+  "review_packet": "docs/review/REVIEW_PACKET.md",
+  "source_sha256": {
+    "services/api/lumen_api/main.py": "2b19868b3d7caeab5c7fca97d5810dbfb55282b303a96a8e56ebbaa818118066",
+    "services/api/lumen_api/db.py": "002d84a6a45f6e5bcbc085d1ad9747b9c125d747c49beff091e85d67c30da667",
+    "services/api/lumen_api/schemas.py": "d10dac5dcf0fea7cf4af7c1ff9477351233c93e11a53ee0044f8ae497c6a3329",
+    "services/api/lumen_api/screening.py": "642fc5762e50d424d394a5014b3c831503567019067edd5e49b8096f68bec360",
+    "services/api/migrations/versions/0003_journal_mood.py": "a36f694f559c059c11360c65fd6cb1325feca86fd1129f882eeb3fcf88fba1ca",
+    "services/api/tests/test_integration.py": "0f934145ed9cd77ca9b348cdbe9a9adde30a6e345b991a4bd38b265a17f0e3bf",
+    "apps/web/app/workspace/page.tsx": "254220df5e14ecf9e57699e5b919cbfe798549ef889b808f79396b44049acefb",
+    "apps/web/app/api/[...path]/route.ts": "04940a851c1ce910d930b8e657f4de93d70ddacabdbcdc6b0392032248ec9d78",
+    "apps/web/app/globals.css": "761a86ed347b2e1a989a77bdb5831b7cafca3cfea4fa18b448a8443c8b5016dd",
+    "apps/web/app/support/page.tsx": "a1836b3843d25a4da4e970b7b799a2bae36aa3e7ffea7d6ac88bf34a059d5d3c",
+    "apps/web/app/support/resources.ts": "df9ebd35841683e7ad0582094122cd868f906f8f5cb54a680a2e3be48a3b2059",
+    "apps/web/tests/workspace.spec.ts": "0a714f9dedeb0da29183105eb6b9cd94a056a8a402a42c64692b166b2e29cb77",
+    "apps/web/tests/ui.spec.ts": "b9085ff7ae29969b9dbd3b90433887fac96563142f993257d48ed341ea26db78",
+    "apps/web/tests/landing.spec.ts": "d6f5a77fb8afa4aa096d834868fb2de7e92be580808012d4feedcda9487ec066",
+    "docs/review/annotation-sheet.v0.csv": "3510a54740b49ff96d057318642326384d0a9309ac17a82b6e6d21dd817b126e",
+    "docs/review/REVIEW_PACKET.md": "7c52295c05ba4f512bc6fb511a514d503e2d469131eb8cd92628f374603ada6e",
+    "docs/PLAN_AUDIT.md": "e6aca612c10641f781a480995d108ace4a969a20d872800e108aed11e4a7d415",
+    "docs/IMPLEMENTATION_STATUS.md": "aac6746804f9b00fe39c2eb084a81325c7c78a55eca72c4fb353a2d5239c2433"
+  },
+  "not_completed": [
+    "AI semantic/generation stack",
+    "consented temporal context and deletion-safe whole-response release",
+    "independent clinical/language judgments",
+    "remote CI and hosted retention/security/recovery",
+    "trend check-ins/reviewer/referral operations",
+    "independent research qualification/pilot/market validation"
+  ]
+}

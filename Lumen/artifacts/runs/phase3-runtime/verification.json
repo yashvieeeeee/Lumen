@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "verified_utc": "2026-10-08T14:36:19.5498614Z",
+  "scope": "local synthetic engineering; no clinical or hosted-release qualification",
+  "routes": [
+    "/",
+    "/workspace",
+    "/workspace?mode=signin"
+  ],
+  "database": "PostgreSQL; project cluster127.0.0.1:55432; schema0002_screening",
+  "checks": {
+    "offline_tests": 24,
+    "api_schema_postgresql_tests": 22,
+    "api_statement_branch_percent": 98.66,
+    "browser_checks": 55,
+    "browser_breakdown": {
+      "landing_three_engines": 12,
+      "mocked_workspace_three_engines": 33,
+      "chrome_database_journeys": 10
+    },
+    "production_build": "passed",
+    "typescript": "passed",
+    "ruff": "passed",
+    "python_format": "passed",
+    "web_format": "passed",
+    "npm_audit": "no known advisories at check",
+    "pip_audit": "no known advisories at check",
+    "migration_empty_dedicated_database": "UP/DOWN/UP passed",
+    "migration_application": "additive upgrade to0002; no reset",
+    "supplied_sources": {
+      "changed": 0,
+      "files": 24
+    }
+  },
+  "baseline_regression": {
+    "exact_draft_action_matches": 151,
+    "rule_only_p95_ms": 0.105,
+    "uncertain": 40,
+    "policy_version": "rules-0.1.1-draft",
+    "action_matrix_unchanged": true,
+    "authored_families": 40,
+    "unavailable": 0,
+    "attempted": 200
+  },
+  "review": {
+    "final_reviewer_followup": "agent usage limit; final automated regressions passed",
+    "findings_reproduced_and_fixed": [
+      "postcommit derived-decision resurrection",
+      "stale editor/submission card",
+      "native connection failure sanitization",
+      "fresh receipt/consent reconciliation"
+    ],
+    "independent_normalized_span_cases": 36
+  },
+  "pending_record": "docs/PLAN_AUDIT.md",
+  "screenshots": [
+    "artifacts/runs/landing-page",
+    "artifacts/runs/ui-refinement",
+    "artifacts/runs/phase2-browser"
+  ],
+  "limits": [
+    "draft policy and synthetic labels unreviewed",
+    "no semantic model/generator/retrieval/support registry",
+    "no independent/blinded qualification",
+    "no hosted deployment or CI/publishing",
+    "no physical mobile/assistive-tech qualification"
+  ],
+  "code_sha256": {
+    "apps/web/app/page.tsx": "f491bcbce83f79a2bd6fe3d21a16bf77f8e19bf6912d1a2f09a9e561454c3299",
+    "apps/web/app/landing.module.css": "b8838b9cf99a7c54f2d0799dcd106c2ff09f55e227e751d6b580910398a5b952",
+    "apps/web/app/workspace/page.tsx": "b23aa6649c7685d44ca3635e98a80ac34d3dfccaf0aee5d6c1d43665e64dc79e",
+    "apps/web/app/globals.css": "4f18350e46be64e32255c976e5ba8565f4f8b50f0dd240cd1b00c20652d4c504",
+    "apps/web/app/layout.tsx": "ea8eda4782d28c068908d4d6b5319c121a161ad2934f60e8cb4223be6c308a6a",
+    "apps/web/playwright.config.ts": "d54805682c2a1c02f5ce9e2367ebca607b15ed3e5f275735a9d8653dc311638c",
+    "apps/web/tests/landing.spec.ts": "2ba19ebf6b5b05fa6cf2abaa5c4b1862cb159881dad19dd8fc1a03a5c834d71b",
+    "apps/web/tests/ui.spec.ts": "3a1c778f887c0e1170fb4f40a0ac11b1efedcafeff9f166a517663714b878634",
+    "apps/web/tests/workspace.spec.ts": "863cb622df59b1a045b2fa9de8024da279dd468fd1666f6d987387e04cb5bdbe",
+    "services/api/lumen_api/main.py": "5fea5fb3fdfd29e9603d15ad9fa7a0bbef1aaec6326a3526327574f9732890e8",
+    "services/api/lumen_api/screening.py": "642fc5762e50d424d394a5014b3c831503567019067edd5e49b8096f68bec360",
+    "services/api/lumen_api/schemas.py": "9b9c8f43692150ee85ee4c653c184adfc0c3b33d5cd1ca5ab0ad07b3dcb4827a",
+    "services/api/lumen_api/db.py": "0faed16042c0dce25806efe4c04f6a2ba06f95588000f46d26ab13ce0733395a",
+    "services/api/migrations/versions/0002_screening.py": "b805da26e936568786a82ec865433b62c9060d8d4f969d055225f60796c860d9",
+    "evaluation/baseline.py": "18bcd307c3fd22c44d4c79e8e385c7ba47b2881fdffb4462341bc2e4202da194",
+    "evaluation/test_baseline.py": "8ae1a94a1fb5f0e5a6ad370cecfaaf4b4e011331713dc2612e02740b689b7edc",
+    "scripts/start-local.ps1": "660d2bc73015e007f60f3f10b3140f9b28225c1e5378a8d414a42c445f745f06",
+    "IMPLEMENTATION_PLAN.md": "daf1b13880db483b4e7a8138a044355ab4b55810c1b6d248a03ea40cb9d3ea70",
+    "docs/PLAN_AUDIT.md": "48a8536ef4ef51e0a242a3d3a58d6ebfafd21d339236a083be63ccb47179b6b3",
+    "docs/IMPLEMENTATION_STATUS.md": "003942dcfe09a417f666dedc17eda27506f2319d3280b4f09e25cf33df002180",
+    "docs/LOCAL_DEVELOPMENT.md": "2cd9f01ac11ab5100581101b4b0361f798756a83d842bfda0bda9579090ca484",
+    "docs/ARCHITECTURE.md": "59be79b6c8c1a50fe8f6af10eea086592556739f43184585ca6b35f2e0951ee0",
+    "README.md": "c0521f01954e72b9c6b3cdc4b1c90e3befa5f00e4dd663891c059b94b8a51e7d"
+  }
+}

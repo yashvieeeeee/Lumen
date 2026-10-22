@@ -1,0 +1,190 @@
+Source ID: S03
+Original: Documentation/major project/Mid sem ppt_template.pptx
+
+=== SLIDE 1 ===
+Yashvie Mahey	51
+Shravani Lad		52
+Harshit Behl		53
+Rahil Kirtikar		54
+
+Date of presentation: 21/09/26
+Under the guidance of: Dr. Prachi Raut
+ 
+St. Francis Institute of Technology
+Department of Information Technology
+Lumen: A Safety-Guarded Conversational AI Companion with Real-Time Crisis Detection
+NOTES: 
+
+=== SLIDE 2 ===
+Content
+SFIT- IT department                     LUMEN                               
+‹#›
+Introduction 
+Problem definition & Proposed solution
+Scope of project
+Review of literature
+System description
+Architecture or block diagram (broader topic/algorithm)
+Explanation of individual blocks (if exists) or algorithm
+Hardware & software requirements
+System Design
+Timeline chart
+User Interface Design (GUI snapshots)
+NOTES: 
+
+=== SLIDE 3 ===
+Introduction 
+SFIT- IT department                     LUMEN                                 
+‹#›
+Mental health challenges are becoming increasingly common worldwide, while social stigma, lack of awareness, high treatment costs and limited accessibility continue to prevent many individuals from seeking timely professional support.
+The growing use of AI-powered conversational systems offers an opportunity to provide accessible and continuous emotional support; however, general-purpose AI chatbots may miss crisis-related signals, overlook gradual negative mood trends and generate diagnosis-like or potentially inappropriate responses.
+Existing conversational systems often lack long-term contextual understanding, explainable risk detection and structured escalation mechanisms, making it difficult to safely identify users who may require additional or professional support.
+Lumen: a Safety-Guarded Conversational AI Architecture that integrates real-time risk classification, retrieval-augmented contextual memory, anti-diagnosis guardrails, longitudinal mood tracking, explainable escalation and human-reviewed continuous improvement to enable supportive, context-aware and non-diagnostic AI interactions.
+NOTES: 
+
+=== SLIDE 4 ===
+Problem definition & Proposed solution 
+SFIT- IT department                     LUMEN                                 
+‹#›
+Problem Definition 
+Mental health support remains difficult to access due to social stigma, lack of awareness, high treatment costs, and limited accessibility. As a result, many individuals may rely on general-purpose AI chatbots that are not specifically designed for safe mental-health support.
+Existing conversational AI systems may miss immediate crisis signals and gradual negative mood trends, generate diagnosis-like responses, and lack long-term contextual memory, explainable risk detection, and reliable escalation mechanisms for users who may require professional support.
+Proposed Solution
+Lumen is a Safety-Guarded Conversational AI Architecture designed to provide supportive, context-aware, and strictly non-diagnostic mental-health interactions.
+Lumen combines:
+Real-time crisis-risk classification to identify potential high-risk messages.
+Emotion and stress detection to understand the user’s current emotional state.
+Retrieval-Augmented Context Memory (RAG) to retrieve relevant information from previous conversations and provide contextual responses.
+Longitudinal mood tracking to identify gradual changes in emotional state over time.
+Anti-diagnosis guardrails to prevent the system from producing diagnosis-like or clinically inappropriate responses.
+Structured escalation to verified professional-support resources such as Tele-MANAS when elevated risk is detected.
+NOTES: 
+
+=== SLIDE 5 ===
+Scope of project
+SFIT- IT department                     LUMEN                                 
+‹#›
+To develop Lumen, a safety-guarded conversational AI system for supportive and preventive mental-health interactions by integrating real-time crisis-risk classification, emotion and stress detection, Retrieval-Augmented Context Memory, and longitudinal mood tracking across user conversations.
+To implement a rule-based safety layer, explainable risk aggregation, anti-diagnosis guardrails, and structured escalation to verified resources such as Tele-MANAS. The system will also maintain secure audit logs and support a human-reviewed continuous improvement loop for refining risk lexicons, detection thresholds, and safety guardrails.
+The system is designed to provide supportive, context-aware, and strictly non-diagnostic assistance. It is not intended to diagnose mental-health conditions or replace psychiatrists, psychologists, therapists, emergency services, or other professional mental-health care.
+NOTES: 
+
+=== SLIDE 6 ===
+Review of literature
+SFIT- IT department                     Project Title                                  
+‹#›
+Research Paper | Main Focus | Research Gap / Limitation | How Lumen Addresses the Gap
+Suicide- and Crisis-Risk Detection Using Large Language Models in Mental-Health Chatbots | Uses LLMs to detect suicide and crisis risk in mental-health conversations. | Limited real-world validation, generalization challenges, and difficulty handling multi-turn and changing risk. | Uses a dedicated crisis-risk classifier, rule-based safety detection, risk aggregation, and longitudinal monitoring instead of relying only on an LLM.
+Machine Learning and the Prediction of Suicide in Psychiatric Populations: A Systematic Review | Reviews ML approaches for predicting suicide risk in psychiatric populations. | Many studies lack external validation and longitudinal evaluation, limiting real-world applicability. | Combines real-time risk detection with longitudinal mood tracking and evaluates the complete safety pipeline rather than only a prediction model.
+NOTES: 
+
+=== SLIDE 7 ===
+Review of literature
+‹#›
+Research Paper | Main Focus | Research Gap / Limitation | How Lumen Addresses the Gap
+SentimentCareBot: Retrieval-Augmented Generation Chatbot for Mental Health Support with Sentiment Analysis | Combines RAG and sentiment analysis for mental-health conversational support. | Focuses mainly on sentiment and context-aware responses, with scope for stronger crisis detection, longitudinal monitoring, risk integration, and escalation. | Adds crisis-risk, emotion and stress detection, explainable risk aggregation, longitudinal tracking, safety guardrails, and structured escalation.
+Can Large Language Models Identify Implicit Suicidal Ideation? An Empirical Evaluation | Evaluates whether LLMs can identify implicit suicidal ideation that is not directly expressed. | LLMs can struggle with implicit suicidal signals and require stronger real-world and clinically grounded validation. | Uses multiple safety signals—crisis classification, emotion/stress detection and rule-based detection—followed by risk aggregation, rather than relying on a single LLM.
+SFIT- IT department                     Lumen                                
+NOTES: 
+
+=== SLIDE 8 ===
+Consolidated Research Gap
+‹#›
+SFIT- IT department                     Lumen                                
+Consolidated Research Gap | Existing research largely focuses on isolated detection, sentiment analysis, or single-model prediction. | Gaps remain in real-world validation, implicit-risk detection, longitudinal monitoring, risk-level assessment, explainability, and structured escalation. | Lumen addresses these gaps through multi-signal crisis detection, longitudinal monitoring, explainable risk aggregation, Low/Moderate/Elevated/Critical risk levels, safety guardrails, and structured escalation.
+NOTES: 
+
+=== SLIDE 9 ===
+System description
+‹#›
+SFIT- IT department                     Lumen                                
+NOTES: 
+
+=== SLIDE 10 ===
+Hardware & software requirements
+SFIT- IT department                     Lumen                                
+‹#›
+Hardware Requirements
+Processor: Intel Core i5 / AMD Ryzen 5 or higher
+RAM: Minimum 8 GB; 16 GB recommended
+Storage: Minimum 50 GB free SSD space
+GPU: Optional; NVIDIA GPU with 6 GB+ VRAM recommended for local AI model inference
+Internet: Stable internet connection for cloud-based LLM and API services
+
+Software Requirements
+
+Operating System: Windows 10/11 or Linux
+Frontend: React.js / Next.js,Tailwind CSS
+Backend: Python, Flask / FastAPI
+Database: PostgreSQL with pgvector
+Voice Interaction: Web Speech API
+AI / ML: DistilBERT / RoBERTa, Sentence Transformers, Hugging Face Transformers, PyTorch, LLM API / Ollama
+Security: JWT Authentication, HTTPS/TLS Encryption, Password Hashing, Role-Based Access Control (RBAC), Secure Audit Logging
+Development Tools: Visual Studio Code, Git, GitHub, Postman, Node.js & npm, Python 3.x
+NOTES: 
+
+=== SLIDE 11 ===
+System Design
+SFIT- IT department                     Project Title                                  
+‹#›
+NOTES: 
+
+=== SLIDE 12 ===
+System Design
+SFIT- IT department                     Project Title                                  
+‹#›
+NOTES: 
+
+=== SLIDE 13 ===
+Proof of chatbots - claude (1)
+‹#›
+NOTES: 
+
+=== SLIDE 14 ===
+Proof of chatbots - claude (2)
+‹#›
+NOTES: 
+
+=== SLIDE 15 ===
+Proof of chatbots - gemini
+‹#›
+NOTES: 
+
+=== SLIDE 16 ===
+Proof of chatbots - gemini
+‹#›
+NOTES: 
+
+=== SLIDE 17 ===
+Proof of chatbots - Chat GPT
+‹#›
+
+NOTES: 
+
+=== SLIDE 18 ===
+Timeline chart
+SFIT- IT department                     Project Title                                  
+‹#›
+
+NOTES: 
+
+=== SLIDE 19 ===
+User Interface Design
+SFIT- IT department                     Project Title                                  
+‹#›
+
+NOTES: 
+
+=== SLIDE 20 ===
+Literature Cited
+SFIT- IT department                     Project Title                                  
+‹#›
+
+NOTES: 
+
+=== SLIDE 21 ===
+Questions??
+Thank You!
+SFIT- IT department                     Project Title                                  
+‹#›
+NOTES: 

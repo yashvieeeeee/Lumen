@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "account": {
+    "id": "a8704559-6421-4a03-94e8-0055738c0315",
+    "email": "browser-de797511-1387-4857-9f80-e52f32486c05@example.com"
+  },
+  "consent": [
+    {
+      "revision": 1,
+      "storage_enabled": false,
+      "recorded_at": "2026-10-08T16:27:17.922336+00:00"
+    },
+    {
+      "revision": 2,
+      "storage_enabled": true,
+      "recorded_at": "2026-10-08T16:27:19.424595+00:00"
+    }
+  ],
+  "events": [
+    {
+      "id": "dcc8cba8-e1de-4e3f-b3d4-eac7fb2fb2b2",
+      "sequence": 1,
+      "source": "journal",
+      "locale": "en",
+      "consent_revision": 1,
+      "save_state": "not_saved",
+      "text": null,
+      "authored_at": null,
+      "recorded_at": "2026-10-08T16:27:18.757411+00:00",
+      "screening": null,
+      "mood": null,
+      "revision": 1,
+      "updated_at": null
+    },
+    {
+      "id": "88009b9b-b120-4679-b1a7-ddb1f79aad1c",
+      "sequence": 2,
+      "source": "journal",
+      "locale": "en",
+      "consent_revision": 2,
+      "save_state": "saved",
+      "text": "Sample: I finished one task today and took a walk. I want to remember that small moment.",
+      "authored_at": null,
+      "recorded_at": "2026-10-08T16:27:20.013587+00:00",
+      "screening": {
+        "action": "Low",
+        "locale": "en",
+        "reason": "no_rule_match_not_assurance",
+        "source": "journal",
+        "status": "rule_only",
+        "rule_ids": [],
+        "policy_sha256": "763c564f319c7dc566dd1cd168bf37d31130f617a107255820664a2b3938b36b",
+        "evidence_spans": [],
+        "policy_version": "rules-0.1.1-draft",
+        "schema_version": 1,
+        "baseline_sha256": "18bcd307c3fd22c44d4c79e8e385c7ba47b2881fdffb4462341bc2e4202da194",
+        "evidence_truncated": false,
+        "policy_review_status": "draft_unreviewed",
+        "evidence_coordinate_system": "normalized_unicode_codepoints"
+      },
+      "mood": null,
+      "revision": 1,
+      "updated_at": null
+    }
+  ]
+}

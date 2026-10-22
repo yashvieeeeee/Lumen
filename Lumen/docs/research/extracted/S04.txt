@@ -1,0 +1,182 @@
+Source ID: S04
+Original: Documentation/major project/Project Proposal Presentation Template July 2026.pptx
+
+=== SLIDE 1 ===
+Yashvie Mahey		51
+Shravani Lad		52
+Harshit Behl 		53
+Rahil Kirtikar		54
+
+Date of presentation: 20/07/26
+Under the guidance of: Name of guide
+
+St. Francis Institute of Technology
+Department of Information Technology
+Lumen: A Safety-Guarded Conversational AI Companion with Real-Time Crisis Detection
+NOTES: 
+
+=== SLIDE 2 ===
+Content
+SFIT- IT department                     Lumen                                 
+‹#›
+Introduction 
+Review of literature
+Problem definition & Proposed solution
+Scope of project
+Architecture or block diagram (broader topic/algorithm)
+Explanation of individual blocks (if exists) or algorithm
+Hardware/ software requirement
+Literature Cited (book, web & paper References)
+NOTES: 
+
+=== SLIDE 3 ===
+Introduction 
+SFIT- IT department                     Lumen                           
+‹#›
+Mental health challenges are becoming increasingly common worldwide, while social stigma, lack of awareness, high treatment costs and limited accessibility continue to prevent many individuals from seeking timely professional support.
+The growing use of AI-powered conversational systems offers an opportunity to provide accessible and continuous emotional support; however, general-purpose AI chatbots may miss crisis-related signals, overlook gradual negative mood trends and generate diagnosis-like or potentially inappropriate responses.
+Existing conversational systems often lack long-term contextual understanding, explainable risk detection and structured escalation mechanisms, making it difficult to safely identify users who may require additional or professional support.
+Lumen: a Safety-Guarded Conversational AI Architecture that integrates real-time risk classification, retrieval-augmented contextual memory, anti-diagnosis guardrails, longitudinal mood tracking, explainable escalation and human-reviewed continuous improvement to enable supportive, context-aware and non-diagnostic AI interactions
+
+NOTES: 
+
+=== SLIDE 4 ===
+Review of literature
+SFIT- IT department                     Lumen                                 
+‹#›
+Author & Title | Results & Conclusion | Research Gaps | Limitations / Challenges
+MacNeill et al. (2024) Effectiveness of a Mental Health Chatbot for People with Chronic Diseases: Randomized Controlled Trial | Demonstrated that chatbot-assisted interventions improved mental health support and accessibility for individuals with chronic diseases. | Does not include suicide-risk detection, emergency escalation, or advanced AI safety mechanisms. | Limited to chronic disease patients; evaluates outcomes rather than chatbot safety and explainability.
+Engineering, Technology & Applied Science Research (2026) An AI-Driven Hybrid Approach for Detecting Mental Health Indicators in Multilingual Indian Social Media  | Developed a multilingual NLP framework for detecting mental health indicators from code-mixed Indian social media text with improved detection performance.  | Not designed for conversational AI, journaling, or interactive mental health assistance.  | Limited to social media analysis; lacks chatbot interaction, explainability, and crisis-management features. 
+NOTES: 
+
+=== SLIDE 5 ===
+Review of literature
+SFIT- IT department                     Lumen                             
+‹#›
+Author & Title | Results & Conclusion | Research Gaps | Limitations / Challenges
+Moore et al. (2025) Expressing Stigma and Inappropriate Responses Prevents LLMs from Safely Replacing Mental Health Providers | Evaluated general-purpose LLMs for mental health support and found that they may produce stigmatizing and unsafe responses during crisis situations. Concluded that LLMs should support, not replace, clinicians. | No dedicated safety framework, crisis escalation, or explainable AI for mental health chatbots. | Limited to general-purpose LLMs; does not evaluate purpose-built safety-focused chatbot systems.
+Pichowicz et al. (2025) Performance of Mental Health Chatbot Agents in Detecting and Managing Suicidal Ideation | Assessed chatbot agents for suicidal ideation detection and found inconsistent clinical responses across systems. | Does not address long-term monitoring or personalized risk assessment. | Evaluates isolated conversations only; lacks real-world deployment and explainability.
+Weber et al. (2026) Suicide- and Crisis-Risk Detection Using Large Language Models in Mental-Health Chatbots | Proposed an LLM-based framework for detecting suicide and crisis risk using clinician-annotated conversations. | No multilingual support, journaling integration, or user-facing explanations of risk predictions. | Small dataset and evaluation limited to prompt-based LLM models.
+NOTES: 
+
+=== SLIDE 6 ===
+Problem definition & Proposed solution 
+SFIT- IT department                     Project Title                                  
+‹#›
+Problem Definition
+Mental health support remains difficult to access due to social stigma, lack of awareness, high treatment costs and limited accessibility, leading many individuals to rely on general-purpose AI chatbots that are not specifically designed for safe mental-health support.
+Existing conversational AI systems may miss immediate crisis signals and gradual negative mood trends, generate diagnosis-like responses, and lack long-term contextual memory, explainable risk detection and reliable escalation mechanisms for users who may require professional support.
+Proposed Solution
+Lumen: a Safety-Guarded Conversational AI Architecture that combines real-time crisis-risk classification, Retrieval-Augmented Context Memory and longitudinal mood tracking to provide supportive, context-aware and strictly non-diagnostic AI interactions.
+Lumen integrates anti-diagnosis guardrails, explainable risk aggregation and structured escalation to verified resources such as Tele-MANAS, supported by a human-reviewed continuous learning loop that improves risk lexicons, detection thresholds and safety guardrails over time.
+NOTES: 
+
+=== SLIDE 7 ===
+Scope of project
+SFIT- IT department                     Project Title                                  
+‹#›
+Develop a safety-guarded conversational AI system for supportive mental-health interactions by integrating real-time crisis-risk classification, Retrieval-Augmented Context Memory, multilingual risk detection, and longitudinal mood tracking across user conversations and journal entries. 
+Implement anti-diagnosis guardrails, explainable risk aggregation, structured escalation to verified resources such as Tele-MANAS, and secure audit logging with human-reviewed continuous improvement to enhance risk detection, safety guardrails, and transparency.
+The system is designed to provide supportive and preventive assistance only and remains strictly non-diagnostic; it is not intended to replace psychiatrists, psychologists, therapists, emergency services, or other professional mental-health care. 
+
+NOTES: 
+
+=== SLIDE 8 ===
+Proof -  gemini
+‹#›
+NOTES: 
+
+=== SLIDE 9 ===
+‹#›
+Proof -  gemini
+NOTES: 
+
+=== SLIDE 10 ===
+Proof - Claude
+‹#›
+NOTES: 
+
+=== SLIDE 11 ===
+
+‹#›
+
+NOTES: 
+
+=== SLIDE 12 ===
+Architecture
+SFIT- IT department                     Project Title                                  
+‹#›
+NOTES: 
+
+=== SLIDE 13 ===
+SFIT- IT department                     Lumen                                  
+‹#›
+NOTES: 
+
+=== SLIDE 14 ===
+SFIT- IT department                     Lumen                                  
+‹#›
+NOTES: 
+
+=== SLIDE 15 ===
+SFIT- IT department                     Lumen                                  
+‹#›
+NOTES: 
+
+=== SLIDE 16 ===
+‹#›
+SFIT- IT department                     Lumen                                  
+NOTES: 
+
+=== SLIDE 17 ===
+‹#›
+SFIT- IT department                     Lumen                                  
+NOTES: 
+
+=== SLIDE 18 ===
+‹#›
+SFIT- IT department                     Lumen                                  
+NOTES: 
+
+=== SLIDE 19 ===
+Hardware & software requirements
+SFIT- IT department                     Project Title                                  
+‹#›
+Hardware Requirements
+Processor: Intel Core i5 / AMD Ryzen 5 or higher
+RAM: Minimum 8 GB; 16 GB recommended
+Storage: Minimum 50 GB free SSD space
+GPU: Optional; NVIDIA GPU with 6 GB+ VRAM recommended for local AI model inference
+Internet: Stable internet connection for cloud-based LLM and API services
+
+Software Requirements
+
+Operating System: Windows 10/11 or Linux
+Frontend: React.js / Next.js,Tailwind CSS
+Backend: Python, Flask / FastAPI
+Database: PostgreSQL with pgvector
+Voice Interaction: Web Speech API
+AI / ML: DistilBERT / RoBERTa, Sentence Transformers, Hugging Face Transformers, PyTorch, LLM API / Ollama
+Security: JWT Authentication, HTTPS/TLS Encryption, Password Hashing, Role-Based Access Control (RBAC), Secure Audit Logging
+Development Tools: Visual Studio Code, Git, GitHub, Postman, Node.js & npm, Python 3.x
+NOTES: 
+
+=== SLIDE 20 ===
+Literature Cited
+SFIT- IT department                     Project Title                                  
+‹#›
+[1] J. Moore, D. Grabb, W. Agnew, K. Klyman, S. Chancellor, D. C. Ong, and N. Haber, "Expressing Stigma and Inappropriate Responses Prevents LLMs from Safely Replacing Mental Health Providers," Proceedings of the ACM Conference on Fairness, Accountability, and Transparency (FAccT), pp. 599–627, 2025.
+[2] W. Pichowicz, M. Kotas, and P. Piotrowski, "Performance of Mental Health Chatbot Agents in Detecting and Managing Suicidal Ideation," Scientific Reports, vol. 15, no. 1, Art. no. 31652, 2025.
+[3] S. Weber, D. Klebe, L. Wolf, et al., "Suicide- and Crisis-Risk Detection Using Large Language Models in Mental-Health Chatbots," medRxiv, preprint, 2026.
+[4] A. L. MacNeill, S. Doucet, and A. Luke, "Effectiveness of a Mental Health Chatbot for People with Chronic Diseases: Randomized Controlled Trial," JMIR Formative Research, vol. 8, Art. no. e50025, 2024.
+[5] P. Kaywan, K. Ahmed, A. Ibaida, Y. Miao, and B. Gu, "Early Detection of Depression Using a Conversational AI Bot: A Non-Clinical Trial," PLOS ONE, vol. 18, no. 2, Art. no. e0279743, 2023.
+[6] An AI-Driven Hybrid Approach for Detecting Mental Health Indicators in Multilingual Indian Social Media, Engineering, Technology & Applied Science Research, 2026.
+
+NOTES: 
+
+=== SLIDE 21 ===
+Questions??
+Thank You!
+SFIT- IT department                     Project Title                                  
+‹#›
+NOTES: 

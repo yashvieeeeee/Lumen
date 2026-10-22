@@ -1,0 +1,72 @@
+{
+  "recorded_at": "2026-10-08T09:18:50.587611+00:00",
+  "scope": "local synthetic engineering only",
+  "toolchain": {
+    "python": "3.13.14",
+    "node": "22.16.0",
+    "npm": "10.9.2",
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "postgresql": "18.3"
+  },
+  "tests_passed": {
+    "offline_baseline": 23,
+    "api_schema_postgresql": 11,
+    "production_browser_journeys": 10
+  },
+  "independent_review": {
+    "mocked_browser_race_checks_passed": 7,
+    "application_records_written": false,
+    "material_blockers_remaining_local_scope": 0
+  },
+  "api_statement_branch_coverage_percent": 98.33333333333333,
+  "checks": {
+    "production_build": "passed",
+    "typescript": "passed",
+    "ruff": "passed",
+    "formatting": "passed",
+    "npm_audit": "no known advisories reported",
+    "pip_audit": "no known advisories reported",
+    "empty_isolated_migration_up_down_up": "passed",
+    "original_file_hashes_preserved": 24
+  },
+  "not_implemented": [
+    "runtime clinical screening",
+    "generated support replies",
+    "personal memory",
+    "reviewer/referral service",
+    "participant collection",
+    "hosted CI/deployment"
+  ],
+  "files_sha256": {
+    "apps/web/app/api/[...path]/route.ts": "3233d4da0eada2991a2b70b4f8966b912393a5d79d78534d98a181860cf0bae7",
+    "apps/web/app/globals.css": "e60822c8b7d5e69d709d6efa67cf0de4f637df5d1c7ab71921ba74944fe3ddae",
+    "apps/web/app/layout.tsx": "74ba63f0f1cc7755b6a5bd6454f1eae36ccc65be3ff2c1522843f2a7c23a9056",
+    "apps/web/app/page.tsx": "6dd5387332b51d76a3792d04cd92821af3dcbeba10c8de48724b2664654ad4bb",
+    "apps/web/next.config.ts": "9638c26f2ccd585184d17ca6a8f659f108d0ebd3acae9162b494fb6095ef01ca",
+    "apps/web/package-lock.json": "482926293db0d37be8f5d224baa0e5039482efc9b4f736a16bbaa83ac09ee062",
+    "apps/web/package.json": "cc3334e26a2bba6df7329b5325c291006f640e62c649ea342f4816ecc66f54b6",
+    "apps/web/playwright.config.ts": "5105f76a62c0e9d695af6301aada79be0f7907eb715db86ef2d13f3fef7384e6",
+    "apps/web/tests/workspace.spec.ts": "019bba0ace82edc38a64b8a712f26576e957e9d56f5deef161a390a6283420f6",
+    "apps/web/tsconfig.json": "e4d6ccaf240fc6784a89a762c6f0f545a50856455f71317492fb34923eadeb72",
+    "scripts/bootstrap-db.py": "69e15ca8245b7835094017e3bc239a83d8130b994ea72ea5f172cf1c652cec7e",
+    "scripts/check-local.ps1": "48b83949d5cbca070d84e265b9ed2701079ee06e3df6fbb8140005ffc5c44dd5",
+    "scripts/check-migrations.py": "aad7b4e387c3c5f06a405c05aa03ecc435ba4baa49eafb9a1c596c19b345b700",
+    "scripts/setup-local.ps1": "accce27a1068892c7b6f8ec948093c91ea0699b3d9d07639cb59c9e6f7caf00a",
+    "scripts/start-local.ps1": "cd5de8452bad464fbb2fa316fbe78abcd8a476c901fa15f3766f3895f03ddd56",
+    "services/api/lumen_api/__init__.py": "6bd32747aa791cef7a0ada07835f62bc2985319ee1b8f91ff24ab02f97f2cdf7",
+    "services/api/lumen_api/auth.py": "94f939e372411af2fe012d24f886bd88dacbdc6ac5dd22d756a00d750cf467b1",
+    "services/api/lumen_api/boundary.py": "b796fba99e4eff64a371fdba90a4595c8805e2142f42daaa0572113e09f37f0a",
+    "services/api/lumen_api/config.py": "0aba8468bc500ee9f717d5588c9f14aadf14177701200c9a8df71fa3533f7bd5",
+    "services/api/lumen_api/db.py": "8a545371267a71e4de0bbcbb4874118d9cd90e7152e7a54d1850459c8fde06af",
+    "services/api/lumen_api/main.py": "fa7f2c1c2df9f6fb7a7cf11743c328254ee639bff2a3614b25bc576964e3546d",
+    "services/api/lumen_api/schemas.py": "770623f2de6418d870c569fb566a9d88106b68d53d7d4727a3a65f1617ca25ce",
+    "services/api/migrations/env.py": "0906c306be1a3543b89500121a0a1dad9e41806473006376f8235e7288ddd69f",
+    "services/api/migrations/versions/0001_foundation.py": "d8b3a100109c5f92f43ea3b2e8e1a722516dae80421a3b1e90dd3268803daa8b",
+    "services/api/pyproject.toml": "ccc19647cc84a642726fcc560a4458e82e096f7997046df6a1359bc8257d70ed",
+    "services/api/tests/conftest.py": "2eba29b6d1ce1928239618f539624e45294f8b6bf47ec2c0ec0379ccb9ed0cc6",
+    "services/api/tests/test_contract.py": "de9d400889f4439b94125a5f0c320801155903d2c11a20723617cec9005c23ee",
+    "services/api/tests/test_integration.py": "daaab6d076d9d2488b75a5195b594dfea861e11bfe691bf606f5a9e097c57d50",
+    "services/api/uv.lock": "10275b3074592f22dca848504a64263e000643f41b3ed332ff5067ccc1428c39"
+  }
+}
