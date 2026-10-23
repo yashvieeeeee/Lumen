@@ -162,10 +162,10 @@ export default function Motion() {
           gsap.set(orbit, { animation: "none" });
           gsap.fromTo(
             orbit,
-            { rotation: -8, y: 10 },
+            { rotation: -12, y: 15 },
             {
-              rotation: 12,
-              y: -22,
+              rotation: 28,
+              y: -28,
               ease: "none",
               scrollTrigger: {
                 trigger: orbit.closest("section"),

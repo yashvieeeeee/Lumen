@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import LumenLogo from "../components/LumenLogo";
 import ThemeToggle from "./theme-toggle";
 import styles from "./landing.module.css";
 
@@ -8,7 +9,6 @@ export const metadata: Metadata = {
     "A thoughtful space to write, reflect and revisit your words. Optional saving, a personal history and privacy choices in your hands.",
 };
 
-/* PROTECTED: Lumen logo/symbol asset. Kept exactly as is: read-only. */
 function Orbit({
   className,
   motion,
@@ -47,6 +47,44 @@ function Orbit({
         transform="rotate(90 160 160)"
       />
       <circle cx="258" cy="87" r="7" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function HeroOrbit({
+  className,
+  motion,
+}: {
+  className?: string;
+  motion?: "hero" | "closing";
+}) {
+  return (
+    <svg
+      className={className}
+      data-motion-orbit={motion}
+      viewBox="0 0 320 320"
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <rect
+        x="42"
+        y="42"
+        width="236"
+        height="236"
+        rx="64"
+        transform="rotate(45 160 160)"
+        stroke="currentColor"
+        strokeWidth="2.2"
+      />
+      <circle
+        cx="160"
+        cy="160"
+        r="142"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+      <circle cx="260" cy="60" r="7" fill="currentColor" stroke="none" />
     </svg>
   );
 }
@@ -162,10 +200,7 @@ export default function LandingPage() {
       {/* Sticky Header with Logo & Wordmark, Links, Outlined 'Find support', Theme Toggle, and Quick Exit */}
       <header className={styles.header} data-motion-header>
         <div className={styles.headerInner}>
-          <a className={styles.brand} href="/" aria-label="Lumen home">
-            <Orbit className={styles.brandOrbit} />
-            Lumen
-          </a>
+          <LumenLogo />
 
           <nav className={styles.navigation} aria-label="Main">
             <a className={styles.sectionLink} href="#how-it-works">
@@ -237,7 +272,7 @@ export default function LandingPage() {
             data-motion-hero-art
             aria-label="Illustrative journal with a sample entry and saving turned off"
           >
-            <Orbit className={styles.heroOrbit} motion="hero" />
+            <HeroOrbit className={styles.heroOrbit} motion="hero" />
             <div className={styles.paperBehind} />
             <div className={styles.journalPaper} data-motion-journal>
               <div className={styles.paperTop}>

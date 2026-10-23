@@ -251,7 +251,7 @@
   color: var(--iris);
   stroke: currentColor;
   stroke-width: 2.2;
-  animation: heroOrbitSlowSpin 75s linear infinite;
+  animation: none;
   pointer-events: none;
 }
 

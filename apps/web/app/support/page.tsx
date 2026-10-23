@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import LumenLogo from "../../components/LumenLogo";
 import { activeResources, resources, resourceState } from "./resources";
 
 export const metadata: Metadata = {
@@ -21,10 +22,7 @@ export default function SupportPage() {
         Skip to content
       </a>
       <header className="site-header" data-motion-header>
-        <a className="brand" href="/" aria-label="Lumen home">
-          <span className="brand-mark" aria-hidden="true" />
-          Lumen
-        </a>
+        <LumenLogo />
         <a className="text-button" href="/workspace">
           Open workspace
         </a>

@@ -4,6 +4,7 @@ import { FormEvent, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { AppearanceControls, useAppearance } from "./appearance";
 import { MoodFace, MoodPicker, moodLabels } from "./mood-picker";
+import LumenLogo from "../../components/LumenLogo";
 import "./studio.css";
 
 type Account = {
@@ -942,10 +943,7 @@ export default function Home() {
         Skip to content
       </a>
       <header className={`site-header ${user ? "signed-in" : ""}`}>
-        <a className="brand" href="/" aria-label="Lumen home">
-          <span className="brand-mark" aria-hidden="true" />
-          <span>Lumen</span>
-        </a>
+        <LumenLogo />
         {user && (
           <button className="text-button" onClick={signout} disabled={busy}>
             Sign out
