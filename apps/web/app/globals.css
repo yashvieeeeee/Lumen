@@ -1,6 +1,7 @@
 /* Mobile first: mist paper, slate ink, iris linework and a page to write on. */
 :root {
   --paper: #f2f5f7;
+  --paper-deeper: #e7edf1;
   --ink: #28394a;
   --muted: #526477;
   --line: #dce3e9;
@@ -8,9 +9,23 @@
   --iris-light: #ecebf5;
   --blue: #34576b;
   --error: #953e44;
-  --white: #fff;
+  --white: #ffffff;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   color-scheme: light;
+}
+:root[data-theme="dark"],
+body[data-theme="dark"] {
+  --paper: #16202c;
+  --paper-deeper: #111a24;
+  --ink: #ecf2f7;
+  --muted: #94a5b7;
+  --line: #2b3949;
+  --iris: #a9a6d8;
+  --iris-light: #24283c;
+  --blue: #8eaec2;
+  --error: #e07a82;
+  --white: #1d2836;
+  color-scheme: dark;
 }
 * {
   box-sizing: border-box;
